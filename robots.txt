@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://terrain.co.ke/sitemap.xml
