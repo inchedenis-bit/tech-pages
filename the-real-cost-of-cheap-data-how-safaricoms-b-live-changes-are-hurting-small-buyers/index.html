@@ -123,7 +123,7 @@
     }
   });
   */
-})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/" target="_self">News</a></li><li><a href="https://terrain.co.ke/" target="_self">Contact</a></li><li><a href="#faq" target="_self">FAQ</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-10-31T22:15">October 31, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
+})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/" target="_self">News</a></li><li><a href="https://terrain.co.ke/" target="_self">Contact</a></li><li><a href="#faq" target="_self">FAQ</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-10-31T22:28">October 31, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
     position: fixed;
     top: 0; left: 0;
     height: 3px;
@@ -990,7 +990,7 @@ Follow these rules strictly:
     opacity: 1; pointer-events: auto;
   }
 
-  /* The FAQ Panel */
+  /* The FAQ Panel (Desktop Default: Right Slide) */
   #faq-panel {
     position: fixed; top: 0; right: -100%; width: 100%; max-width: 500px; height: 100%;
     background: #f7f9fc; z-index: 999991;
@@ -1013,7 +1013,7 @@ Follow these rules strictly:
   #faq-close {
     background: #f1f5f9; border: none; width: 32px; height: 32px; border-radius: 50%;
     cursor: pointer; display: flex; align-items: center; justify-content: center;
-    font-size: 20px; color: #64748b; transition: all 0.2s;
+    font-size: 24px; color: #64748b; transition: all 0.2s; line-height: 1;
   }
   #faq-close:hover { background: #e2e8f0; color: #1e293b; transform: rotate(90deg); }
 
@@ -1053,6 +1053,32 @@ Follow these rules strictly:
   }
   .faq-item.active .faq-answer {
     max-height: 400px; padding: 16px 20px 20px 20px; border-top: 1px solid #e2e8f0;
+  }
+
+  /* =========================================
+     📱 MOBILE RESPONSIVENESS (Bottom Sheet)
+     ========================================= */
+  @media (max-width: 768px) {
+    /* Change the slide direction on mobile */
+    #faq-panel {
+      top: auto; bottom: -100%; right: 0;
+      width: 100%; max-width: 100%; height: 85vh;
+      border-radius: 20px 20px 0 0; /* Rounded top corners */
+      box-shadow: 0 -10px 30px rgba(0,0,0,0.2);
+      transition: bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    #faq-panel.active {
+      bottom: 0;
+    }
+    
+    /* Add a little swipe-down bar at the top to make it look like an app */
+    #faq-header::before {
+      content: ''; position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
+      width: 40px; height: 4px; background: #cbd5e1; border-radius: 2px;
+    }
+    #faq-header {
+      position: relative; padding-top: 24px;
+    }
   }</style><div id="faq-overlay"></div><div id="faq-panel"><div id="faq-header"><h3>Frequently Asked Questions</h3><button id="faq-close" aria-label="Close FAQ">&times;</button></div><div id="faq-content"><div class="faq-list"><div class="faq-item"><button class="faq-question">Where do you get your phone prices from? <span class="faq-icon"></span></button><div class="faq-answer">We track prices from major verified retailers, official brand stores, and trusted local vendors across Kenya. We update our articles regularly, but prices can fluctuate. Always double-check with the vendor before making a purchase.</div></div><div class="faq-item"><button class="faq-question">Do you sell phones or laptops directly? <span class="faq-icon"></span></button><div class="faq-answer">No, Tech Terrain is a news and price-tracking publication. We do not sell devices directly. We simply help you find the best deals by comparing the market.</div></div><div class="faq-item"><button class="faq-question">How often are the articles updated? <span class="faq-icon"></span></button><div class="faq-answer">Our team publishes new tech news and price comparisons weekly. If you spot an outdated price, feel free to message us on Telegram, and we will look into it!</div></div></div></div></div><script>(function () {
   const overlay = document.getElementById('faq-overlay');
   const panel = document.getElementById('faq-panel');
@@ -1084,11 +1110,9 @@ Follow these rules strictly:
   overlay.addEventListener('click', closeFAQ); // Click outside to close
 
   // 3. MAGIC LINK INTERCEPTOR
-  // This automatically finds any link on your site pointing to "#faq" 
-  // and makes it open the panel instead of scrolling.
   document.querySelectorAll('a[href="#faq"], a[href="#faq-widget"]').forEach(link => {
     link.addEventListener('click', (e) => {
-      e.preventDefault(); // Stop the page from jumping
+      e.preventDefault(); 
       window.openFAQ();
     });
   });
