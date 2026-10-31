@@ -3,7 +3,7 @@
     <title>Tech-Terrain</title>
     <link href="https://terrain.co.ke/feed.xml" rel="self" />
     <link href="https://terrain.co.ke" />
-    <updated>2026-10-28T14:39:39+03:00</updated>
+    <updated>2026-10-31T12:13:30+03:00</updated>
     <author>
         <name>Editorial</name>
     </author>
@@ -75,8 +75,7 @@
 </table>
 </div>
 <p class="ds-markdown-paragraph"><strong>Value Score: 3 / 5</strong> — The NFC feature is genuinely useful for urban Kenyan buyers, but the inconsistent spec listings and slow storage keep it from a higher score.<br><br><br></p>
-<script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer="defer"></script>
-<div class="commonninja_component pid-70032ac4-e48d-43e6-83c8-bbcd8eab6788"> </div>
+<p> </p>
             ]]>
         </content>
     </entry>
@@ -149,8 +148,7 @@
 </table>
 </div>
 <p class="ds-markdown-paragraph"><strong>Value Score: 2 / 5 for small buyers</strong> — The monthly tier improved, but the removal of affordable hourly access is a direct cost to the Kenyans who can least absorb it.</p>
-<script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer="defer"></script>
-<div class="commonninja_component pid-70032ac4-e48d-43e6-83c8-bbcd8eab6788"> </div>
+<p> </p>
             ]]>
         </content>
     </entry>
@@ -225,8 +223,7 @@
 </table>
 </div>
 <p class="ds-markdown-paragraph"><strong>Value Score: 3 / 5</strong> — The best in a weak bracket. Good enough for the basics, but not a phone you will love for years.</p>
-<script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer="defer"></script>
-<div class="commonninja_component pid-70032ac4-e48d-43e6-83c8-bbcd8eab6788"> </div>
+<p> </p>
             ]]>
         </content>
     </entry>
@@ -298,8 +295,7 @@
 </table>
 </div>
 <p class="ds-markdown-paragraph"><strong>Value Score: 2 / 5</strong> — The price can be tempting, but the end of Android updates makes it a short-term purchase at best.</p>
-<script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer="defer"></script>
-<div class="commonninja_component pid-70032ac4-e48d-43e6-83c8-bbcd8eab6788"> </div>
+<p> </p>
             ]]>
         </content>
     </entry>
@@ -388,8 +384,7 @@
 </table>
 </div>
 <p class="ds-markdown-paragraph"><strong>Value Score: N/A</strong> — This is a buying guide, not a product review. The score belongs to the phones you choose after applying it.</p>
-<script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer="defer"></script>
-<div class="commonninja_component pid-70032ac4-e48d-43e6-83c8-bbcd8eab6788"> </div>
+<p> </p>
             ]]>
         </content>
     </entry>
@@ -413,7 +408,7 @@
         <content type="html">
             <![CDATA[
                     <p><img src="https://terrain.co.ke/media/posts/12/HP-EliteBook-840-G5.jpg" class="type:primaryImage" alt="" /></p>
-                <p class="ds-markdown-paragraph">When you buy a refurbished laptop for KES 35,000 in town, you are not buying a premium machine. You are buying a tool. You expect it to be a little slow, maybe a little heavy. What you do not expect is for it to physically fall apart in your hands.</p>
+                <p><span style="float: left; font-size: 3.5em; line-height: 0.9; margin-right: 0.1em; font-weight: bold;">W</span>hen you buy a refurbished laptop for KES 35,000 in town, you are not buying a premium machine. You are buying a tool. You expect it to be a little slow, maybe a little heavy. What you do not expect is for it to physically fall apart in your hands.</p>
 <p class="ds-markdown-paragraph">I bought a refurbished HP EliteBook 840 G5 for exactly KES 35,000 from a dealer in town. I wanted to see if the hype about cheap business laptops is real, or if they are just as fragile as the cheap new ones.</p>
 <p class="ds-markdown-paragraph">I have used it for everything for a year. I have carried it in a backpack on matatus, typed articles on it, dropped it more than once (by accident), and ran its battery to zero more times than I should admit.</p>
 <p class="ds-markdown-paragraph">Here is the honest breakdown of what broke, and what survived.</p>
@@ -440,10 +435,7 @@
 </li>
 </ol>
 <p class="ds-markdown-paragraph">These machines are built to last, but they are not indestructible. For KES 35,000, you are getting a serious piece of hardware. Just take care of it, and it will survive the month, the year, and your entire university degree.</p>
-<p>
-<script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer="defer"></script>
-</p>
-<div class="commonninja_component pid-70032ac4-e48d-43e6-83c8-bbcd8eab6788"> </div>
+<p> </p>
             ]]>
         </content>
     </entry>
@@ -467,7 +459,7 @@
         <content type="html">
             <![CDATA[
                     <p><img src="https://terrain.co.ke/media/posts/20/Gamming-Laptop.jpg" class="type:primaryImage" alt="" /></p>
-                <p class="ds-markdown-paragraph">You finally did it. You saved up, walked into a shop in Nairobi, and dropped KES 100,000 on a serious gaming laptop. It has an RTX graphics card, a high refresh rate screen, and enough RGB lights to host a concert.</p>
+                <p><span style="float: left; font-size: 3.5em; line-height: 0.9; margin-right: 0.1em; font-weight: bold;">Y</span>ou finally did it. You saved up, walked into a shop in Nairobi, and dropped KES 100,000 on a serious gaming laptop. It has an RTX graphics card, a high refresh rate screen, and enough RGB lights to host a concert.</p>
 <p class="ds-markdown-paragraph">You take it home, fire up your favorite game, and ten minutes later, the frame rate crashes. The keyboard gets uncomfortably hot. The fans sound like a jet engine taking off at JKIA.</p>
 <p class="ds-markdown-paragraph">You did not get scammed. The laptop is not broken. You have just run into the harsh reality of gaming in Nairobi: the environment is fighting back.</p>
 <p class="ds-markdown-paragraph">Here is why your powerful machine is struggling, and exactly how to fix it.</p>
@@ -488,10 +480,7 @@
 <h2>The Verdict</h2>
 <p class="ds-markdown-paragraph">A KES 100,000 gaming laptop is a fantastic machine, but it needs help to survive the Kenyan climate. You cannot control the heat outside, but you can control the dust inside and the way the laptop breathes.</p>
 <p class="ds-markdown-paragraph">Keep it elevated. Clean it twice a year. Use it on a hard desk, not on a mattress. Do those three things, and your laptop will run cool, fast, and quiet for years.</p>
-<p>
-<script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer="defer"></script>
-</p>
-<div class="commonninja_component pid-70032ac4-e48d-43e6-83c8-bbcd8eab6788"> </div>
+<p> </p>
             ]]>
         </content>
     </entry>
@@ -568,8 +557,7 @@
 <h2>The Bottom Line</h2>
 <p class="ds-markdown-paragraph">Your old laptop isn't dead. It's just dragging a mechanical anchor. For under KES 4,000, you can replace the one component that's holding everything else back. That's not a trick. It's not an "optimizer." It's the upgrade most people skip because they assume a new laptop is the only answer.</p>
 <p class="ds-markdown-paragraph">It usually isn't. Check your disk type in Task Manager. If it says HDD, you've just found your fix.</p>
-<script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer="defer"></script>
-<div class="commonninja_component pid-70032ac4-e48d-43e6-83c8-bbcd8eab6788"> </div>
+<p> </p>
             ]]>
         </content>
     </entry>
@@ -593,7 +581,7 @@
         <content type="html">
             <![CDATA[
                     <p><img src="https://terrain.co.ke/media/posts/17/Hand-Laptop.jpg" class="type:primaryImage" alt="" /></p>
-                <p class="ds-markdown-paragraph">When you walk into a laptop shop in Nairobi, the seller will often try to upsell you. They will point to a machine and say, "This one has an Intel Core i7." They say it with reverence, as if the i7 badge magically makes the laptop faster and better.</p>
+                <p><span style="float: left; font-size: 3.5em; line-height: 0.9; margin-right: 0.1em; font-weight: bold;">W</span>hen you walk into a laptop shop in Nairobi, the seller will often try to upsell you. They will point to a machine and say, "This one has an Intel Core i7." They say it with reverence, as if the i7 badge magically makes the laptop faster and better.</p>
 <p class="ds-markdown-paragraph">Because of this, many Kenyan buyers stretch their budgets to the breaking point just to get an i7 sticker on their laptop. But here is a secret that tech sellers do not always explain: an older i7 is often a terrible deal.</p>
 <p class="ds-markdown-paragraph">If you are shopping for a laptop today, the smartest money you can spend is on a machine with an <strong>8th-Generation Intel Core i5</strong>. Here is why.</p>
 <h2>The Myth of the "i7"</h2>
@@ -617,10 +605,7 @@
 <p class="ds-markdown-paragraph">Do not get fooled by the badge. The letter on the sticker matters less than the generation number next to it.</p>
 <p class="ds-markdown-paragraph">For the vast majority of Kenyan buyers, an <strong>8th-Gen Intel Core i5</strong> is the smartest, safest, and most cost-effective choice. It gives you the speed you need, it runs the software you want, and it leaves money in your pocket for an SSD upgrade or a new battery.</p>
 <p class="ds-markdown-paragraph">Save the i7 for the video editors. Buy the i5, and use the savings to buy a laptop sleeve.</p>
-<p>
-<script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer="defer"></script>
-</p>
-<div class="commonninja_component pid-70032ac4-e48d-43e6-83c8-bbcd8eab6788"> </div>
+<p> </p>
             ]]>
         </content>
     </entry>
@@ -644,7 +629,7 @@
         <content type="html">
             <![CDATA[
                     <p><img src="https://terrain.co.ke/media/posts/11/Laptop-illustration.jpg" class="type:primaryImage" alt="" /></p>
-                <p class="ds-markdown-paragraph">You have KES 25,000 in your pocket. You walk into a shop, and the seller shows you two options. On the left is a brand-new laptop, still sealed in its box. On the right is a refurbished laptop that looks a bit heavy and has a sticker from a foreign company on it.</p>
+                <p><span style="float: left; font-size: 3.5em; line-height: 0.9; margin-right: 0.1em; font-weight: bold;">Y</span>ou have KES 25,000 in your pocket. You walk into a shop, and the seller shows you two options. On the left is a brand-new laptop, still sealed in its box. On the right is a refurbished laptop that looks a bit heavy and has a sticker from a foreign company on it.</p>
 <p class="ds-markdown-paragraph">The new one feels safer. But the used one will probably work better.</p>
 <p class="ds-markdown-paragraph">This is the hardest choice in the Kenyan laptop market. We are taught to fear second-hand things because we worry they will break. But when it comes to computers, the truth is often reversed.</p>
 <p class="ds-markdown-paragraph">Here is a simple breakdown of why a refurbished laptop is usually the safer bet, and when you should walk away.</p>
@@ -677,10 +662,7 @@
 <h2>The Verdict</h2>
 <p class="ds-markdown-paragraph">If you have exactly KES 25,000, do not buy a new laptop. The specs on those cheap new machines are a trap.</p>
 <p class="ds-markdown-paragraph">Instead, buy a refurbished business laptop. Get one with an SSD and at least an 8th-generation processor. It might not look brand new, but it will do everything you need it to do, and it will still be working long after the cheap new laptop has been thrown in a drawer.</p>
-<p>
-<script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer="defer"></script>
-</p>
-<div class="commonninja_component pid-70032ac4-e48d-43e6-83c8-bbcd8eab6788"> </div>
+<p> </p>
             ]]>
         </content>
     </entry>
