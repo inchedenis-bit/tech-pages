@@ -3,7 +3,7 @@
     <title>Tech-Terrain</title>
     <link href="https://terrain.co.ke/feed.xml" rel="self" />
     <link href="https://terrain.co.ke" />
-    <updated>2026-10-31T12:13:30+03:00</updated>
+    <updated>2026-10-31T14:49:34+03:00</updated>
     <author>
         <name>Editorial</name>
     </author>
@@ -480,6 +480,9 @@
 <h2>The Verdict</h2>
 <p class="ds-markdown-paragraph">A KES 100,000 gaming laptop is a fantastic machine, but it needs help to survive the Kenyan climate. You cannot control the heat outside, but you can control the dust inside and the way the laptop breathes.</p>
 <p class="ds-markdown-paragraph">Keep it elevated. Clean it twice a year. Use it on a hard desk, not on a mattress. Do those three things, and your laptop will run cool, fast, and quiet for years.</p>
+<p> </p>
+<!-- ═══════════ ARTICLE REACTIONS (TELEGRAM STYLE) ═══════════ -->
+<div id="reaction-box"><button class="reaction-btn" data-type="heart"> ❤️ <span id="count-heart" class="reaction-count">0</span> </button> <button class="reaction-btn" data-type="fire"> 🔥 <span id="count-fire" class="reaction-count">0</span> </button> <button class="reaction-btn" data-type="mind"> 🤯 <span id="count-mind" class="reaction-count">0</span> </button></div>
 <p> </p>
             ]]>
         </content>
