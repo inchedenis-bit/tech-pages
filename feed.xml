@@ -3,7 +3,7 @@
     <title>Tech-Terrain</title>
     <link href="https://terrain.co.ke/feed.xml" rel="self" />
     <link href="https://terrain.co.ke" />
-    <updated>2026-11-01T18:20:33+03:00</updated>
+    <updated>2026-11-01T22:24:31+03:00</updated>
     <author>
         <name>Editorial</name>
     </author>
@@ -300,7 +300,7 @@
         </content>
     </entry>
     <entry>
-        <title>Stop Wasting Money on “Cheap” Phones: 5 Things to Check Before You Buy Under KES 15,000</title>
+        <title>Stop Wasting Money on Bad Phones: 5 Things to Check Before You Buy Under KES 15,000</title>
         <author>
             <name>Editorial</name>
         </author>
@@ -383,8 +383,6 @@
 </tbody>
 </table>
 </div>
-<p class="ds-markdown-paragraph"><strong>Value Score: N/A</strong> — This is a buying guide, not a product review. The score belongs to the phones you choose after applying it.</p>
-<p> </p>
             ]]>
         </content>
     </entry>
@@ -480,10 +478,7 @@
 <h2>The Verdict</h2>
 <p class="ds-markdown-paragraph">A KES 100,000 gaming laptop is a fantastic machine, but it needs help to survive the Kenyan climate. You cannot control the heat outside, but you can control the dust inside and the way the laptop breathes.</p>
 <p class="ds-markdown-paragraph">Keep it elevated. Clean it twice a year. Use it on a hard desk, not on a mattress. Do those three things, and your laptop will run cool, fast, and quiet for years.</p>
-<p> </p>
-<!-- ═══════════ ARTICLE REACTIONS (TELEGRAM STYLE) ═══════════ -->
-<div id="reaction-box"><button class="reaction-btn" data-type="heart"> ❤️ <span id="count-heart" class="reaction-count">0</span> </button> <button class="reaction-btn" data-type="fire"> 🔥 <span id="count-fire" class="reaction-count">0</span> </button> <button class="reaction-btn" data-type="mind"> 🤯 <span id="count-mind" class="reaction-count">0</span> </button></div>
-<p> </p>
+<details></details>
             ]]>
         </content>
     </entry>
