@@ -106,7 +106,7 @@
     body.scrolled-down #trending-ticker { transform: translateY(60px); }
   }</style><div id="trending-ticker"><div id="ticker-label"><span class="ticker-pulse"></span> Trending</div><div id="ticker-content"><div class="ticker-track"><a href="https://terrain.co.ke/local-ai-just-got-real-for-kenyan-businesses-heres-why-it-matters/">🤖 NEWS: Local AI Just Got Real: Cassava Brings Nvidia to Kenyan Businesses</a> <a href="https://terrain.co.ke/do-you-really-need-an-i7-why-an-8th-gen-i5-is-the-smartest-buy-in-kenya-right-now/">🖥️ OPINION: Why an 8th-Gen i5 Is the Smartest Buy in Kenya</a> <a href="https://terrain.co.ke/the-real-reason-half-of-kenya-is-still-offline-isnt-the-network/">📱 NEWS: The Real Reason Half of Kenya Is Still Offline Isn't the Network</a> <a href="https://terrain.co.ke/the-binance-hack-just-hit-close-to-home-heres-what-it-means-for-kenyan-crypto-traders/">🚨 NEWS: The Binance Hack Just Hit Close to Home for Kenyan Traders</a> <a href="https://terrain.co.ke/best-laptops-for-kenyan-university-students-under-kes-50000-updated-2026/">💻 GUIDE: Best Student Laptops Under KES 50,000 (Updated 2026)</a> <a href="https://terrain.co.ke/kenyas-cyber-threats-surge-29-as-mobile-money-hits-54-million/">🛡️ NEWS: Cyber Threats Surge 29% as Mobile Money Hits 54 Million</a></div></div></div><script>(function() {
   // The layout remains 100% natural.
-})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="https://terrain.co.ke/" target="_self">Contact</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-04T00:57">November 4, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
+})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="https://terrain.co.ke/" target="_self">Contact</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-04T13:57">November 4, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
     position: fixed;
     top: 0; left: 0;
     height: 3px;
@@ -475,11 +475,6 @@
       return num.toString();
     }
 
-    function seededRandom(seed) {
-      let x = Math.sin(seed++) * 10000;
-      return x - Math.floor(x);
-    }
-
     // Handle Reactions
     document.querySelectorAll('.reaction-btn').forEach(btn => {
       btn.addEventListener('click', async function() {
@@ -504,106 +499,42 @@
         const res = await fetch(`${WORKER_URL}/stats?page=${encodeURIComponent(pageId)}`);
         const data = await res.json();
         
-        // 📅 SMART DATE FINDER
-        let articleDate = null;
-        
-        // 1. Look at the URL first (Most reliable for older posts)
-        // Matches URLs like /2024/07/ or /2026/10/
-        const urlMatch = window.location.href.match(/\/(20\d{2})\/(\d{2})\//);
-        if (urlMatch) {
-            const year = parseInt(urlMatch[1]);
-            const month = parseInt(urlMatch[2]) - 1; 
-            // Set it to the 15th of the month to be safe
-            articleDate = new Date(year, month, 15); 
-        }
+        // 🕵️ READ THE HIDDEN HTML BOX
+        let baseViews = 0;
+        let baseShares = 0;
+        let baseThumbs = 0;
+        let baseLove = 0;
+        let baseFire = 0;
 
-        // 2. If URL fails, check the <time> tag
-        if (!articleDate) {
-            const timeTag = document.querySelector('time[datetime]') || document.querySelector('time');
-            if (timeTag) {
-                const dateStr = timeTag.getAttribute('datetime') || timeTag.textContent;
-                const parsed = new Date(dateStr);
-                if (!isNaN(parsed.getTime())) articleDate = parsed;
-            }
+        const statsDiv = document.getElementById('manual-stats');
+        
+        if (statsDiv) {
+            // If the hidden box exists, read the numbers from it
+            baseViews = parseInt(statsDiv.getAttribute('data-views')) || 0;
+            baseShares = parseInt(statsDiv.getAttribute('data-shares')) || 0;
+            baseThumbs = parseInt(statsDiv.getAttribute('data-thumbs')) || 0;
+            baseLove = parseInt(statsDiv.getAttribute('data-love')) || 0;
+            baseFire = parseInt(statsDiv.getAttribute('data-fire')) || 0;
+        } else {
+            // If no hidden box exists (older posts before today), 
+            // generate a nice base number based on the URL so it never shows 0.
+            let seed = 0;
+            for (let i = 0; i < pageId.length; i++) seed += pageId.charCodeAt(i);
+            
+            baseViews = (seed % 3000) + 1200; 
+            baseShares = (seed % 15) + 3;
+            baseThumbs = (seed % 100) + 40;
+            baseLove = (seed % 70) + 20;
+            baseFire = (seed % 50) + 10;
         }
         
-        // 3. Meta tags fallback
-        if (!articleDate) {
-            const metaDate = document.querySelector('meta[property="article:published_time"]');
-            if (metaDate && metaDate.content) {
-                const parsed = new Date(metaDate.content);
-                if (!isNaN(parsed.getTime())) articleDate = parsed;
-            }
-        }
-
-        // 4. If all else fails, it's a new post
-        if (!articleDate) {
-            articleDate = new Date(); 
-        }
-
-        const today = new Date();
-        const timeDifference = today.getTime() - articleDate.getTime();
-        const daysPassed = Math.max(0, Math.floor(timeDifference / (1000 * 60 * 60 * 24)));
+        // Update stats (Hidden Box Number + Real Database Clicks)
+        document.getElementById('stat-views').textContent = formatNumber(baseViews + (data.views || 0));
+        document.getElementById('stat-shares').textContent = formatNumber(baseShares + (data.shares || 0));
         
-        // 🎲 ORGANIC GROWTH ENGINE
-        let organicViews = 0;
-        let organicShares = 0;
-        let organicThumbs = 0;
-        let organicLove = 0;
-        let organicFire = 0;
-        
-        let seed = 0;
-        for (let i = 0; i < pageId.length; i++) seed += pageId.charCodeAt(i);
-        
-        // 🟢 RULE 1: INCUBATION PERIOD (First 7 Days)
-        if (daysPassed <= 7) {
-            const rWarm = seededRandom(seed + 999);
-            organicViews = Math.floor(rWarm * 201) + 200; // 200 to 400 views
-            
-            const rThumbs = seededRandom(seed + 888);
-            const rLove = seededRandom(seed + 777);
-            const rFire = seededRandom(seed + 666);
-            
-            organicThumbs = Math.floor(rThumbs * 20) + 5;  
-            organicLove = Math.floor(rLove * 15) + 2;      
-            organicFire = Math.floor(rFire * 10) + 1;      
-            
-            organicShares = Math.floor(rWarm * 5) + 1;     
-        } 
-        // 🟢 RULE 2: OLDER POSTS (Day 8 and beyond)
-        else {
-            // 1. Base views: 1.2K to 8.9K
-            const rBase = seededRandom(seed + 111);
-            const baseViews = Math.floor(rBase * 7700) + 1200; 
-            organicViews += baseViews;
-            
-            // 2. Base reactions: 100 to 300
-            const rBaseReactions = seededRandom(seed + 222);
-            const totalBaseReactions = Math.floor(rBaseReactions * 200) + 100;
-            
-            organicThumbs += Math.floor(totalBaseReactions * 0.45); 
-            organicLove += Math.floor(totalBaseReactions * 0.30);   
-            organicFire += Math.floor(totalBaseReactions * 0.25);   
-            
-            // 3. Base shares: 2 to 18
-            const rBaseShares = seededRandom(seed + 333);
-            organicShares += Math.floor(rBaseShares * 17) + 2;
-            
-            // 4. ONGOING GROWTH: +10 to +50 views per day
-            const daysSinceIncubation = daysPassed - 7;
-            for (let i = 0; i < daysSinceIncubation; i++) {
-              const rDailyViews = seededRandom(seed + i * 4);
-              organicViews += Math.floor(rDailyViews * 41) + 10; 
-            }
-        }
-        
-        // Update stats
-        document.getElementById('stat-views').textContent = formatNumber((data.views || 0) + organicViews);
-        document.getElementById('stat-shares').textContent = formatNumber((data.shares || 0) + organicShares);
-        
-        document.getElementById('count-thumbs').textContent = formatNumber((data.thumbs || 0) + organicThumbs);
-        document.getElementById('count-love').textContent = formatNumber((data.love || 0) + organicLove);
-        document.getElementById('count-fire').textContent = formatNumber((data.fire || 0) + organicFire);
+        document.getElementById('count-thumbs').textContent = formatNumber(baseThumbs + (data.thumbs || 0));
+        document.getElementById('count-love').textContent = formatNumber(baseLove + (data.love || 0));
+        document.getElementById('count-fire').textContent = formatNumber(baseFire + (data.fire || 0));
         
         if (hasClicked) {
           const activeBtn = document.querySelector(`.reaction-btn[data-type="${hasClicked}"]`);
