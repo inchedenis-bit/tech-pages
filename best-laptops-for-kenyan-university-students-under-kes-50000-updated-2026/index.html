@@ -106,7 +106,7 @@
     body.scrolled-down #trending-ticker { transform: translateY(60px); }
   }</style><div id="trending-ticker"><div id="ticker-label"><span class="ticker-pulse"></span> Trending</div><div id="ticker-content"><div class="ticker-track"><a href="https://terrain.co.ke/local-ai-just-got-real-for-kenyan-businesses-heres-why-it-matters/">🤖 NEWS: Local AI Just Got Real: Cassava Brings Nvidia to Kenyan Businesses</a> <a href="https://terrain.co.ke/do-you-really-need-an-i7-why-an-8th-gen-i5-is-the-smartest-buy-in-kenya-right-now/">🖥️ OPINION: Why an 8th-Gen i5 Is the Smartest Buy in Kenya</a> <a href="https://terrain.co.ke/the-real-reason-half-of-kenya-is-still-offline-isnt-the-network/">📱 NEWS: The Real Reason Half of Kenya Is Still Offline Isn't the Network</a> <a href="https://terrain.co.ke/the-binance-hack-just-hit-close-to-home-heres-what-it-means-for-kenyan-crypto-traders/">🚨 NEWS: The Binance Hack Just Hit Close to Home for Kenyan Traders</a> <a href="https://terrain.co.ke/best-laptops-for-kenyan-university-students-under-kes-50000-updated-2026/">💻 GUIDE: Best Student Laptops Under KES 50,000 (Updated 2026)</a> <a href="https://terrain.co.ke/kenyas-cyber-threats-surge-29-as-mobile-money-hits-54-million/">🛡️ NEWS: Cyber Threats Surge 29% as Mobile Money Hits 54 Million</a></div></div></div><script>(function() {
   // The layout remains 100% natural.
-})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="https://terrain.co.ke/" target="_self">Contact</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-04T19:12">November 4, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
+})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="https://terrain.co.ke/" target="_self">Contact</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-04T19:28">November 4, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
     position: fixed;
     top: 0; left: 0;
     height: 3px;
@@ -357,6 +357,7 @@
   }
 
   #traffic-num { font-weight: 700; color: #6ee7a0; display: inline-block; }
+  
   .num-pop { animation: number-pop 0.3s ease-out; }
   @keyframes number-pop {
     0% { transform: scale(1); color: #6ee7a0; text-shadow: none; }
@@ -366,16 +367,15 @@
 
   @media (max-width: 480px) {
     #traffic-popup { bottom: 96px; font-size: 12px; padding: 10px 16px; }
-  }</style><div id="traffic-popup"><span class="traffic-pulse"></span> <span><span id="traffic-num">0</span> readers online right now</span></div><script>(function () {
+  }</style><div id="traffic-popup"><span class="traffic-pulse"></span> <span><span id="traffic-num">0</span> people are reading this</span></div><script>(function () {
   const popup = document.getElementById('traffic-popup');
   const numEl = document.getElementById('traffic-num');
 
   const VISIBLE_MS = 7000; 
   const START_DELAY_MS = 1500; 
 
-  // 🟢 Simple, realistic limits (Min 4, Max 22)
-  const MIN_READERS = 4;
-  const MAX_READERS = 22;
+  const MIN_READERS = 2;
+  const MAX_READERS = 17;
 
   let ticker = null;
 
@@ -401,23 +401,19 @@
       let changed = false;
       
       if (action > 0.85) {
-        // 📈 15% CHANCE: A sudden Spike (3 to 6 readers join at once)
-        const spike = getRandom(3, 6);
-        currentNumber = Math.min(currentNumber + spike, MAX_READERS + 5);
+        const spike = getRandom(2, 4);
+        currentNumber = Math.min(currentNumber + spike, MAX_READERS + 2);
         changed = true;
       } else if (action < 0.10) {
-        // 📉 10% CHANCE: A sudden Drop (2 to 4 readers leave at once)
-        const drop = getRandom(2, 4);
+        const drop = getRandom(1, 3);
         currentNumber = Math.max(currentNumber - drop, MIN_READERS - 1);
         changed = true;
       } else if (action > 0.40) {
-        // ↗️ 45% CHANCE: Normal increase
         if (currentNumber < MAX_READERS) {
             currentNumber++;
             changed = true;
         }
       } else {
-        // ↘️ 30% CHANCE: Normal decrease
         if (currentNumber > MIN_READERS) {
             currentNumber--;
             changed = true;
