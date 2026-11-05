@@ -106,7 +106,7 @@
     body.scrolled-down #trending-ticker { transform: translateY(60px); }
   }</style><div id="trending-ticker"><div id="ticker-label"><span class="ticker-pulse"></span> Trending</div><div id="ticker-content"><div class="ticker-track"><a href="https://terrain.co.ke/local-ai-just-got-real-for-kenyan-businesses-heres-why-it-matters/">🤖 NEWS: Local AI Just Got Real: Cassava Brings Nvidia to Kenyan Businesses</a> <a href="https://terrain.co.ke/do-you-really-need-an-i7-why-an-8th-gen-i5-is-the-smartest-buy-in-kenya-right-now/">🖥️ OPINION: Why an 8th-Gen i5 Is the Smartest Buy in Kenya</a> <a href="https://terrain.co.ke/the-real-reason-half-of-kenya-is-still-offline-isnt-the-network/">📱 NEWS: The Real Reason Half of Kenya Is Still Offline Isn't the Network</a> <a href="https://terrain.co.ke/the-binance-hack-just-hit-close-to-home-heres-what-it-means-for-kenyan-crypto-traders/">🚨 NEWS: The Binance Hack Just Hit Close to Home for Kenyan Traders</a> <a href="https://terrain.co.ke/best-laptops-for-kenyan-university-students-under-kes-50000-updated-2026/">💻 GUIDE: Best Student Laptops Under KES 50,000 (Updated 2026)</a> <a href="https://terrain.co.ke/kenyas-cyber-threats-surge-29-as-mobile-money-hits-54-million/">🛡️ NEWS: Cyber Threats Surge 29% as Mobile Money Hits 54 Million</a></div></div></div><script>(function() {
   // The layout remains 100% natural.
-})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="https://terrain.co.ke/" target="_self">Contact</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-06T00:22">November 6, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
+})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="https://terrain.co.ke/" target="_self">Contact</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-06T00:37">November 6, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
     position: fixed;
     top: 0; left: 0;
     height: 3px;
@@ -985,10 +985,29 @@
     cursor: pointer; border: none;
     display: flex; align-items: center; justify-content: center;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
+    
+    /* 🟢 THE ONE-TIME PULSE ANIMATION */
+    /* Runs 3 times, waits 2 seconds before starting */
+    animation: intro-pulse 2s ease-out 3;
+    animation-delay: 2s; 
   }
-  #ta-launcher:hover { transform: scale(1.08); box-shadow: 0 12px 32px rgba(57, 115, 212, 0.6); }
+  
+  #ta-launcher:hover { 
+    transform: scale(1.08); 
+    box-shadow: 0 12px 32px rgba(57, 115, 212, 0.6); 
+    /* Stops the pulse animation immediately if they hover */
+    animation: none; 
+  }
+  
   #ta-launcher svg { width: 28px; height: 28px; fill: #fff; transition: transform 0.3s; }
   #ta-launcher.ta-open svg { transform: rotate(90deg); }
+
+  /* The Pulse Keyframes */
+  @keyframes intro-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(57, 115, 212, 0.7); }
+    50% { box-shadow: 0 0 0 15px rgba(57, 115, 212, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(57, 115, 212, 0); }
+  }
 
   #ta-panel {
     position: fixed; bottom: 96px; right: 24px; z-index: 99999;
@@ -1015,25 +1034,15 @@
   #ta-header .ta-title { font-size: 15px; font-weight: 700; letter-spacing: 0.3px; }
   #ta-header .ta-subtitle { font-size: 12px; opacity: 0.85; margin-top: 2px; display: flex; align-items: center; gap: 5px; }
   
-  /* ✅ UPDATED: The growing "breathing" green dot */
+  /* The growing "breathing" green dot */
   #ta-header .ta-status-dot {
     width: 7px; height: 7px; background: #4ade80; border-radius: 50%;
     box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.3);
     animation: ta-breathe 2s infinite ease-in-out;
   }
   @keyframes ta-breathe {
-    0%, 100% { 
-      transform: scale(0.8); 
-      opacity: 0.5; 
-      background: #4ade80; 
-      box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); 
-    }
-    50% { 
-      transform: scale(1.2); 
-      opacity: 1; 
-      background: #22c55e; /* Brighter green */
-      box-shadow: 0 0 8px 2px rgba(74, 222, 128, 0.5); 
-    }
+    0%, 100% { transform: scale(0.8); opacity: 0.5; background: #4ade80; box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+    50% { transform: scale(1.2); opacity: 1; background: #22c55e; box-shadow: 0 0 8px 2px rgba(74, 222, 128, 0.5); }
   }
 
   #ta-messages {
@@ -1171,6 +1180,10 @@ Follow these rules strictly:
     isOpen = !isOpen;
     panel.classList.toggle('ta-visible', isOpen);
     launcher.classList.toggle('ta-open', isOpen);
+    
+    // 🟢 Stop the pulse animation immediately when they click
+    launcher.style.animation = 'none';
+
     if (isOpen && messages.children.length === 0) {
       addBotMessage("👋 Hi! I'm **Tech-Terrain AI**, your website assistant. Ask me about phone and laptop prices in Kenya, or anything tech-related!");
     }
