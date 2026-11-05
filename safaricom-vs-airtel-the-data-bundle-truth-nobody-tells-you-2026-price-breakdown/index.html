@@ -106,7 +106,7 @@
     body.scrolled-down #trending-ticker { transform: translateY(60px); }
   }</style><div id="trending-ticker"><div id="ticker-label"><span class="ticker-pulse"></span> Trending</div><div id="ticker-content"><div class="ticker-track"><a href="https://terrain.co.ke/local-ai-just-got-real-for-kenyan-businesses-heres-why-it-matters/">🤖 NEWS: Local AI Just Got Real: Cassava Brings Nvidia to Kenyan Businesses</a> <a href="https://terrain.co.ke/do-you-really-need-an-i7-why-an-8th-gen-i5-is-the-smartest-buy-in-kenya-right-now/">🖥️ OPINION: Why an 8th-Gen i5 Is the Smartest Buy in Kenya</a> <a href="https://terrain.co.ke/the-real-reason-half-of-kenya-is-still-offline-isnt-the-network/">📱 NEWS: The Real Reason Half of Kenya Is Still Offline Isn't the Network</a> <a href="https://terrain.co.ke/the-binance-hack-just-hit-close-to-home-heres-what-it-means-for-kenyan-crypto-traders/">🚨 NEWS: The Binance Hack Just Hit Close to Home for Kenyan Traders</a> <a href="https://terrain.co.ke/best-laptops-for-kenyan-university-students-under-kes-50000-updated-2026/">💻 GUIDE: Best Student Laptops Under KES 50,000 (Updated 2026)</a> <a href="https://terrain.co.ke/kenyas-cyber-threats-surge-29-as-mobile-money-hits-54-million/">🛡️ NEWS: Cyber Threats Surge 29% as Mobile Money Hits 54 Million</a></div></div></div><script>(function() {
   // The layout remains 100% natural.
-})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="https://terrain.co.ke/" target="_self">Contact</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-05T13:48">November 5, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
+})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="https://terrain.co.ke/" target="_self">Contact</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-05T14:14">November 5, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
     position: fixed;
     top: 0; left: 0;
     height: 3px;
@@ -828,7 +828,6 @@
     background-color: #ffffff;
     transition: border-color 0.2s ease;
   }
-  /* Fixes Chrome Autofill Background */
   .kes-newsletter-form input:-webkit-autofill,
   .kes-newsletter-form input:-webkit-autofill:hover, 
   .kes-newsletter-form input:-webkit-autofill:focus, 
@@ -881,44 +880,48 @@
   }
   .kes-newsletter-form button:active {
     transform: scale(0.98);
-  }</style><div class="kes-newsletter-form"><form id="kes-form" action="https://formsubmit.co/inchedenis@gmail.com" method="POST"><input type="hidden" name="_subject" value="New Terrain Newsletter Subscriber!"> <input type="hidden" name="_captcha" value="false"> <input type="text" name="_gotcha" style="display:none"> <label for="kes-email">Email Address</label> <input type="email" id="kes-email" name="email" placeholder="you@example.com" required> <label for="kes-name">Name</label> <input type="text" id="kes-name" name="name" placeholder="Your name"><div class="kes-checkbox-row"><input type="checkbox" id="kes-consent-1" name="consent_data" required> <label for="kes-consent-1">I agree to my personal data being stored and used to receive the newsletter</label></div><div class="kes-checkbox-row"><input type="checkbox" id="kes-consent-2" name="consent_commercial"> <label for="kes-consent-2">I agree to receive information and commercial offers.</label></div><button type="submit" id="kes-btn">Subscribe</button></form></div><script>document.getElementById('kes-form').addEventListener('submit', function(e) {
-  e.preventDefault(); // Stops the page from refreshing
+  }</style><div class="kes-newsletter-form"><form id="kes-form"><input type="hidden" name="access_key" value="5ea1c451-8e90-484b-b7db-e43fb10a0b34"> <input type="checkbox" name="botcheck" class="hidden" style="display: none;"> <input type="hidden" name="subject" value="New Terrain Newsletter Subscriber!"> <label for="kes-email">Email Address</label> <input type="email" id="kes-email" name="email" placeholder="you@example.com" required> <label for="kes-name">Name</label> <input type="text" id="kes-name" name="name" placeholder="Your name"><div class="kes-checkbox-row"><input type="checkbox" id="kes-consent-1" name="consent_data" checked="checked" required> <label for="kes-consent-1">I agree to my personal data being stored and used to receive the newsletter</label></div><div class="kes-checkbox-row"><input type="checkbox" id="kes-consent-2" name="consent_commercial" checked="checked"> <label for="kes-consent-2">I agree to receive information and commercial offers.</label></div><button type="submit" id="kes-btn">Subscribe</button></form></div><script>document.getElementById('kes-form').addEventListener('submit', function(e) {
+  e.preventDefault(); 
   
   const btn = document.getElementById('kes-btn');
   const originalText = btn.textContent;
   const form = e.target;
   
-  // Change button to "Subscribing..."
   btn.textContent = 'Subscribing...';
   btn.disabled = true;
   btn.style.backgroundColor = '#2650a3'; 
 
-  // Send the data silently in the background
-  fetch(form.action, {
+  const formData = new FormData(form);
+  const object = Object.fromEntries(formData);
+  const json = JSON.stringify(object);
+
+  fetch('https://api.web3forms.com/submit', {
     method: 'POST',
-    body: new FormData(form),
-    headers: { 'Accept': 'application/json' }
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: json
   })
-  .then(response => {
-    if (response.ok) {
-      btn.textContent = 'Success! Check your email.';
-      btn.style.backgroundColor = '#10b981'; // Turns green
-      form.reset(); // Clear the form
+  .then(async (response) => {
+    if (response.status == 200) {
+      btn.textContent = 'Success! You are subscribed.';
+      btn.style.backgroundColor = '#10b981'; 
+      form.reset();
     } else {
       btn.textContent = 'Error. Try again.';
-      btn.style.backgroundColor = '#ef4444'; // Turns red
+      btn.style.backgroundColor = '#ef4444'; 
     }
   })
   .catch(error => {
     btn.textContent = 'Network error.';
-    btn.style.backgroundColor = '#ef4444'; // Turns red
+    btn.style.backgroundColor = '#ef4444'; 
   })
   .finally(() => {
-    // Reset button back to normal after 4 seconds
     setTimeout(() => {
       btn.textContent = originalText;
       btn.disabled = false;
-      btn.style.backgroundColor = '#3263c4'; // Back to your original blue
+      btn.style.backgroundColor = '#3263c4'; 
     }, 4000);
   });
 });</script></section><section class="box"><h3 class="box__title">Tags</h3><ul class="tags"><li><a href="https://terrain.co.ke/tags/buying-guides/">Buying Guides</a> <span class="u-small">(7)</span></li><li><a href="https://terrain.co.ke/tags/comparisons/">Comparisons</a> <span class="u-small">(5)</span></li><li><a href="https://terrain.co.ke/tags/news/">News</a> <span class="u-small">(4)</span></li><li><a href="https://terrain.co.ke/tags/opinion/">Opinion</a> <span class="u-small">(4)</span></li><li><a href="https://terrain.co.ke/tags/phones/">Reviews</a> <span class="u-small">(4)</span></li></ul></section></div><footer class="footer"><a class="footer__logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav><ul class="footer__nav"><li class="footer__nav-item"><a href="https://terrain.co.ke/" target="_self">About Us</a></li><li class="footer__nav-item"><span>|</span></li><li class="footer__nav-item"><a href="https://terrain.co.ke/" target="_self">Privacy Policy</a></li><li class="footer__nav-item"><span>|</span></li><li class="footer__nav-item"><a href="https://terrain.co.ke/" target="_self">Editorial Policy</a></li><li class="footer__nav-item"><span>|</span></li><li class="footer__nav-item"><a href="https://terrain.co.ke/" target="_self">info@terrain.co.ke</a></li><li class="footer__nav-item"><span>|</span></li><li class="footer__nav-item"><a href="https://terrain.co.ke/" target="_self">0728148777</a></li></ul></nav><div class="footer__follow"><a href="www.facebook.com" aria-label="Facebook"><svg><use xlink:href="https://terrain.co.ke/assets/svg/svg-map.svg#facebook"/></svg> </a><a href="https://x.com/" aria-label="Twitter"><svg><use xlink:href="https://terrain.co.ke/assets/svg/svg-map.svg#twitter"/></svg></a></div><div class="footer__copyright"><p>© 2026 <strong>Tech-Terrain</strong>. All rights reserved.</p></div></footer></div><script>window.publiiThemeMenuConfig = {    
