@@ -106,7 +106,7 @@
     body.scrolled-down #trending-ticker { transform: translateY(60px); }
   }</style><div id="trending-ticker"><div id="ticker-label"><span class="ticker-pulse"></span> Trending</div><div id="ticker-content"><div class="ticker-track"><a href="https://terrain.co.ke/local-ai-just-got-real-for-kenyan-businesses-heres-why-it-matters/">🤖 NEWS: Local AI Just Got Real: Cassava Brings Nvidia to Kenyan Businesses</a> <a href="https://terrain.co.ke/do-you-really-need-an-i7-why-an-8th-gen-i5-is-the-smartest-buy-in-kenya-right-now/">🖥️ OPINION: Why an 8th-Gen i5 Is the Smartest Buy in Kenya</a> <a href="https://terrain.co.ke/the-real-reason-half-of-kenya-is-still-offline-isnt-the-network/">📱 NEWS: The Real Reason Half of Kenya Is Still Offline Isn't the Network</a> <a href="https://terrain.co.ke/the-binance-hack-just-hit-close-to-home-heres-what-it-means-for-kenyan-crypto-traders/">🚨 NEWS: The Binance Hack Just Hit Close to Home for Kenyan Traders</a> <a href="https://terrain.co.ke/best-laptops-for-kenyan-university-students-under-kes-50000-updated-2026/">💻 GUIDE: Best Student Laptops Under KES 50,000 (Updated 2026)</a> <a href="https://terrain.co.ke/kenyas-cyber-threats-surge-29-as-mobile-money-hits-54-million/">🛡️ NEWS: Cyber Threats Surge 29% as Mobile Money Hits 54 Million</a></div></div></div><script>(function() {
   // The layout remains 100% natural.
-})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="https://terrain.co.ke/" target="_self">Contact</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-05T14:40">November 5, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
+})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="https://terrain.co.ke/" target="_self">Contact</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-06T00:06">November 6, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
     position: fixed;
     top: 0; left: 0;
     height: 3px;
@@ -814,6 +814,7 @@
     color: #555;
     font-size: 15px;
     margin-bottom: 5px;
+    line-height: 1.4;
   }
   .kes-newsletter-form input[type="text"],
   .kes-newsletter-form input[type="email"] {
@@ -822,11 +823,14 @@
     margin-bottom: 15px;
     border: 1px solid #d1d5db;
     border-radius: 4px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Prevents padding from breaking width */
     font-size: 15px;
     color: #333;
     background-color: #ffffff;
     transition: border-color 0.2s ease;
+    line-height: 1.5;
+    appearance: none; /* Forces native styling to behave the same on all browsers */
+    -webkit-appearance: none;
   }
   .kes-newsletter-form input:-webkit-autofill,
   .kes-newsletter-form input:-webkit-autofill:hover, 
@@ -847,12 +851,13 @@
     margin-bottom: 12px;
   }
   .kes-checkbox-row input[type="checkbox"] {
-    margin-top: 4px;
+    margin-top: 3px; /* Adjusted for perfect vertical alignment with text */
     margin-right: 10px;
     width: 16px;
     height: 16px;
     cursor: pointer;
-    flex-shrink: 0;
+    flex-shrink: 0; /* Prevents checkbox from squishing on small screens */
+    accent-color: #3b6fd4; /* Makes the checkmark blue natively in modern browsers */
   }
   .kes-checkbox-row label {
     font-size: 14px;
@@ -874,6 +879,8 @@
     cursor: pointer;
     margin-top: 10px;
     transition: background-color 0.2s ease, transform 0.1s ease;
+    appearance: none;
+    -webkit-appearance: none;
   }
   .kes-newsletter-form button:hover {
     background-color: #2650a3;
@@ -891,7 +898,7 @@
   btn.textContent = 'Subscribing...';
   btn.disabled = true;
   btn.style.backgroundColor = '#2650a3'; 
-  btn.style.color = '#ffffff'; // Force white text
+  btn.style.color = '#ffffff'; 
 
   const formData = new FormData(form);
   const object = Object.fromEntries(formData);
@@ -909,31 +916,31 @@
     if (response.status == 200) {
       // 2. SUCCESS STATE (Green)
       btn.textContent = 'Success! You are subscribed.';
-      btn.style.backgroundColor = '#10b981'; // Green
-      btn.style.color = '#ffffff'; // 🟢 Force pure white text
-      btn.style.fontWeight = 'bold'; // Make it pop
+      btn.style.backgroundColor = '#10b981'; 
+      btn.style.color = '#ffffff'; 
+      btn.style.fontWeight = 'bold'; 
       form.reset();
     } else {
       // 3. ERROR STATE (Red)
       btn.textContent = 'Error. Try again.';
-      btn.style.backgroundColor = '#ef4444'; // Red
-      btn.style.color = '#ffffff'; // Force white text
+      btn.style.backgroundColor = '#ef4444'; 
+      btn.style.color = '#ffffff'; 
     }
   })
   .catch(error => {
     // 4. NETWORK ERROR STATE (Red)
     btn.textContent = 'Network error.';
-    btn.style.backgroundColor = '#ef4444'; // Red
-    btn.style.color = '#ffffff'; // Force white text
+    btn.style.backgroundColor = '#ef4444'; 
+    btn.style.color = '#ffffff'; 
   })
   .finally(() => {
     // 5. Reset back to normal after 4 seconds
     setTimeout(() => {
       btn.textContent = originalText;
       btn.disabled = false;
-      btn.style.backgroundColor = '#3263c4'; // Back to original blue
-      btn.style.color = '#ffffff'; // Keep white
-      btn.style.fontWeight = '700'; // Back to original weight
+      btn.style.backgroundColor = '#3263c4'; 
+      btn.style.color = '#ffffff'; 
+      btn.style.fontWeight = '700'; 
     }, 4000);
   });
 });</script></section><section class="box"><h3 class="box__title">Tags</h3><ul class="tags"><li><a href="https://terrain.co.ke/tags/buying-guides/">Buying Guides</a> <span class="u-small">(7)</span></li><li><a href="https://terrain.co.ke/tags/comparisons/">Comparisons</a> <span class="u-small">(5)</span></li><li><a href="https://terrain.co.ke/tags/news/">News</a> <span class="u-small">(4)</span></li><li><a href="https://terrain.co.ke/tags/opinion/">Opinion</a> <span class="u-small">(4)</span></li><li><a href="https://terrain.co.ke/tags/phones/">Reviews</a> <span class="u-small">(4)</span></li></ul></section></div><footer class="footer"><a class="footer__logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav><ul class="footer__nav"><li class="footer__nav-item"><a href="https://terrain.co.ke/" target="_self">About Us</a></li><li class="footer__nav-item"><span>|</span></li><li class="footer__nav-item"><a href="https://terrain.co.ke/" target="_self">Privacy Policy</a></li><li class="footer__nav-item"><span>|</span></li><li class="footer__nav-item"><a href="https://terrain.co.ke/" target="_self">Editorial Policy</a></li><li class="footer__nav-item"><span>|</span></li><li class="footer__nav-item"><a href="https://terrain.co.ke/" target="_self">info@terrain.co.ke</a></li><li class="footer__nav-item"><span>|</span></li><li class="footer__nav-item"><a href="https://terrain.co.ke/" target="_self">0728148777</a></li></ul></nav><div class="footer__follow"><a href="www.facebook.com" aria-label="Facebook"><svg><use xlink:href="https://terrain.co.ke/assets/svg/svg-map.svg#facebook"/></svg> </a><a href="https://x.com/" aria-label="Twitter"><svg><use xlink:href="https://terrain.co.ke/assets/svg/svg-map.svg#twitter"/></svg></a></div><div class="footer__copyright"><p>© 2026 <strong>Tech-Terrain</strong>. All rights reserved.</p></div></footer></div><script>window.publiiThemeMenuConfig = {    
