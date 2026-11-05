@@ -106,7 +106,7 @@
     body.scrolled-down #trending-ticker { transform: translateY(60px); }
   }</style><div id="trending-ticker"><div id="ticker-label"><span class="ticker-pulse"></span> Trending</div><div id="ticker-content"><div class="ticker-track"><a href="https://terrain.co.ke/local-ai-just-got-real-for-kenyan-businesses-heres-why-it-matters/">🤖 NEWS: Local AI Just Got Real: Cassava Brings Nvidia to Kenyan Businesses</a> <a href="https://terrain.co.ke/do-you-really-need-an-i7-why-an-8th-gen-i5-is-the-smartest-buy-in-kenya-right-now/">🖥️ OPINION: Why an 8th-Gen i5 Is the Smartest Buy in Kenya</a> <a href="https://terrain.co.ke/the-real-reason-half-of-kenya-is-still-offline-isnt-the-network/">📱 NEWS: The Real Reason Half of Kenya Is Still Offline Isn't the Network</a> <a href="https://terrain.co.ke/the-binance-hack-just-hit-close-to-home-heres-what-it-means-for-kenyan-crypto-traders/">🚨 NEWS: The Binance Hack Just Hit Close to Home for Kenyan Traders</a> <a href="https://terrain.co.ke/best-laptops-for-kenyan-university-students-under-kes-50000-updated-2026/">💻 GUIDE: Best Student Laptops Under KES 50,000 (Updated 2026)</a> <a href="https://terrain.co.ke/kenyas-cyber-threats-surge-29-as-mobile-money-hits-54-million/">🛡️ NEWS: Cyber Threats Surge 29% as Mobile Money Hits 54 Million</a></div></div></div><script>(function() {
   // The layout remains 100% natural.
-})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-06T02:14">November 6, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
+})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-06T02:51">November 6, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
     position: fixed;
     top: 0; left: 0;
     height: 3px;
@@ -370,13 +370,10 @@
   }</style><div id="traffic-popup"><span class="traffic-pulse"></span> <span><span id="traffic-num">0</span> <span id="traffic-text">people are</span> reading this</span></div><script>(function () {
   const popup = document.getElementById('traffic-popup');
   const numEl = document.getElementById('traffic-num');
-  const textEl = document.getElementById('traffic-text'); // Grabs the word "people" or "person"
+  const textEl = document.getElementById('traffic-text');
 
   const VISIBLE_MS = 7000; 
   const START_DELAY_MS = Math.floor(Math.random() * 6000) + 2000; 
-
-  const MIN_READERS = 1;
-  const MAX_READERS = 18;
 
   let ticker = null;
 
@@ -400,8 +397,32 @@
   }
 
   function showPopup() {
+    // 🕒 GET THE CURRENT HOUR (0-23)
+    const currentHour = new Date().getHours();
+    
+    let MIN_READERS, MAX_READERS;
+
+    // 📈 MIMIC REAL-WORLD PEAK HOURS
+    if (currentHour >= 22 || currentHour < 6) {
+      // 10 PM to 6 AM (Late Night)
+      MIN_READERS = 1;
+      MAX_READERS = 5;
+    } else if (currentHour >= 6 && currentHour < 10) {
+      // 6 AM to 10 AM (Morning Rush)
+      MIN_READERS = 4;
+      MAX_READERS = 12;
+    } else if (currentHour >= 10 && currentHour < 17) {
+      // 10 AM to 5 PM (Work Hours)
+      MIN_READERS = 7;
+      MAX_READERS = 16;
+    } else {
+      // 5 PM to 10 PM (Prime Time)
+      MIN_READERS = 10;
+      MAX_READERS = 22;
+    }
+
     let currentNumber = getRandom(MIN_READERS, MAX_READERS);
-    updateNumber(currentNumber); // Set initial number with grammar check
+    updateNumber(currentNumber); 
 
     popup.classList.add('visible');
 
@@ -410,11 +431,11 @@
       let changed = false;
       
       if (action > 0.85) {
-        const spike = getRandom(2, 4);
+        const spike = getRandom(1, 3);
         currentNumber = Math.min(currentNumber + spike, MAX_READERS + 2);
         changed = true;
       } else if (action < 0.10) {
-        const drop = getRandom(1, 3);
+        const drop = getRandom(1, 2);
         currentNumber = Math.max(currentNumber - drop, MIN_READERS);
         changed = true;
       } else if (action > 0.40) {
