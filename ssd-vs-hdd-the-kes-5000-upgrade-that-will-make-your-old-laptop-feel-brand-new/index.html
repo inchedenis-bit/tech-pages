@@ -106,7 +106,7 @@
     body.scrolled-down #trending-ticker { transform: translateY(60px); }
   }</style><div id="trending-ticker"><div id="ticker-label"><span class="ticker-pulse"></span> Trending</div><div id="ticker-content"><div class="ticker-track"><a href="https://terrain.co.ke/local-ai-just-got-real-for-kenyan-businesses-heres-why-it-matters/">🤖 NEWS: Local AI Just Got Real: Cassava Brings Nvidia to Kenyan Businesses</a> <a href="https://terrain.co.ke/do-you-really-need-an-i7-why-an-8th-gen-i5-is-the-smartest-buy-in-kenya-right-now/">🖥️ OPINION: Why an 8th-Gen i5 Is the Smartest Buy in Kenya</a> <a href="https://terrain.co.ke/the-real-reason-half-of-kenya-is-still-offline-isnt-the-network/">📱 NEWS: The Real Reason Half of Kenya Is Still Offline Isn't the Network</a> <a href="https://terrain.co.ke/the-binance-hack-just-hit-close-to-home-heres-what-it-means-for-kenyan-crypto-traders/">🚨 NEWS: The Binance Hack Just Hit Close to Home for Kenyan Traders</a> <a href="https://terrain.co.ke/best-laptops-for-kenyan-university-students-under-kes-50000-updated-2026/">💻 GUIDE: Best Student Laptops Under KES 50,000 (Updated 2026)</a> <a href="https://terrain.co.ke/kenyas-cyber-threats-surge-29-as-mobile-money-hits-54-million/">🛡️ NEWS: Cyber Threats Surge 29% as Mobile Money Hits 54 Million</a></div></div></div><script>(function() {
   // The layout remains 100% natural.
-})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-06T19:10">November 6, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
+})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-06T19:30">November 6, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
     position: fixed;
     top: 0; left: 0;
     height: 3px;
@@ -1004,7 +1004,7 @@
     z-index: 99998;
     display: flex;
     flex-direction: column;
-    gap: 16px; /* More breathing room between buttons */
+    gap: 16px; 
     align-items: center;
     transition: all 0.3s ease;
   }
@@ -1016,7 +1016,7 @@
     display: flex; align-items: center; justify-content: center;
     box-shadow: 0 6px 16px rgba(0,0,0,0.25);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    padding: 0; /* Removes any hidden padding */
+    padding: 0; 
   }
   .float-btn:hover { transform: scale(1.08) translateY(-2px); }
 
@@ -1117,7 +1117,7 @@
   .lc-input-area { display: flex; padding: 10px; background: #f0f2f5; border-top: 1px solid #d1d7db; align-items: center; gap: 8px; }
   .lc-input { flex: 1; padding: 12px 16px; border: none; border-radius: 20px; font-size: 14px; outline: none; font-family: inherit; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
   
-  /* PURE CSS SEND BUTTON */
+  /* PROFESSIONAL PAPER PLANE SEND BUTTON */
   .lc-send { 
     background: #00a884; color: white; border: none; 
     width: 42px; height: 42px; border-radius: 50%; 
@@ -1299,6 +1299,7 @@
     if (e.key === 'Enter') lcSend.click();
   });
 
+  // 🟢 FASTER POLLING (500 milliseconds)
   setInterval(async () => {
     if (!lcPanel.classList.contains('open')) return;
     try {
@@ -1311,10 +1312,10 @@
         lcMsgs.appendChild(el);
         lcMsgs.scrollTop = lcMsgs.scrollHeight;
         saveHistory(); 
-        playPop(); // 🟢 Play sound on INCOMING message
+        playPop(); 
       }
     } catch (e) {}
-  }, 1500);
+  }, 500);
 
   // ==========================================
   // 2. TERRAIN AI LOGIC
