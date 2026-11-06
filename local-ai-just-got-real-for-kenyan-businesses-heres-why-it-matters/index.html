@@ -106,7 +106,7 @@
     body.scrolled-down #trending-ticker { transform: translateY(60px); }
   }</style><div id="trending-ticker"><div id="ticker-label"><span class="ticker-pulse"></span> Trending</div><div id="ticker-content"><div class="ticker-track"><a href="https://terrain.co.ke/local-ai-just-got-real-for-kenyan-businesses-heres-why-it-matters/">🤖 NEWS: Local AI Just Got Real: Cassava Brings Nvidia to Kenyan Businesses</a> <a href="https://terrain.co.ke/do-you-really-need-an-i7-why-an-8th-gen-i5-is-the-smartest-buy-in-kenya-right-now/">🖥️ OPINION: Why an 8th-Gen i5 Is the Smartest Buy in Kenya</a> <a href="https://terrain.co.ke/the-real-reason-half-of-kenya-is-still-offline-isnt-the-network/">📱 NEWS: The Real Reason Half of Kenya Is Still Offline Isn't the Network</a> <a href="https://terrain.co.ke/the-binance-hack-just-hit-close-to-home-heres-what-it-means-for-kenyan-crypto-traders/">🚨 NEWS: The Binance Hack Just Hit Close to Home for Kenyan Traders</a> <a href="https://terrain.co.ke/best-laptops-for-kenyan-university-students-under-kes-50000-updated-2026/">💻 GUIDE: Best Student Laptops Under KES 50,000 (Updated 2026)</a> <a href="https://terrain.co.ke/kenyas-cyber-threats-surge-29-as-mobile-money-hits-54-million/">🛡️ NEWS: Cyber Threats Surge 29% as Mobile Money Hits 54 Million</a></div></div></div><script>(function() {
   // The layout remains 100% natural.
-})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-06T23:37">November 6, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
+})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-07T00:03">November 7, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
     position: fixed;
     top: 0; left: 0;
     height: 3px;
@@ -1104,9 +1104,11 @@
   .lc-msg.bot { background: #ffffff; color: #111; align-self: flex-start; border-top-left-radius: 0; }
   
   .lc-msg-meta { display: flex; justify-content: flex-end; align-items: center; gap: 4px; margin-top: 2px; font-size: 10px; color: #999; }
+  
+  /* 🟢 GRAY TICKS */
   .lc-status-icon { font-size: 11px; font-weight: bold; display: flex; justify-content: flex-end; margin-top: 2px; align-items: center; gap: 2px; }
   .lc-status-icon.sending { color: #999; }
-  .lc-status-icon.sent { color: #34b7f1; }
+  .lc-status-icon.sent { color: #64748b; } /* Gray sent tick */
   .lc-status-icon.error { color: #ef4444; }
 
   .lc-input-area { display: flex; padding: 10px; background: #f0f2f5; border-top: 1px solid #d1d7db; align-items: center; gap: 8px; }
@@ -1328,6 +1330,7 @@
     const safeText = escapeHTML(text);
     const timeNow = getDateTimeString();
     
+    // 🟢 CHANGED TO SINGLE GRAY TICK
     const msgHTML = `<div class="lc-msg user" id="${msgId}"><span class="lc-msg-text">${safeText}</span><div class="lc-msg-meta">${timeNow} <span class="lc-status-icon sending">🕒</span></div></div>`;
     lcMsgs.insertAdjacentHTML('beforeend', msgHTML);
     
@@ -1345,7 +1348,7 @@
       if (!res.ok) throw new Error("Server error");
       
       const statusIcon = document.querySelector(`#${msgId} .lc-status-icon`);
-      if(statusIcon) { statusIcon.textContent = '✓✓'; statusIcon.className = 'lc-status-icon sent'; }
+      if(statusIcon) { statusIcon.textContent = '✓'; statusIcon.className = 'lc-status-icon sent'; }
 
     } catch (e) {
       const statusIcon = document.querySelector(`#${msgId} .lc-status-icon`);
