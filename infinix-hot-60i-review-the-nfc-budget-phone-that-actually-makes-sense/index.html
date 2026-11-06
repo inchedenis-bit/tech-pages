@@ -106,7 +106,7 @@
     body.scrolled-down #trending-ticker { transform: translateY(60px); }
   }</style><div id="trending-ticker"><div id="ticker-label"><span class="ticker-pulse"></span> Trending</div><div id="ticker-content"><div class="ticker-track"><a href="https://terrain.co.ke/local-ai-just-got-real-for-kenyan-businesses-heres-why-it-matters/">🤖 NEWS: Local AI Just Got Real: Cassava Brings Nvidia to Kenyan Businesses</a> <a href="https://terrain.co.ke/do-you-really-need-an-i7-why-an-8th-gen-i5-is-the-smartest-buy-in-kenya-right-now/">🖥️ OPINION: Why an 8th-Gen i5 Is the Smartest Buy in Kenya</a> <a href="https://terrain.co.ke/the-real-reason-half-of-kenya-is-still-offline-isnt-the-network/">📱 NEWS: The Real Reason Half of Kenya Is Still Offline Isn't the Network</a> <a href="https://terrain.co.ke/the-binance-hack-just-hit-close-to-home-heres-what-it-means-for-kenyan-crypto-traders/">🚨 NEWS: The Binance Hack Just Hit Close to Home for Kenyan Traders</a> <a href="https://terrain.co.ke/best-laptops-for-kenyan-university-students-under-kes-50000-updated-2026/">💻 GUIDE: Best Student Laptops Under KES 50,000 (Updated 2026)</a> <a href="https://terrain.co.ke/kenyas-cyber-threats-surge-29-as-mobile-money-hits-54-million/">🛡️ NEWS: Cyber Threats Surge 29% as Mobile Money Hits 54 Million</a></div></div></div><script>(function() {
   // The layout remains 100% natural.
-})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-06T18:35">November 6, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
+})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-06T18:45">November 6, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
     position: fixed;
     top: 0; left: 0;
     height: 3px;
@@ -1079,9 +1079,29 @@
     object-fit: cover; border: 2px solid rgba(255,255,255,0.2);
   }
 
-  .lc-header-info { display: flex; flex-direction: column; }
+  .lc-header-info { display: flex; flex-direction: column; flex: 1; }
   .lc-header-name { font-weight: 600; font-size: 15px; }
-  .lc-header-status { font-size: 12px; opacity: 0.8; }
+  
+  /* 🟢 THE ANIMATED ONLINE DOT */
+  .lc-header-status { 
+    font-size: 12px; opacity: 0.9; 
+    display: flex; align-items: center; gap: 5px; 
+  }
+  .lc-status-dot {
+    width: 6px; height: 6px; background: #4ade80; border-radius: 50%;
+    animation: lc-breathe 2s infinite ease-in-out;
+  }
+  @keyframes lc-breathe {
+    0%, 100% { transform: scale(0.8); opacity: 0.5; background: #4ade80; box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+    50% { transform: scale(1.2); opacity: 1; background: #22c55e; box-shadow: 0 0 6px 1px rgba(74, 222, 128, 0.5); }
+  }
+  
+  /* THE CLEAR CHAT BUTTON */
+  .lc-clear-btn {
+    background: rgba(255,255,255,0.1); border: none; color: white;
+    padding: 4px 8px; border-radius: 4px; font-size: 11px; cursor: pointer;
+  }
+  .lc-clear-btn:hover { background: rgba(255,255,255,0.2); }
   
   .lc-messages {
     padding: 20px 16px; height: 260px; overflow-y: auto;
@@ -1096,7 +1116,7 @@
   .lc-input-area { display: flex; padding: 10px; background: #f0f2f5; border-top: 1px solid #d1d7db; align-items: center; gap: 8px; }
   .lc-input { flex: 1; padding: 12px 16px; border: none; border-radius: 20px; font-size: 14px; outline: none; font-family: inherit; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
   
-  /* 🟢 FIXED PURE CSS SEND BUTTON */
+  /* PURE CSS SEND BUTTON */
   .lc-send { 
     background: #00a884; color: white; border: none; 
     width: 40px; height: 40px; border-radius: 50%; 
@@ -1104,8 +1124,7 @@
     flex-shrink: 0; position: relative; padding: 0;
   }
   .lc-send::before {
-    content: '';
-    display: block;
+    content: ''; display: block;
     width: 0; height: 0; 
     border-top: 7px solid transparent;
     border-bottom: 7px solid transparent;
@@ -1185,7 +1204,7 @@
     #floating-stack { bottom: 16px; right: 16px; }
     #live-chat-panel { width: calc(100vw - 32px); right: 16px; bottom: 150px; }
     #ta-panel { width: calc(100vw - 16px); right: 8px; bottom: 88px; height: calc(100vh - 110px); }
-  }</style><div id="floating-stack"><button id="ta-launcher" class="float-btn" aria-label="Open Tech-Terrain AI"><svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg></button> <button id="live-chat-btn" class="float-btn" aria-label="Open WhatsApp Chat"><svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button></div><div id="live-chat-panel"><div class="lc-header"><img src="https://terrain.co.ke/media/posts/22/responsive/Inche-Dennis-md.png" alt="Dennis" class="lc-avatar-img"><div class="lc-header-info"><div class="lc-header-name">Dennis from Terrain</div><div class="lc-header-status">online</div></div></div><div class="lc-messages" id="lc-messages"><div class="lc-msg bot">Hi! Send me a message and I'll reply shortly.</div></div><div class="lc-input-area"><input type="text" id="lc-input" class="lc-input" placeholder="Type a message..."> <button id="lc-send" class="lc-send"></button></div></div><div id="ta-panel"><div id="ta-header"><div class="ta-avatar"><svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a3 3 0 0 1 3 3v1h1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-1v1a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3v-1H5a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h1V10a3 3 0 0 1 3-3h1V5.73A2 2 0 0 1 12 2zm-2 9a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm4 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg></div><div><div class="ta-title">Tech-Terrain AI</div><div class="ta-subtitle"><span class="ta-status-dot"></span> Website AI Assistant</div></div></div><div id="ta-messages"></div><div id="ta-chips"><button class="ta-chip" data-q="Show me phones under KES 15,000">Phones under KES 15,000</button> <button class="ta-chip" data-q="Recommend good laptops under KES 35,000">Good laptops under KES 35,000</button> <button class="ta-chip" data-q="What's the best budget phone right now?">Best budget phone?</button></div><div id="ta-input-area"><textarea id="ta-input" rows="1" placeholder="Ask Tech-Terrain AI…"></textarea> <button id="ta-send" aria-label="Send"><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button></div><div id="ta-footer">Powered by AI · Tech-Terrain AI may make mistakes</div></div><script>(function () {
+  }</style><div id="floating-stack"><button id="ta-launcher" class="float-btn" aria-label="Open Tech-Terrain AI"><svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg></button> <button id="live-chat-btn" class="float-btn" aria-label="Open WhatsApp Chat"><svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button></div><div id="live-chat-panel"><div class="lc-header"><img src="https://terrain.co.ke/media/posts/22/responsive/Inche-Dennis-md.png" alt="Dennis" class="lc-avatar-img"><div class="lc-header-info"><div class="lc-header-name">Dennis from Terrain</div><div class="lc-header-status"><span class="lc-status-dot"></span> online</div></div><button id="lc-clear" class="lc-clear-btn">Clear</button></div><div class="lc-messages" id="lc-messages"></div><div class="lc-input-area"><input type="text" id="lc-input" class="lc-input" placeholder="Type a message..."> <button id="lc-send" class="lc-send"></button></div></div><div id="ta-panel"><div id="ta-header"><div class="ta-avatar"><svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a3 3 0 0 1 3 3v1h1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-1v1a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3v-1H5a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h1V10a3 3 0 0 1 3-3h1V5.73A2 2 0 0 1 12 2zm-2 9a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm4 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg></div><div><div class="ta-title">Tech-Terrain AI</div><div class="ta-subtitle"><span class="ta-status-dot"></span> Website AI Assistant</div></div></div><div id="ta-messages"></div><div id="ta-chips"><button class="ta-chip" data-q="Show me phones under KES 15,000">Phones under KES 15,000</button> <button class="ta-chip" data-q="Recommend good laptops under KES 35,000">Good laptops under KES 35,000</button> <button class="ta-chip" data-q="What's the best budget phone right now?">Best budget phone?</button></div><div id="ta-input-area"><textarea id="ta-input" rows="1" placeholder="Ask Tech-Terrain AI…"></textarea> <button id="ta-send" aria-label="Send"><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button></div><div id="ta-footer">Powered by AI · Tech-Terrain AI may make mistakes</div></div><script>(function () {
   // 🟢 SHARED SOUND FUNCTION
   function playPop() {
     try {
@@ -1205,13 +1224,14 @@
   }
 
   // ==========================================
-  // 1. WHATSAPP LOGIC
+  // 1. WHATSAPP LOGIC (With History)
   // ==========================================
   const liveBtn = document.getElementById('live-chat-btn');
   const lcPanel = document.getElementById('live-chat-panel');
   const lcInput = document.getElementById('lc-input');
   const lcSend = document.getElementById('lc-send');
   const lcMsgs = document.getElementById('lc-messages');
+  const lcClear = document.getElementById('lc-clear');
   const stack = document.getElementById('floating-stack');
   
   let sessionId = localStorage.getItem('chat_session');
@@ -1219,6 +1239,27 @@
     sessionId = 'user_' + Math.random().toString(36).substr(2, 9);
     localStorage.setItem('chat_session', sessionId);
   }
+
+  function loadHistory() {
+    const saved = localStorage.getItem('chat_history');
+    if (saved) {
+      lcMsgs.innerHTML = saved;
+      lcMsgs.scrollTop = lcMsgs.scrollHeight;
+    } else {
+      lcMsgs.innerHTML = '<div class="lc-msg bot">Hi! Send me a message and I\'ll reply shortly.</div>';
+    }
+  }
+  loadHistory();
+
+  function saveHistory() {
+    localStorage.setItem('chat_history', lcMsgs.innerHTML);
+  }
+
+  lcClear.addEventListener('click', () => {
+    localStorage.removeItem('chat_history');
+    lcMsgs.innerHTML = '<div class="lc-msg bot">Chat cleared. How can we help?</div>';
+    saveHistory();
+  });
 
   liveBtn.addEventListener('click', () => {
     const isOpen = lcPanel.classList.contains('open');
@@ -1245,6 +1286,7 @@
     lcMsgs.appendChild(el);
     lcInput.value = '';
     lcMsgs.scrollTop = lcMsgs.scrollHeight;
+    saveHistory(); 
     playPop(); 
 
     try {
@@ -1260,7 +1302,6 @@
     if (e.key === 'Enter') lcSend.click();
   });
 
-  // FASTER POLLING (1.5 seconds)
   setInterval(async () => {
     if (!lcPanel.classList.contains('open')) return;
     try {
@@ -1272,6 +1313,7 @@
         el.textContent = data.reply;
         lcMsgs.appendChild(el);
         lcMsgs.scrollTop = lcMsgs.scrollHeight;
+        saveHistory(); 
       }
     } catch (e) {}
   }, 1500);
@@ -1393,402 +1435,90 @@
     position: fixed;
     bottom: 24px;
     left: 24px;
-    z-index: 99<!-- ═══════════ SMART FLOATING STACK (WhatsApp + AI) ═══════════ -->
-<style>
-  /* 🟢 THE FLOATING STACK CONTAINER */
-  #floating-stack {
-    position: fixed;
-    bottom: 24px;
-    right: 24px;
     z-index: 99998;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(14px) saturate(180%);
+    -webkit-backdrop-filter: blur(14px) saturate(180%);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     display: flex;
-    flex-direction: column;
-    gap: 12px; 
     align-items: center;
-    transition: all 0.3s ease;
-  }
-
-  /* Base styles for BOTH floating buttons */
-  .float-btn {
-    width: 60px; height: 60px; border-radius: 50%;
-    border: none; cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .float-btn:hover { transform: scale(1.08); }
-
-  /* WhatsApp Button Style */
-  #live-chat-btn {
-    background: #25D366; color: white;
-    box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-    animation: wa-pulse 2s ease-out 3;
-    animation-delay: 4s; 
-  }
-  #live-chat-btn:hover { animation: none; }
-
-  /* AI Button Style */
-  #ta-launcher {
-    background: linear-gradient(135deg, #3973D4 0%, #2a5cb8 100%);
-    color: white;
-    animation: ai-pulse 2s ease-out 3;
-    animation-delay: 2s; 
-  }
-  #ta-launcher:hover { animation: none; }
-  
-  /* The Pulse Animations */
-  @keyframes ai-pulse {
-    0% { box-shadow: 0 0 0 0 rgba(57, 115, 212, 0.7); }
-    50% { box-shadow: 0 0 0 15px rgba(57, 115, 212, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(57, 115, 212, 0); }
-  }
-  @keyframes wa-pulse {
-    0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
-    50% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
-  }
-
-  /* 🟢 THE SWAP LOGIC */
-  #floating-stack.swapped {
-    flex-direction: column-reverse;
-  }
-
-  /* ==========================================
-     WHATSAPP CHAT PANEL STYLES
-     ========================================== */
-  #live-chat-panel {
-    position: fixed; bottom: 165px; right: 24px; z-index: 99999;
-    width: 340px; background: #efeae2; border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-    display: none; flex-direction: column; overflow: hidden;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    border: 1px solid #d1d7db;
-    opacity: 0; transform: translateY(20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-  #live-chat-panel.open { display: flex; opacity: 1; transform: translateY(0); }
-  
-  .lc-header {
-    background: #075e54; color: white; padding: 10px 16px;
-    display: flex; align-items: center; gap: 12px;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease;
   }
   
-  .lc-avatar-img {
-    width: 40px; height: 40px; border-radius: 50%;
-    object-fit: cover; border: 2px solid rgba(255,255,255,0.2);
+  #back-to-top.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  
+  #back-to-top:hover {
+    background: linear-gradient(135deg, #1e6fff 0%, #0a4fd6 100%);
+    border-color: transparent;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(30, 111, 255, 0.5);
   }
 
-  .lc-header-info { display: flex; flex-direction: column; }
-  .lc-header-name { font-weight: 600; font-size: 15px; }
-  .lc-header-status { font-size: 12px; opacity: 0.8; }
-  
-  .lc-messages {
-    padding: 20px 16px; height: 260px; overflow-y: auto;
-    display: flex; flex-direction: column; gap: 8px;
-    background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png');
-    background-repeat: repeat; background-size: 300px;
-  }
-  .lc-msg { padding: 8px 12px; border-radius: 8px; font-size: 14px; max-width: 85%; line-height: 1.4; position: relative; box-shadow: 0 1px 1px rgba(0,0,0,0.1); }
-  .lc-msg.user { background: #dcf8c6; color: #111; align-self: flex-end; border-top-right-radius: 0; }
-  .lc-msg.bot { background: #ffffff; color: #111; align-self: flex-start; border-top-left-radius: 0; }
-  
-  .lc-input-area { display: flex; padding: 10px; background: #f0f2f5; border-top: 1px solid #d1d7db; align-items: center; gap: 8px; }
-  .lc-input { flex: 1; padding: 12px 16px; border: none; border-radius: 20px; font-size: 14px; outline: none; font-family: inherit; box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
-  
-  /* 🟢 FIXED PURE CSS SEND BUTTON */
-  .lc-send { 
-    background: #00a884; color: white; border: none; 
-    width: 40px; height: 40px; border-radius: 50%; 
-    cursor: pointer; display: flex; align-items: center; justify-content: center; 
-    flex-shrink: 0; position: relative; padding: 0;
-  }
-  .lc-send::before {
-    content: '';
-    display: block;
-    width: 0; height: 0; 
-    border-top: 7px solid transparent;
-    border-bottom: 7px solid transparent;
-    border-left: 12px solid #ffffff;
-    transform: translateX(2px);
+  /* The Arrow Container */
+  #back-to-top .arrow {
+    position: relative;
+    width: 16px; 
+    height: 20px;
+    display: flex;
+    justify-content: center;
     transition: transform 0.2s ease;
   }
-  .lc-send:hover::before { transform: translateX(4px); }
 
-  /* ==========================================
-     TERRAIN AI PANEL STYLES
-     ========================================== */
-  #ta-panel {
-    position: fixed; bottom: 96px; right: 24px; z-index: 99999;
-    width: 380px; max-width: calc(100vw - 32px);
-    height: 560px; max-height: calc(100vh - 130px);
-    background: #fff; border-radius: 16px;
-    box-shadow: 0 20px 60px rgba(10, 30, 80, 0.25);
-    display: flex; flex-direction: column; overflow: hidden;
-    opacity: 0; transform: translateY(16px) scale(0.98);
-    pointer-events: none; transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  #ta-panel.ta-visible { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
-
-  #ta-header {
-    background: linear-gradient(135deg, #3973D4 0%, #2a5cb8 100%);
-    color: #fff; padding: 16px 18px; display: flex; align-items: center; gap: 12px;
-  }
-  #ta-header .ta-avatar { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  #ta-header .ta-avatar svg { width: 22px; height: 22px; fill: #fff; }
-  #ta-header .ta-title { font-size: 15px; font-weight: 700; letter-spacing: 0.3px; }
-  #ta-header .ta-subtitle { font-size: 12px; opacity: 0.85; margin-top: 2px; display: flex; align-items: center; gap: 5px; }
-  
-  #ta-header .ta-status-dot { width: 7px; height: 7px; background: #4ade80; border-radius: 50%; box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.3); animation: ta-breathe 2s infinite ease-in-out; }
-  @keyframes ta-breathe {
-    0%, 100% { transform: scale(0.8); opacity: 0.5; background: #4ade80; box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
-    50% { transform: scale(1.2); opacity: 1; background: #22c55e; box-shadow: 0 0 8px 2px rgba(74, 222, 128, 0.5); }
+  /* The Arrow Head (the ^) */
+  #back-to-top .arrow::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    width: 12px;
+    height: 12px;
+    border-top: 2.5px solid #ffffff;
+    border-left: 2.5px solid #ffffff;
+    transform: rotate(45deg);
+    border-radius: 1px;
   }
 
-  #ta-messages { flex: 1; overflow-y: auto; padding: 18px; background: #f7f9fc; display: flex; flex-direction: column; gap: 12px; }
-  #ta-messages::-webkit-scrollbar { width: 6px; }
-  #ta-messages::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+  /* The Arrow Stem (the |) */
+  #back-to-top .arrow::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    width: 2.5px;
+    height: 14px;
+    background-color: #ffffff;
+    border-radius: 2px;
+  }
 
-  .ta-msg { max-width: 82%; padding: 11px 15px; border-radius: 14px; font-size: 14px; line-height: 1.5; word-wrap: break-word; animation: ta-fade 0.3s ease; }
-  @keyframes ta-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  #back-to-top:hover .arrow {
+    transform: translateY(-2px); /* Slight bounce on hover */
+  }
 
-  .ta-msg-bot { align-self: flex-start; background: #fff; color: #1e293b; border: 1px solid #e2e8f0; border-bottom-left-radius: 4px; }
-  .ta-msg-user { align-self: flex-end; color: #fff; background: linear-gradient(135deg, #3973D4 0%, #2a5cb8 100%); border-bottom-right-radius: 4px; }
-
-  .ta-typing { display: flex; gap: 4px; padding: 4px 0; }
-  .ta-typing span { width: 7px; height: 7px; background: #94a3b8; border-radius: 50%; animation: ta-bounce 1.4s infinite; }
-  .ta-typing span:nth-child(2) { animation-delay: 0.2s; }
-  .ta-typing span:nth-child(3) { animation-delay: 0.4s; }
-  @keyframes ta-bounce { 0%,60%,100% { transform: translateY(0); opacity: 0.4; } 30% { transform: translateY(-6px); opacity: 1; } }
-
-  #ta-chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 18px 12px 18px; background: #f7f9fc; animation: ta-fade 0.4s ease; }
-  #ta-chips.ta-hidden { display: none; }
-  .ta-chip { padding: 8px 14px; border-radius: 18px; background: #fff; border: 1.5px solid #3973D4; color: #3973D4; font-size: 12.5px; font-weight: 500; cursor: pointer; transition: all 0.18s ease; line-height: 1.3; font-family: inherit; }
-  .ta-chip:hover { background: linear-gradient(135deg, #3973D4 0%, #2a5cb8 100%); color: #fff; border-color: transparent; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(57, 115, 212, 0.3); }
-  .ta-chip:active { transform: translateY(0); }
-
-  #ta-input-area { padding: 12px 14px; background: #fff; border-top: 1px solid #e2e8f0; display: flex; gap: 8px; align-items: flex-end; }
-  #ta-input { flex: 1; padding: 11px 14px; border: 1.5px solid #e2e8f0; border-radius: 12px; font-size: 14px; resize: none; outline: none; max-height: 100px; transition: border-color 0.2s; font-family: inherit; }
-  #ta-input:focus { border-color: #3973D4; }
-  
-  #ta-send { width: 42px; height: 42px; border-radius: 12px; border: none; cursor: pointer; background: linear-gradient(135deg, #3973D4 0%, #2a5cb8 100%); display: flex; align-items: center; justify-content: center; transition: transform 0.15s, opacity 0.2s; flex-shrink: 0; padding: 0; }
-  #ta-send:hover:not(:disabled) { transform: scale(1.05); }
-  #ta-send:disabled { opacity: 0.5; cursor: not-allowed; }
-  #ta-send svg { width: 22px; height: 22px; fill: #fff; display: block; margin-left: 3px; }
-
-  #ta-footer { text-align: center; padding: 8px; font-size: 11px; color: #94a3b8; background: #fff; }
-
-  /* ==========================================
-     MOBILE ADJUSTMENTS
-     ========================================== */
   @media (max-width: 480px) {
-    #floating-stack { bottom: 16px; right: 16px; }
-    #live-chat-panel { width: calc(100vw - 32px); right: 16px; bottom: 150px; }
-    #ta-panel { width: calc(100vw - 16px); right: 8px; bottom: 88px; height: calc(100vh - 110px); }
-  }</style><div id="floating-stack"><button id="ta-launcher" class="float-btn" aria-label="Open Tech-Terrain AI"><svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg></button> <button id="live-chat-btn" class="float-btn" aria-label="Open WhatsApp Chat"><svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></button></div><div id="live-chat-panel"><div class="lc-header"><img src="https://terrain.co.ke/media/posts/22/responsive/Inche-Dennis-md.png" alt="Dennis" class="lc-avatar-img"><div class="lc-header-info"><div class="lc-header-name">Dennis from Terrain</div><div class="lc-header-status">online</div></div></div><div class="lc-messages" id="lc-messages"><div class="lc-msg bot">Hi! Send me a message and I'll reply shortly.</div></div><div class="lc-input-area"><input type="text" id="lc-input" class="lc-input" placeholder="Type a message..."> <button id="lc-send" class="lc-send"></button></div></div><div id="ta-panel"><div id="ta-header"><div class="ta-avatar"><svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a3 3 0 0 1 3 3v1h1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-1v1a3 3 0 0 1-3 3H9a3 3 0 0 1-3-3v-1H5a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h1V10a3 3 0 0 1 3-3h1V5.73A2 2 0 0 1 12 2zm-2 9a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zm4 0a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg></div><div><div class="ta-title">Tech-Terrain AI</div><div class="ta-subtitle"><span class="ta-status-dot"></span> Website AI Assistant</div></div></div><div id="ta-messages"></div><div id="ta-chips"><button class="ta-chip" data-q="Show me phones under KES 15,000">Phones under KES 15,000</button> <button class="ta-chip" data-q="Recommend good laptops under KES 35,000">Good laptops under KES 35,000</button> <button class="ta-chip" data-q="What's the best budget phone right now?">Best budget phone?</button></div><div id="ta-input-area"><textarea id="ta-input" rows="1" placeholder="Ask Tech-Terrain AI…"></textarea> <button id="ta-send" aria-label="Send"><svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg></button></div><div id="ta-footer">Powered by AI · Tech-Terrain AI may make mistakes</div></div><script>(function () {
-  // 🟢 SHARED SOUND FUNCTION
-  function playPop() {
-    try {
-      const AudioContext = window.AudioContext || window.webkitAudioContext;
-      if (!AudioContext) return;
-      const ctx = new AudioContext();
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.connect(gain); gain.connect(ctx.destination);
-      osc.type = 'sine';
-      osc.frequency.setValueAtTime(800, ctx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(300, ctx.currentTime + 0.1);
-      gain.gain.setValueAtTime(0.5, ctx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.1);
-      osc.start(ctx.currentTime); osc.stop(ctx.currentTime + 0.1);
-    } catch(e) {}
-  }
-
-  // ==========================================
-  // 1. WHATSAPP LOGIC
-  // ==========================================
-  const liveBtn = document.getElementById('live-chat-btn');
-  const lcPanel = document.getElementById('live-chat-panel');
-  const lcInput = document.getElementById('lc-input');
-  const lcSend = document.getElementById('lc-send');
-  const lcMsgs = document.getElementById('lc-messages');
-  const stack = document.getElementById('floating-stack');
-  
-  let sessionId = localStorage.getItem('chat_session');
-  if (!sessionId) {
-    sessionId = 'user_' + Math.random().toString(36).substr(2, 9);
-    localStorage.setItem('chat_session', sessionId);
-  }
-
-  liveBtn.addEventListener('click', () => {
-    const isOpen = lcPanel.classList.contains('open');
-    window.closeAIPanel(); 
-
-    if (isOpen) {
-      lcPanel.classList.remove('open');
-      stack.classList.remove('swapped'); 
-    } else {
-      lcPanel.classList.add('open');
-      stack.classList.add('swapped'); 
-      lcMsgs.scrollTop = lcMsgs.scrollHeight;
-      lcInput.focus();
-      playPop(); 
+    #back-to-top {
+      bottom: 88px;
+      left: 16px;
+      width: 42px;
+      height: 42px;
     }
-  });
-
-  lcSend.addEventListener('click', async () => {
-    const text = lcInput.value.trim();
-    if (!text) return;
-    const el = document.createElement('div');
-    el.className = 'lc-msg user';
-    el.textContent = text;
-    lcMsgs.appendChild(el);
-    lcInput.value = '';
-    lcMsgs.scrollTop = lcMsgs.scrollHeight;
-    playPop(); 
-
-    try {
-      await fetch('https://terrain-ai-proxy.inchedenis.workers.dev/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: text, sessionId: sessionId })
-      });
-    } catch (e) {}
-  });
-
-  lcInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') lcSend.click();
-  });
-
-  // FASTER POLLING (1.5 seconds)
-  setInterval(async () => {
-    if (!lcPanel.classList.contains('open')) return;
-    try {
-      const res = await fetch(`https://terrain-ai-proxy.inchedenis.workers.dev/check-replies?sessionId=${sessionId}`);
-      const data = await res.json();
-      if (data.reply) {
-        const el = document.createElement('div');
-        el.className = 'lc-msg bot';
-        el.textContent = data.reply;
-        lcMsgs.appendChild(el);
-        lcMsgs.scrollTop = lcMsgs.scrollHeight;
-      }
-    } catch (e) {}
-  }, 1500);
-
-  // ==========================================
-  // 2. TERRAIN AI LOGIC
-  // ==========================================
-  const PROXY_URL = 'https://terrain-ai-proxy.inchedenis.workers.dev/';
-  const SYSTEM_PROMPT = `You are Tech-Terrain AI, the official AI assistant for Tech Terrain, a Kenyan technology news website exploring phone and laptop pricing in Kenya. Your primary role is to help visitors understand phone and laptop pricing in Kenya, and to provide general tech news context. Follow these rules strictly: 1. Stay On-Topic. 2. Pricing Accuracy: Always add a disclaimer that prices fluctuate and users should check Tech Terrain's latest articles for verified prices. 3. Tone: Be professional, helpful, and concise. 4. Knowledge Boundary: Suggest the user browse the site directly if you don't know. 5. Always Point to the Site.`;
-
-  const taBtn = document.getElementById('ta-launcher');
-  const taPanel = document.getElementById('ta-panel');
-  const taMessages = document.getElementById('ta-messages');
-  const taInput = document.getElementById('ta-input');
-  const taSend = document.getElementById('ta-send');
-  const taChips = document.getElementById('ta-chips');
-
-  let history = [];
-  let isAIOpen = false;
-
-  function addBotMessage(text) {
-    const el = document.createElement('div');
-    el.className = 'ta-msg ta-msg-bot';
-    el.innerHTML = text.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>').replace(/\n/g, '<br>');
-    taMessages.appendChild(el);
-    taMessages.scrollTop = taMessages.scrollHeight;
-    return el;
-  }
-
-  function addUserMessage(text) {
-    const el = document.createElement('div');
-    el.className = 'ta-msg ta-msg-user';
-    el.textContent = text;
-    taMessages.appendChild(el);
-    taMessages.scrollTop = taMessages.scrollHeight;
-  }
-
-  function showTyping() {
-    const el = document.createElement('div');
-    el.className = 'ta-msg ta-msg-bot';
-    el.innerHTML = '<div class="ta-typing"><span></span><span></span><span></span></div>';
-    taMessages.appendChild(el);
-    taMessages.scrollTop = taMessages.scrollHeight;
-    return el;
-  }
-
-  function hideChips() { taChips.classList.add('ta-hidden'); }
-
-  window.closeAIPanel = function() {
-    if (isAIOpen) {
-      isAIOpen = false;
-      taPanel.classList.remove('ta-visible');
-      stack.classList.remove('swapped');
+    #back-to-top .arrow {
+      transform: scale(0.85);
     }
-  };
-
-  taBtn.addEventListener('click', () => {
-    const isOpen = taPanel.classList.contains('ta-visible');
-    if (lcPanel.classList.contains('open')) lcPanel.classList.remove('open');
-
-    isAIOpen = !isOpen;
-    taPanel.classList.toggle('ta-visible', isAIOpen);
-    stack.classList.toggle('swapped', isAIOpen);
-    playPop(); 
-
-    if (isAIOpen && taMessages.children.length === 0) {
-      addBotMessage("👋 Hi! I'm **Tech-Terrain AI**, your website assistant. Ask me about phone and laptop prices in Kenya, or anything tech-related!");
+    #back-to-top:hover .arrow {
+      transform: scale(0.85) translateY(-2px);
     }
-    if (isAIOpen) setTimeout(() => taInput.focus(), 300);
-  });
-
-  async function sendAI(presetText) {
-    const text = (presetText || taInput.value).trim();
-    if (!text) return;
-
-    playPop(); 
-    hideChips();
-    addUserMessage(text);
-    taInput.value = '';
-    taInput.style.height = 'auto';
-    taSend.disabled = true;
-
-    history.push({ role: 'user', parts: [{ text }] });
-    const typing = showTyping();
-
-    try {
-      const res = await fetch(PROXY_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: text, systemPrompt: SYSTEM_PROMPT, history: history.slice(-10) })
-      });
-      const data = await res.json();
-      const reply = data.reply || data.candidates?.[0]?.content?.parts?.[0]?.text || "I'm sorry, I couldn't process that. Please try again.";
-      typing.remove();
-      addBotMessage(reply);
-      history.push({ role: 'model', parts: [{ text: reply }] });
-    } catch (err) {
-      typing.remove();
-      addBotMessage("⚠️ Connection issue. Please check your network and try again.");
-    } finally {
-      taSend.disabled = false;
-      taInput.focus();
-    }
-  }
-
-  taChips.querySelectorAll('.ta-chip[data-q]').forEach(chip => {
-    chip.addEventListener('click', () => sendAI(chip.dataset.q));
-  });
-
-  taSend.onclick = () => sendAI();
-  taInput.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendAI(); }
-  });
-  taInput.addEventListener('input', () => {
-    taInput.style.height = 'auto';
-    taInput.style.height = Math.min(taInput.scrollHeight, 100) + 'px';
-  });
-})();</script>998; width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.15); cursor: pointer; background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(14px) saturate(180%); -webkit-backdrop-filter: blur(14px) saturate(180%); box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); display: flex; align-items: center; justify-content: center; opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease; } #back-to-top.visible { opacity: 1; transform: translateY(0); pointer-events: auto; } #back-to-top:hover { background: linear-gradient(135deg, #1e6fff 0%, #0a4fd6 100%); border-color: transparent; transform: translateY(-2px); box-shadow: 0 12px 32px rgba(30, 111, 255, 0.5); } /* The Arrow Container */ #back-to-top .arrow { position: relative; width: 16px; height: 20px; display: flex; justify-content: center; transition: transform 0.2s ease; } /* The Arrow Head (the ^) */ #back-to-top .arrow::before { content: ''; position: absolute; top: 2px; width: 12px; height: 12px; border-top: 2.5px solid #ffffff; border-left: 2.5px solid #ffffff; transform: rotate(45deg); border-radius: 1px; } /* The Arrow Stem (the |) */ #back-to-top .arrow::after { content: ''; position: absolute; top: 4px; width: 2.5px; height: 14px; background-color: #ffffff; border-radius: 2px; } #back-to-top:hover .arrow { transform: translateY(-2px); /* Slight bounce on hover */ } @media (max-width: 480px) { #back-to-top { bottom: 88px; left: 16px; width: 42px; height: 42px; } #back-to-top .arrow { transform: scale(0.85); } #back-to-top:hover .arrow { transform: scale(0.85) translateY(-2px); } }<button id="back-to-top" aria-label="Back to top"><div class="arrow"></div></button><script>(function () {
+  }</style><button id="back-to-top" aria-label="Back to top"><div class="arrow"></div></button><script>(function () {
   const btn = document.getElementById('back-to-top');
   if (!btn) return;
 
