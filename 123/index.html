@@ -653,7 +653,7 @@
     });
   };
 
-})();</script></head><body class="page-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="https://terrain.co.ke/#writer-portal" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-12T00:16">November 12, 2026</time></div></div><main class="main page"><div class="banner banner--before-content"><style>/* 1. The entire body starts slightly transparent */
+})();</script></head><body class="page-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="https://terrain.co.ke/#writer-portal" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-12T00:41">November 12, 2026</time></div></div><main class="main page"><div class="banner banner--before-content"><style>/* 1. The entire body starts slightly transparent */
   body {
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
@@ -2251,7 +2251,7 @@
     setTimeout(() => { toast.classList.remove('show'); }, 3000);
   }
 
-  // 🟢 0. CHECK FOR VERIFICATION SUCCESS
+  // 🟢 0. CHECK FOR VERIFICATION SUCCESS (From Email Link)
   if (window.location.search.includes('verified=true')) {
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -2260,6 +2260,7 @@
     successBox.textContent = "✅ Email verified successfully! You can now log in.";
     successBox.style.display = 'block';
     
+    // Clean URL
     if (window.history.replaceState) window.history.replaceState(null, null, window.location.pathname);
   }
 
@@ -2273,7 +2274,7 @@
       e.preventDefault();
       overlay.classList.add('active');
       document.body.style.overflow = 'hidden';
-      document.getElementById('writer-success').style.display = 'none';
+      document.getElementById('writer-success').style.display = 'none'; 
       document.getElementById('writer-error').style.display = 'none';
     }
   }, true);
@@ -2480,7 +2481,6 @@
       return; 
     }
 
-    // Simple text loading state (No animations to crash the script)
     const originalText = btn.innerHTML;
     btn.innerHTML = 'Submitting...';
     btn.disabled = true;
@@ -2498,14 +2498,13 @@
         document.getElementById('writer-article-title').value = '';
         document.getElementById('writer-article-content').value = '';
         
-        // Refresh data silently
         const dashRes = await fetch(`${WORKER_URL}/writer/dashboard?writerId=${currentWriter.id}`);
         const dashData = await dashRes.json();
         if (dashData.success) {
           allArticles = dashData.articles;
           document.getElementById('stat-total').textContent = dashData.articles.length;
           document.getElementById('stat-pending').textContent = dashData.pendingCount;
-          renderFullArticleList(); // Instantly update the table
+          renderFullArticleList(); 
         }
       } else {
         showToast('Failed to submit article. Please try again.', true);
@@ -2513,7 +2512,6 @@
     } catch (err) {
       showToast('Network error. Please try again.', true);
     } finally {
-      // Reset button
       btn.innerHTML = originalText;
       btn.disabled = false;
       btn.style.opacity = '1';
