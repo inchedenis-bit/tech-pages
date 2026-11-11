@@ -653,7 +653,7 @@
     });
   };
 
-})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="https://terrain.co.ke/#writer-portal" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-11T23:00">November 11, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
+})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="https://terrain.co.ke/#writer-portal" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-11T23:41">November 11, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
     position: fixed;
     top: 0; left: 0;
     height: 3px;
@@ -2805,9 +2805,9 @@
 
   .dash-main { flex: 1; padding: 40px; overflow-y: auto; }
   
-  /* Tabs */
-  .dash-tab-content { display: none; }
-  .dash-tab-content.active { display: block; }
+  /* 🟢 FIXED TABS CSS */
+  .dash-tab-content { display: none !important; }
+  .dash-tab-content.active { display: block !important; }
 
   .dash-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; }
   .dash-header h1 { font-size: 24px; font-weight: 700; color: #1e293b; margin: 0; }
@@ -2897,7 +2897,7 @@
   let currentWriter = null;
   let allArticles = [];
 
-  // 🟢 0. CHECK FOR VERIFICATION SUCCESS (From Email Link)
+  // 🟢 0. CHECK FOR VERIFICATION SUCCESS
   if (window.location.search.includes('verified=true')) {
     overlay.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -2906,7 +2906,6 @@
     successBox.textContent = "✅ Email verified successfully! You can now log in.";
     successBox.style.display = 'block';
     
-    // Clean URL
     if (window.history.replaceState) window.history.replaceState(null, null, window.location.pathname);
   }
 
@@ -2920,7 +2919,7 @@
       e.preventDefault();
       overlay.classList.add('active');
       document.body.style.overflow = 'hidden';
-      document.getElementById('writer-success').style.display = 'none'; // Hide success on new open
+      document.getElementById('writer-success').style.display = 'none';
       document.getElementById('writer-error').style.display = 'none';
     }
   }, true);
@@ -2980,8 +2979,7 @@
 
       if (data.success) {
         if (isRegisterMode) {
-          // 🟢 Show success message instead of alert
-          toggleWriterAuth(); // Flip back to login mode
+          toggleWriterAuth();
           successBox.textContent = "✅ Registration successful! Please check your email to verify your account before logging in.";
           successBox.style.display = 'block';
         } else {
@@ -2989,7 +2987,6 @@
           showWriterDashboard();
         }
       } else {
-        // 🟢 Show error (e.g., "Please verify your email")
         errorBox.textContent = data.error || "Something went wrong";
         errorBox.style.display = 'block';
       }
@@ -2999,10 +2996,13 @@
     }
   };
 
-  // 🟢 6. SWITCH TABS
+  // 🟢 6. SWITCH TABS (FIXED)
   window.switchWriterTab = function(tab) {
     document.querySelectorAll('.dash-nav-item').forEach(el => el.classList.remove('active'));
-    document.querySelectorAll('.dash-tab-content').forEach(el => el.classList.remove('active'));
+    
+    // Force remove active from all tab contents
+    document.getElementById('tab-dashboard').classList.remove('active');
+    document.getElementById('tab-articles').classList.remove('active');
 
     if (tab === 'dashboard') {
       document.querySelectorAll('.dash-nav-item')[0].classList.add('active');
@@ -3066,9 +3066,14 @@
 
     allArticles.forEach((article, index) => {
       const tr = document.createElement('tr');
-      const noteDisplay = article.editor_notes 
-        ? `<span class="editor-note-badge" title="${article.editor_notes}">📝 ${article.editor_notes}</span>` 
-        : '<span style="color: #cbd5e1; font-size: 12px;">None</span>';
+      
+      // Safely handle the note text
+      let noteDisplay = '<span style="color: #cbd5e1; font-size: 12px;">None</span>';
+      if (article.editor_notes && article.editor_notes.trim() !== '') {
+        // Truncate long notes for the table preview
+        const previewNote = article.editor_notes.length > 25 ? article.editor_notes.substring(0, 25) + '...' : article.editor_notes;
+        noteDisplay = `<span class="editor-note-badge" title="${article.editor_notes}">📝 ${previewNote}</span>`;
+      }
       
       const dateObj = new Date(article.submitted_at);
       const dateString = dateObj.toLocaleDateString('en-KE', { month: 'short', day: 'numeric', year: 'numeric' });
