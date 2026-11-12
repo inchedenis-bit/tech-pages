@@ -313,6 +313,7 @@
   .admin-input:focus { border-color: #3973D4; }
   .admin-btn { width: 100%; max-width: 300px; padding: 14px; background: #3973D4; color: white; border: none; border-radius: 8px; font-weight: 700; font-size: 15px; cursor: pointer; }
   .admin-btn:hover { background: #2a5cb8; }
+  .admin-btn:disabled { background: #cbd5e1; cursor: not-allowed; }
   .admin-error { background: #fee2e2; color: #b91c1c; padding: 10px; border-radius: 8px; font-size: 13px; margin-bottom: 15px; text-align: center; display: none; max-width: 300px; margin-left: auto; margin-right: auto; }
 
   #admin-dashboard-view { display: none; }
@@ -368,11 +369,13 @@
   @media (max-width: 600px) {
     #admin-content { padding: 20px; }
     #admin-box { max-height: 95vh; border-radius: 12px; }
-  }</style><div id="admin-overlay"><div id="admin-box"><button id="admin-close">&times;</button><div id="admin-content"><div id="admin-login-view"><div class="admin-title">🔒 Admin Access</div><div id="admin-error" class="admin-error"></div><input type="password" id="admin-password" class="admin-input" placeholder="Enter Admin Password"> <button class="admin-btn" onclick="adminLogin()">Unlock Panel</button></div><div id="admin-dashboard-view"><div class="admin-header"><h2>🛠️ Control Panel</h2></div><div class="admin-tabs"><button id="tab-articles" class="admin-tab active" onclick="switchAdminTab('articles')">📝 Articles</button> <button id="tab-writers" class="admin-tab" onclick="switchAdminTab('writers')">👥 Writers</button></div><div id="admin-articles-container"></div><div id="admin-writers-container" style="display: none;"></div></div></div></div></div><div id="full-article-modal"><div class="modal-inner"><div class="modal-header"><h3 id="full-article-title"></h3><button onclick="closeFullArticle()" style="background: #334155; color: white; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: bold;">✕ Close</button></div><div id="full-article-body" class="modal-body"></div></div></div><div id="thread-modal"><div class="modal-inner"><div class="modal-header"><h3 id="thread-title">Feedback Thread</h3><button onclick="closeThread()" style="background: #334155; color: white; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: bold;">✕ Close</button></div><div id="thread-body" class="modal-body"></div></div></div><script>(function() {
+  }</style><div id="admin-overlay"><div id="admin-box"><button id="admin-close">&times;</button><div id="admin-content"><div id="admin-login-view"><div class="admin-title">🔒 Admin Access</div><div id="admin-error" class="admin-error"></div><input type="password" id="admin-password" class="admin-input" placeholder="Enter Secret Key"> <button class="admin-btn" id="admin-login-btn" onclick="adminLogin()">Unlock Panel</button></div><div id="admin-dashboard-view"><div class="admin-header"><h2>🛠️ Control Panel</h2></div><div class="admin-tabs"><button id="tab-articles" class="admin-tab active" onclick="switchAdminTab('articles')">📝 Articles</button> <button id="tab-writers" class="admin-tab" onclick="switchAdminTab('writers')">👥 Writers</button></div><div id="admin-articles-container"></div><div id="admin-writers-container" style="display: none;"></div></div></div></div></div><div id="full-article-modal"><div class="modal-inner"><div class="modal-header"><h3 id="full-article-title"></h3><button onclick="closeFullArticle()" style="background: #334155; color: white; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: bold;">✕ Close</button></div><div id="full-article-body" class="modal-body"></div></div></div><div id="thread-modal"><div class="modal-inner"><div class="modal-header"><h3 id="thread-title">Feedback Thread</h3><button onclick="closeThread()" style="background: #334155; color: white; border: none; padding: 8px 12px; border-radius: 6px; cursor: pointer; font-weight: bold;">✕ Close</button></div><div id="thread-body" class="modal-body"></div></div></div><script>(function() {
   const WORKER_URL = 'https://terrain-ai-proxy.inchedenis.workers.dev';
-  const ADMIN_KEY = 'DrugFree_19'; 
-  const ADMIN_PASSWORD = 'TerrainAdmin2026'; 
   
+  // 🟢 SECURE: No hardcoded password or key. The user types it in.
+  // It is stored in memory only for the duration of the session.
+  window.ADMIN_KEY = null;
+
   const overlay = document.getElementById('admin-overlay');
   const closeBtn = document.getElementById('admin-close');
 
@@ -414,19 +417,46 @@
     }
   };
 
-  // 🟢 4. LOGIN LOGIC
-  window.adminLogin = function() {
-    const password = document.getElementById('admin-password').value;
+  // 🟢 4. SECURE LOGIN LOGIC (Verifies key with the Worker)
+  window.adminLogin = async function() {
+    const key = document.getElementById('admin-password').value.trim();
     const errorBox = document.getElementById('admin-error');
+    const loginBtn = document.getElementById('admin-login-btn');
 
-    if (password === ADMIN_PASSWORD) {
+    if (!key) {
+      errorBox.textContent = "Please enter your secret key.";
+      errorBox.style.display = 'block';
+      return;
+    }
+
+    loginBtn.textContent = 'Verifying...';
+    loginBtn.disabled = true;
+    errorBox.style.display = 'none';
+
+    try {
+      // Send a ping to the Worker to verify the key
+      const res = await fetch(`${WORKER_URL}/admin/articles?key=${encodeURIComponent(key)}`);
+      
+      if (res.status === 401) {
+        errorBox.textContent = "Invalid Secret Key. Access denied.";
+        errorBox.style.display = 'block';
+        loginBtn.textContent = 'Unlock Panel';
+        loginBtn.disabled = false;
+        return;
+      }
+
+      // If we get here, the key is correct. Save it to memory.
+      window.ADMIN_KEY = key;
+      
       document.getElementById('admin-login-view').style.display = 'none';
       document.getElementById('admin-dashboard-view').style.display = 'block';
       window.loadAdminArticles();
-    } else {
-      errorBox.textContent = "Incorrect password. Access denied.";
+      
+    } catch (e) {
+      errorBox.textContent = "Network error. Please try again.";
       errorBox.style.display = 'block';
-      setTimeout(() => { errorBox.style.display = 'none'; }, 3000);
+      loginBtn.textContent = 'Unlock Panel';
+      loginBtn.disabled = false;
     }
   };
 
@@ -436,7 +466,7 @@
     container.innerHTML = '<p style="color: #94a3b8; text-align: center;">Loading submissions...</p>';
 
     try {
-      const res = await fetch(`${WORKER_URL}/admin/articles?key=${ADMIN_KEY}`);
+      const res = await fetch(`${WORKER_URL}/admin/articles?key=${encodeURIComponent(window.ADMIN_KEY)}`);
       const data = await res.json();
 
       if (!data.success) {
@@ -512,7 +542,7 @@
     
     const res = await fetch(`${WORKER_URL}/admin/editor-notes`, {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ key: ADMIN_KEY, articleId, notes })
+      body: JSON.stringify({ key: window.ADMIN_KEY, articleId, notes })
     });
     const data = await res.json();
     
@@ -535,7 +565,7 @@
     document.getElementById('thread-modal').style.display = 'flex';
 
     try {
-      const res = await fetch(`${WORKER_URL}/admin/get-replies?key=${ADMIN_KEY}&articleId=${articleId}`);
+      const res = await fetch(`${WORKER_URL}/admin/get-replies?key=${encodeURIComponent(window.ADMIN_KEY)}&articleId=${articleId}`);
       const data = await res.json();
       
       if (data.success && data.replies.length > 0) {
@@ -566,7 +596,7 @@
     container.innerHTML = '<p style="color: #94a3b8; text-align: center;">Loading writers...</p>';
 
     try {
-      const res = await fetch(`${WORKER_URL}/admin/writers?key=${ADMIN_KEY}`);
+      const res = await fetch(`${WORKER_URL}/admin/writers?key=${encodeURIComponent(window.ADMIN_KEY)}`);
       const data = await res.json();
 
       if (!data.success) {
@@ -613,7 +643,7 @@
 
     const res = await fetch(`${WORKER_URL}/admin/approve`, {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ key: ADMIN_KEY, articleId: id, paymentAmount: parseInt(amount) })
+      body: JSON.stringify({ key: window.ADMIN_KEY, articleId: id, paymentAmount: parseInt(amount) })
     });
     const data = await res.json();
     if (data.success) window.loadAdminArticles();
@@ -625,7 +655,7 @@
 
     const res = await fetch(`${WORKER_URL}/admin/reject`, {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ key: ADMIN_KEY, articleId: id })
+      body: JSON.stringify({ key: window.ADMIN_KEY, articleId: id })
     });
     const data = await res.json();
     if (data.success) window.loadAdminArticles();
@@ -635,7 +665,7 @@
   window.setWriterGrade = async function(writerId, grade) {
     const res = await fetch(`${WORKER_URL}/admin/writer-grade`, {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ key: ADMIN_KEY, writerId, grade })
+      body: JSON.stringify({ key: window.ADMIN_KEY, writerId, grade })
     });
     const data = await res.json();
     if (data.success) window.loadAdminWriters();
@@ -672,7 +702,7 @@
     });
   };
 
-})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="https://terrain.co.ke/#writer-portal" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-13T01:32">November 13, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
+})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="https://terrain.co.ke/#writer-portal" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-13T02:04">November 13, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
     position: fixed;
     top: 0; left: 0;
     height: 3px;
