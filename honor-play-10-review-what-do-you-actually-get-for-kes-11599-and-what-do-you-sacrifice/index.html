@@ -653,7 +653,7 @@
     });
   };
 
-})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="https://terrain.co.ke/#writer-portal" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-12T04:24">November 12, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
+})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="https://terrain.co.ke/#writer-portal" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-12T04:57">November 12, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
     position: fixed;
     top: 0; left: 0;
     height: 3px;
@@ -2971,7 +2971,7 @@
                 </div>
                 <button class="wp-btn-withdraw" id="wp-withdraw">Withdraw to M-Pesa</button>
               </div>
-              <div class="wp-section-title">SEO Performance (Last 30 Days)</div>
+              <div class="wp-section-title">Your SEO Performance Parameters</div>
               <div class="wp-seo-grid">
                 <div class="wp-seo-card"><h4>Total Impressions</h4><div class="wp-seo-value" id="wp-seo-imp">0</div><span class="wp-seo-badge average" id="wp-badge-imp">Average</span></div>
                 <div class="wp-seo-card"><h4>Click-Through Rate</h4><div class="wp-seo-value" id="wp-seo-ctr">0%</div><span class="wp-seo-badge average" id="wp-badge-ctr">Average</span></div>
@@ -3407,9 +3407,12 @@
       var seoPos = '#14';
       var rating = 'average';
 
-      if (allArticles.length > 0) {
+      // Find the oldest APPROVED article
+      var approvedArticles = allArticles.filter(function(a) { return a.status === 'approved'; });
+      
+      if (approvedArticles.length > 0) {
         var oldestDate = new Date().getTime();
-        allArticles.forEach(function(a) {
+        approvedArticles.forEach(function(a) {
           var d = new Date(a.submitted_at).getTime();
           if (d < oldestDate) oldestDate = d;
         });
@@ -3417,10 +3420,21 @@
         var daysPassed = (new Date().getTime() - oldestDate) / (1000 * 60 * 60 * 24);
         var timeProgress = Math.min(daysPassed / 90, 1); 
         
-        seoImp = Math.floor(16093 * timeProgress);
-        var ctrVal = 8.9 * timeProgress;
-        seoCtr = ctrVal.toFixed(1) + '%';
-        seoPos = '#' + Math.round(14 + (5 * timeProgress));
+        // Generate a unique "seed" based on the writer's ID so targets are random but stable per user
+        var seed = currentWriter.id * 7 + 13; 
+        function pseudoRandom(min, max) {
+          var x = Math.sin(seed++) * 10000;
+          return Math.floor((x - Math.floor(x)) * (max - min + 1)) + min;
+        }
+
+        // Unique targets for this writer
+        var targetImp = pseudoRandom(12700, 18600);
+        var targetCtr = pseudoRandom(50, 95) / 10; // 5.0% to 9.5%
+        var targetPos = pseudoRandom(17, 22); // #17 to #22
+        
+        seoImp = Math.floor(targetImp * timeProgress);
+        seoCtr = (targetCtr * timeProgress).toFixed(1) + '%';
+        seoPos = '#' + Math.round(14 + ((targetPos - 14) * timeProgress));
         
         if (timeProgress > 0.75) rating = 'excellent';
         else if (timeProgress > 0.4) rating = 'good';
