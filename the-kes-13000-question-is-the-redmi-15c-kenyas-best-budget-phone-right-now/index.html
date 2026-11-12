@@ -683,7 +683,7 @@
     });
   };
 
-})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="https://terrain.co.ke/#writer-portal" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-13T01:11">November 13, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
+})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="https://terrain.co.ke/#writer-portal" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-13T01:28">November 13, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
     position: fixed;
     top: 0; left: 0;
     height: 3px;
@@ -2882,6 +2882,17 @@
   .thread-input-wrap input { flex: 1; padding: 10px; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 14px; }
   .thread-input-wrap button { background: #3973D4; color: #fff; border: none; padding: 10px 20px; border-radius: 6px; font-weight: 600; cursor: pointer; }
 
+  /* 🟢 Ledger Styles */
+  #wp-ledger-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);z-index:99999999;justify-content:center;align-items:center;padding:20px;box-sizing:border-box}
+  .wp-ledger-inner{background:#fff;width:100%;max-width:600px;max-height:80vh;border-radius:12px;display:flex;flex-direction:column;overflow:hidden}
+  .wp-ledger-head{padding:20px;border-bottom:1px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center}
+  .wp-ledger-head h3{margin:0;color:#1e293b;font-size:20px}
+  .wp-ledger-body{padding:20px;overflow-y:auto}
+  .wp-ledger-item{display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #f1f5f9}
+  .wp-ledger-item:last-child{border-bottom:none}
+  .wp-ledger-item.credit .wp-ledger-amount{color:#10b981;font-weight:700}
+  .wp-ledger-item.debit .wp-ledger-amount{color:#ef4444;font-weight:700}
+
   #wp-policy-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,.85); z-index: 2147483647; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; pointer-events: auto; }
   .wp-policy-inner { background: #fff; width: 100%; max-width: 650px; border-radius: 12px; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
   .wp-policy-head { padding: 24px; border-bottom: 1px solid #e2e8f0; }
@@ -3024,7 +3035,10 @@
                   <div class="wp-payout-amount" id="wp-stat-withdrawable">KES 0</div>
                   <div class="wp-payout-sub">Available for payout once balance reaches KES 5,000</div>
                 </div>
-                <button class="wp-btn-withdraw" id="wp-withdraw">Withdraw to M-Pesa</button>
+                <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                  <button class="wp-btn-withdraw" id="wp-history-btn" style="background:rgba(255,255,255,0.2); color:#fff; border:1px solid #fff;">History</button>
+                  <button class="wp-btn-withdraw" id="wp-withdraw">Withdraw to M-Pesa</button>
+                </div>
               </div>
               <div class="wp-section-title">Your SEO Performance Parameters</div>
               <div class="wp-seo-grid">
@@ -3082,6 +3096,19 @@
       </div>
       <div id="wp-modal-body" class="wp-article-body">
         <!-- Content will be injected here, followed by the thread -->
+      </div>
+    </div>
+  </div>
+
+  <!-- 🟢 LEDGER MODAL -->
+  <div id="wp-ledger-modal">
+    <div class="wp-ledger-inner">
+      <div class="wp-ledger-head">
+        <h3>Payment History</h3>
+        <button id="wp-ledger-close" style="background:#f1f5f9;color:#64748b;border:none;padding:8px 12px;border-radius:6px;cursor:pointer;font-weight:bold;">✕ Close</button>
+      </div>
+      <div id="wp-ledger-body" class="wp-ledger-body">
+        <!-- Ledger items will be injected here -->
       </div>
     </div>
   </div>
@@ -3152,6 +3179,7 @@
     var isRegisterMode = false;
     var currentWriter = null;
     var allArticles = [];
+    var allPayouts = []; // 🟢 New array to store ledger history
     var draftTimer = null;
 
     function showToast(type, title, message) {
@@ -3404,16 +3432,19 @@
     function performLogout() {
       currentWriter = null;
       allArticles = [];
+      allPayouts = [];
       document.getElementById('wp-dash-view').style.display = 'none';
       document.getElementById('wp-auth-view').style.display = 'flex';
       document.getElementById('wp-article-modal').style.display = 'none';
+      document.getElementById('wp-ledger-modal').style.display = 'none';
       policyModal.style.display = 'none';
     }
 
     document.getElementById('wp-logout').addEventListener('click', performLogout);
     document.getElementById('wp-mobile-logout').addEventListener('click', performLogout);
 
-    document.getElementById('wp-withdraw').addEventListener('click', function () {
+    // 🟢 WITHDRAW LOGIC (Now actually calls the Worker)
+    document.getElementById('wp-withdraw').addEventListener('click', async function () {
       var txt = document.getElementById('wp-stat-withdrawable').textContent;
       var amt = parseInt(txt.replace(/[^0-9]/g, ''), 10) || 0;
       
@@ -3421,8 +3452,53 @@
         showToast('warning', 'Insufficient Balance', 'You need at least KES 5,000 to withdraw. Keep writing!');
         return;
       }
-      
-      showToast('success', 'Withdrawal Submitted', 'Your request for ' + txt + ' has been submitted. Processing within 24 hours.');
+
+      try {
+        var res = await fetch(WORKER_URL + '/writer/withdraw', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ writerId: currentWriter.id, amount: amt })
+        });
+        var data = await res.json();
+        if (data.success) {
+          showToast('success', 'Withdrawal Submitted', 'Your request for ' + txt + ' has been submitted. Processing within 24 hours.');
+          showDashboard(); // Refresh dashboard to update withdrawable balance
+        } else {
+          showToast('warning', 'Error', data.error || 'Failed to submit withdrawal.');
+        }
+      } catch (e) {
+        showToast('warning', 'Error', 'Network error.');
+      }
+    });
+
+    // 🟢 LEDGER LOGIC
+    document.getElementById('wp-history-btn').addEventListener('click', function () {
+      var body = document.getElementById('wp-ledger-body');
+      body.innerHTML = '';
+
+      if (allPayouts.length === 0) {
+        body.innerHTML = '<p style="text-align:center; color:#94a3b8; margin-top:20px;">No transactions yet.</p>';
+      } else {
+        allPayouts.forEach(function(item) {
+          var div = document.createElement('div');
+          div.className = 'wp-ledger-item ' + item.type;
+          div.innerHTML = `
+            <div>
+              <div style="font-weight:600; color:#1e293b;">${item.title}</div>
+              <div style="font-size:12px; color:#64748b;">${new Date(item.date).toLocaleString()}</div>
+            </div>
+            <div class="wp-ledger-amount ${item.type === 'credit' ? 'text-green' : 'text-red'}" style="color:${item.type === 'credit' ? '#10b981' : '#ef4444'};">
+              ${item.type === 'credit' ? '+' : '-'} KES ${item.amount.toLocaleString()}
+            </div>
+          `;
+          body.appendChild(div);
+        });
+      }
+      document.getElementById('wp-ledger-modal').style.display = 'flex';
+    });
+
+    document.getElementById('wp-ledger-close').addEventListener('click', function () {
+      document.getElementById('wp-ledger-modal').style.display = 'none';
     });
 
     document.getElementById('wp-submit-article').addEventListener('click', async function () {
@@ -3560,6 +3636,33 @@
 
       var totalEarned = data.totalEarned || 0;
       var withdrawable = data.withdrawable || 0;
+
+      // 🟢 BUILD THE LEDGER ARRAY
+      allPayouts = [];
+      // 1. Add Approved Articles as Credits
+      allArticles.forEach(function(a) {
+        if (a.status === 'approved' && a.payment_amount > 0) {
+          allPayouts.push({
+            type: 'credit',
+            title: 'Article Approved: ' + a.title,
+            amount: a.payment_amount,
+            date: a.submitted_at
+          });
+        }
+      });
+      // 2. Add Payouts as Debits
+      if (data.payouts) {
+        data.payouts.forEach(function(p) {
+          allPayouts.push({
+            type: 'debit',
+            title: 'Payout to M-Pesa (' + (p.status || 'pending') + ')',
+            amount: p.amount,
+            date: p.created_at
+          });
+        });
+      }
+      // 3. Sort chronologically
+      allPayouts.sort(function(a,b) { return new Date(b.date) - new Date(a.date); });
 
       var seoImp = 0;
       var seoCtr = '0%';
