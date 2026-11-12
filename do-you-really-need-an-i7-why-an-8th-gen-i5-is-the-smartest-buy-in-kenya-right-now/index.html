@@ -457,20 +457,7 @@
           `;
         }
 
-        const currentRating = article.seo_rating || 'average';
-        const seoButtons = `
-          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed #334155;">
-            <p style="font-size: 12px; color: #94a3b8; margin-bottom: 10px; font-weight: 600;">Set Article SEO Performance:</p>
-            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-              <button onclick="setSeoRating(${article.id}, 'bad')" style="background: ${currentRating === 'bad' ? '#991b1b' : '#334155'}; color: white; border: none; padding: 8px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; font-weight: 600;">Bad</button>
-              <button onclick="setSeoRating(${article.id}, 'average')" style="background: ${currentRating === 'average' ? '#92400e' : '#334155'}; color: white; border: none; padding: 8px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; font-weight: 600;">Average</button>
-              <button onclick="setSeoRating(${article.id}, 'good')" style="background: ${currentRating === 'good' ? '#166534' : '#334155'}; color: white; border: none; padding: 8px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; font-weight: 600;">Good</button>
-              <button onclick="setSeoRating(${article.id}, 'excellent')" style="background: ${currentRating === 'excellent' ? '#1e40af' : '#334155'}; color: white; border: none; padding: 8px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; font-weight: 600;">Excellent</button>
-            </div>
-          </div>
-        `;
-
-        // 🟢 NEW: EDITOR NOTES
+        // 🟢 EDITOR NOTES (SEO buttons removed as they are now controlled by Writer Grade)
         const notesHTML = `
           <div style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed #334155;">
             <p style="font-size: 12px; color: #94a3b8; margin-bottom: 10px; font-weight: 600;">Editor Notes (Sent to Writer):</p>
@@ -500,7 +487,6 @@
           </div>
           
           ${controlsHTML}
-          ${seoButtons}
           ${notesHTML}
         `;
         container.appendChild(card);
@@ -521,7 +507,6 @@
     const data = await res.json();
     
     if (data.success) {
-      // Button feedback
       const btn = event.target;
       const originalText = btn.innerHTML;
       btn.innerHTML = '✅ Saved!';
@@ -560,6 +545,7 @@
             <span style="background: ${gradeColors[grade]}; color: white; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 700;">Grade: ${grade}</span>
           </div>
           <p class="admin-writer-info">✉️ ${writer.email}</p>
+          
           <div style="margin-top: 15px;">
             <p style="font-size: 12px; color: #94a3b8; margin-bottom: 10px; font-weight: 600;">Set Writer Grade:</p>
             <div style="display: flex; gap: 8px; flex-wrap: wrap;">
@@ -568,6 +554,10 @@
               <button onclick="setWriterGrade(${writer.id}, 'C')" style="background: ${grade === 'C' ? '#92400e' : '#334155'}; color: white; border: none; padding: 8px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; font-weight: 600;">C (Average)</button>
               <button onclick="setWriterGrade(${writer.id}, 'D')" style="background: ${grade === 'D' ? '#991b1b' : '#334155'}; color: white; border: none; padding: 8px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; font-weight: 600;">D (Bad)</button>
             </div>
+          </div>
+
+          <div style="margin-top: 15px; padding-top: 15px; border-top: 1px dashed #334155;">
+            <button onclick="resetSeoSimulation(${writer.id})" style="background: #b91c1c; color: white; border: none; padding: 8px 16px; border-radius: 6px; font-size: 12px; cursor: pointer; font-weight: 600; width: 100%;">🔄 Reset SEO Simulation</button>
           </div>
         `;
         container.appendChild(card);
@@ -602,17 +592,7 @@
     if (data.success) window.loadAdminArticles();
   };
 
-  // 🟢 10. SET SEO RATING
-  window.setSeoRating = async function(articleId, rating) {
-    const res = await fetch(`${WORKER_URL}/admin/seo-rating`, {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ key: ADMIN_KEY, articleId, rating, impressions: '12.4K', ctr: '3.2%', position: '#14' })
-    });
-    const data = await res.json();
-    if (data.success) window.loadAdminArticles();
-  };
-
-  // 🟢 11. SET WRITER GRADE
+  // 🟢 10. SET WRITER GRADE (SEO Buttons removed from articles)
   window.setWriterGrade = async function(writerId, grade) {
     const res = await fetch(`${WORKER_URL}/admin/writer-grade`, {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -620,6 +600,16 @@
     });
     const data = await res.json();
     if (data.success) window.loadAdminWriters();
+  };
+
+  // 🟢 11. RESET SEO SIMULATION
+  window.resetSeoSimulation = async function(writerId) {
+    if (!confirm('Are you sure you want to reset this writer\'s SEO simulation back to zero?')) return;
+    
+    // We will reuse the writer-grade endpoint to set a temporary 'reset' flag, 
+    // or you can just tell them to re-approve. For now, it will just reload.
+    alert('To truly reset the simulation, the writer must have NO approved articles. You can reject their approved articles or manually reset their article status in the database.');
+    // (We will add a dedicated endpoint for this in the Worker next).
   };
 
   // 🟢 12. OPEN FULL ARTICLE MODAL
@@ -653,7 +643,7 @@
     });
   };
 
-})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="https://terrain.co.ke/#writer-portal" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-12T04:58">November 12, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
+})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="https://terrain.co.ke/#writer-portal" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-12T05:31">November 12, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
     position: fixed;
     top: 0; left: 0;
     height: 3px;
@@ -3397,6 +3387,11 @@
       if (!data.success) return;
 
       allArticles = data.articles || [];
+      
+      // Update currentWriter grade from dashboard payload if available
+      if (data.writer_grade) {
+          currentWriter.writer_grade = data.writer_grade;
+      }
 
       var totalEarned = data.totalEarned || 0;
       var withdrawable = Math.max(0, totalEarned - 5000);
@@ -3420,17 +3415,36 @@
         var daysPassed = (new Date().getTime() - oldestDate) / (1000 * 60 * 60 * 24);
         var timeProgress = Math.min(daysPassed / 90, 1); 
         
-        // Generate a unique "seed" based on the writer's ID so targets are random but stable per user
+        // Generate a unique "seed" based on the writer's ID
         var seed = currentWriter.id * 7 + 13; 
         function pseudoRandom(min, max) {
           var x = Math.sin(seed++) * 10000;
           return Math.floor((x - Math.floor(x)) * (max - min + 1)) + min;
         }
 
-        // Unique targets for this writer
-        var targetImp = pseudoRandom(12700, 18600);
-        var targetCtr = pseudoRandom(50, 95) / 10; // 5.0% to 9.5%
-        var targetPos = pseudoRandom(17, 22); // #17 to #22
+        // ── USE WRITER GRADE TO SET CEILING ──
+        var grade = currentWriter.writer_grade || 'C';
+        var minImp = 12700, maxImp = 14000;
+        var minCtr = 50, maxCtr = 70;
+        var minPos = 17, maxPos = 19;
+
+        if (grade === 'A') {
+            minImp = 16000; maxImp = 18600;
+            minCtr = 75; maxCtr = 95;
+            minPos = 20; maxPos = 22;
+        } else if (grade === 'B') {
+            minImp = 14000; maxImp = 16000;
+            minCtr = 70; maxCtr = 80;
+            minPos = 19; maxPos = 20;
+        } else if (grade === 'D') {
+            minImp = 5000; maxImp = 8000;
+            minCtr = 20; maxCtr = 45;
+            minPos = 14; maxPos = 16;
+        }
+
+        var targetImp = pseudoRandom(minImp, maxImp);
+        var targetCtr = pseudoRandom(minCtr, maxCtr) / 10; 
+        var targetPos = pseudoRandom(minPos, maxPos); 
         
         seoImp = Math.floor(targetImp * timeProgress);
         seoCtr = (targetCtr * timeProgress).toFixed(1) + '%';
@@ -3472,25 +3486,25 @@
           }, 20);
         }
 
-        var targetCtr = parseFloat(seoCtr) || 0;
-        if (targetCtr > 0) {
-          var stepCtr = targetCtr / 30;
+        var targetCtrVal = parseFloat(seoCtr) || 0;
+        if (targetCtrVal > 0) {
+          var stepCtr = targetCtrVal / 30;
           window._seoCtrTimer = setInterval(function() {
             currentCtr += stepCtr;
-            if (currentCtr >= targetCtr) {
-              currentCtr = targetCtr;
+            if (currentCtr >= targetCtrVal) {
+              currentCtr = targetCtrVal;
               clearInterval(window._seoCtrTimer);
             }
             document.getElementById('wp-seo-ctr').textContent = currentCtr.toFixed(1) + '%';
           }, 30);
         }
 
-        var targetPos = parseInt(seoPos.replace('#', '')) || 14;
-        if (targetPos > 14) {
+        var targetPosVal = parseInt(seoPos.replace('#', '')) || 14;
+        if (targetPosVal > 14) {
           window._seoPosTimer = setInterval(function() {
             currentPos++;
-            if (currentPos >= targetPos) {
-              currentPos = targetPos;
+            if (currentPos >= targetPosVal) {
+              currentPos = targetPosVal;
               clearInterval(window._seoPosTimer);
             }
             document.getElementById('wp-seo-pos').textContent = '#' + currentPos;
