@@ -653,7 +653,7 @@
     });
   };
 
-})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="https://terrain.co.ke/#writer-portal" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-12T02:48">November 12, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
+})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="https://terrain.co.ke/#writer-portal" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-12T03:11">November 12, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
     position: fixed;
     top: 0; left: 0;
     height: 3px;
@@ -2816,6 +2816,19 @@
   .wp-editor-note h4{margin:0 0 8px;color:#92400e;font-size:14px;text-transform:uppercase}
   .wp-editor-note p{margin:0;color:#78350f;font-size:14px;line-height:1.5}
 
+  /* ── PROFESSIONAL TOAST NOTIFICATIONS ── */
+  .wp-toast-container{position:fixed;top:24px;right:24px;z-index:999999999;display:flex;flex-direction:column;gap:12px;pointer-events:none}
+  .wp-toast{background:#fff;border-radius:10px;box-shadow:0 8px 30px rgba(0,0,0,.12);padding:16px 20px;display:flex;align-items:flex-start;gap:14px;min-width:320px;max-width:400px;pointer-events:auto;transform:translateX(120%);opacity:0;transition:all .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);border-left:4px solid #3973D4}
+  .wp-toast.show{transform:translateX(0);opacity:1}
+  .wp-toast-icon{font-size:20px;flex-shrink:0;margin-top:2px}
+  .wp-toast-content{flex:1}
+  .wp-toast-title{font-weight:700;font-size:15px;color:#1e293b;margin-bottom:4px}
+  .wp-toast-msg{font-size:13px;color:#64748b;line-height:1.4}
+  .wp-toast.warning{border-left-color:#f59e0b}
+  .wp-toast.warning .wp-toast-icon{color:#f59e0b}
+  .wp-toast.success{border-left-color:#10b981}
+  .wp-toast.success .wp-toast-icon{color:#10b981}
+
   /* ═══════════════════════════════════════════
      MOBILE RESPONSIVE
      ═══════════════════════════════════════════ */
@@ -2848,6 +2861,9 @@
     .wp-article-head { padding: 14px 16px; position: sticky; top: 0; background: #fff; z-index: 2; }
     .wp-article-head h3 { font-size: 16px; }
     .wp-article-body { padding: 16px; font-size: 15px; }
+    
+    .wp-toast-container { top: 12px; right: 12px; left: 12px; }
+    .wp-toast { min-width: auto; }
   }
   `;
 
@@ -2918,7 +2934,7 @@
                 <div class="wp-payout-info">
                   <h3>Available for Withdrawal</h3>
                   <div class="wp-payout-amount" id="wp-stat-withdrawable">KES 0</div>
-                  <div class="wp-payout-sub">Minimum withdrawal: KES 5,000</div>
+                  <div class="wp-payout-sub">Available for payout once balance reaches KES 5,000</div>
                 </div>
                 <button class="wp-btn-withdraw" id="wp-withdraw">Withdraw to M-Pesa</button>
               </div>
@@ -2961,6 +2977,9 @@
       <div id="wp-modal-body" class="wp-article-body"></div>
     </div>
   </div>
+
+  <!-- Toast Container for Notifications -->
+  <div id="wp-toast-container" class="wp-toast-container"></div>
   `;
 
   /* ─────────────────────────────────────────────
@@ -2992,6 +3011,37 @@
     var isRegisterMode = false;
     var currentWriter = null;
     var allArticles = [];
+
+    /* ── CUSTOM TOAST NOTIFICATION FUNCTION ── */
+    function showToast(type, title, message) {
+      var container = document.getElementById('wp-toast-container');
+      var toast = document.createElement('div');
+      toast.className = 'wp-toast ' + type;
+      
+      var icon = type === 'success' ? '✅' : '⚠️';
+      
+      toast.innerHTML = `
+        <div class="wp-toast-icon">${icon}</div>
+        <div class="wp-toast-content">
+          <div class="wp-toast-title">${title}</div>
+          <div class="wp-toast-msg">${message}</div>
+        </div>
+      `;
+      
+      container.appendChild(toast);
+      
+      // Trigger reflow to ensure animation plays
+      void toast.offsetWidth;
+      
+      // Show it
+      toast.classList.add('show');
+      
+      // Auto remove after 4.5 seconds
+      setTimeout(function() {
+        toast.classList.remove('show');
+        setTimeout(function() { toast.remove(); }, 400); // Wait for fade out
+      }, 4500);
+    }
 
     /* success from email verification */
     if (window.location.search.indexOf('verified=true') !== -1) {
@@ -3126,18 +3176,24 @@
     document.getElementById('wp-withdraw').addEventListener('click', function () {
       var txt = document.getElementById('wp-stat-withdrawable').textContent;
       var amt = parseInt(txt.replace(/[^0-9]/g, ''), 10) || 0;
+      
       if (amt < 5000) {
-        alert('You need at least KES 5,000 to withdraw. Keep writing!');
+        showToast('warning', 'Insufficient Balance', 'You need at least KES 5,000 to withdraw. Keep writing!');
         return;
       }
-      alert('Withdrawal request of ' + txt + ' submitted! Our team will process it within 24 hours.');
+      
+      showToast('success', 'Withdrawal Submitted', 'Your request for ' + txt + ' has been submitted. Processing within 24 hours.');
     });
 
     /* submit article */
     document.getElementById('wp-submit-article').addEventListener('click', async function () {
       var title = document.getElementById('wp-art-title').value;
       var content = document.getElementById('wp-art-content').value;
-      if (!title || !content) { alert('Please fill in both fields.'); return; }
+      
+      if (!title || !content) { 
+        showToast('warning', 'Missing Fields', 'Please fill in both the title and article content.'); 
+        return; 
+      }
 
       var res = await fetch(WORKER_URL + '/writer/submit', {
         method: 'POST',
@@ -3145,8 +3201,9 @@
         body: JSON.stringify({ writerId: currentWriter.id, title: title, content: content })
       });
       var data = await res.json();
+      
       if (data.success) {
-        alert('Article submitted! It is now pending review.');
+        showToast('success', 'Article Submitted', 'Your article is now pending review.');
         document.getElementById('wp-art-title').value = '';
         document.getElementById('wp-art-content').value = '';
         var dashRes = await fetch(WORKER_URL + '/writer/dashboard?writerId=' + currentWriter.id);
