@@ -1,0 +1,2022 @@
+[
+    {
+        "path": "123",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/123/index.html",
+        "type": "file",
+        "md5": "0c8f70bc2085d7c5f038b087a684046c"
+    },
+    {
+        "path": "404.html",
+        "type": "file",
+        "md5": "df822478fba6f81267bb72b0c7478719"
+    },
+    {
+        "path": "admin-access",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/admin-access/index.html",
+        "type": "file",
+        "md5": "6d6b9ce6f278a7dbacecedec45149671"
+    },
+    {
+        "path": "assets",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "assets/css",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/assets/css/editor.css",
+        "type": "file",
+        "md5": "e5909a88ba1158a79ba2dbf82d6b2d86"
+    },
+    {
+        "path": "/assets/css/main.css",
+        "type": "file",
+        "md5": "4df1fb9c96a319117b28baca8ee4cefe"
+    },
+    {
+        "path": "/assets/css/style.css",
+        "type": "file",
+        "md5": "5c0e29c1ddbc0a7a28b55e1f24fbaeb1"
+    },
+    {
+        "path": "assets/dynamic",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "assets/js",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/assets/js/scripts.js",
+        "type": "file",
+        "md5": "840d1d0fb7276666706cba10ebb3b40e"
+    },
+    {
+        "path": "/assets/js/scripts.min.js",
+        "type": "file",
+        "md5": "18a65c58aef57c0287e0f0609f3389a9"
+    },
+    {
+        "path": "/assets/js/svg-fix.js",
+        "type": "file",
+        "md5": "7c0d2bb7276904b382e80bf2d85e8a96"
+    },
+    {
+        "path": "/assets/js/svg-map.js",
+        "type": "file",
+        "md5": "9fc67de3715469dc45c582bce11c4eba"
+    },
+    {
+        "path": "assets/svg",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/assets/svg/search.svg",
+        "type": "file",
+        "md5": "dcb9af3171e104304c8117f1c118f2e2"
+    },
+    {
+        "path": "/assets/svg/svg-map.svg",
+        "type": "file",
+        "md5": "bb9e0f5b5c047dfe2eeea9c36390b9f0"
+    },
+    {
+        "path": "authors",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "authors/dennis-n",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/authors/dennis-n/index.html",
+        "type": "file",
+        "md5": "40cf8dc231b01b20ccdc7c27826682db"
+    },
+    {
+        "path": "authors/dennis-n/page",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "authors/dennis-n/page/2",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/authors/dennis-n/page/2/index.html",
+        "type": "file",
+        "md5": "ecb58d8936bf05dde4de23ad26a156de"
+    },
+    {
+        "path": "authors/dennis-n/page/3",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/authors/dennis-n/page/3/index.html",
+        "type": "file",
+        "md5": "c0d322a51d5f612e096ebbf152f6e0bb"
+    },
+    {
+        "path": "authors/fred-hill",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/authors/fred-hill/index.html",
+        "type": "file",
+        "md5": "87795db1558eab56eb3272ef202f3330"
+    },
+    {
+        "path": "authors/lina-maya",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/authors/lina-maya/index.html",
+        "type": "file",
+        "md5": "ae1b5d1ee1a5fa267b8481384d94118f"
+    },
+    {
+        "path": "best-laptops-for-kenyan-university-students-under-kes-50000",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/best-laptops-for-kenyan-university-students-under-kes-50000/index.html",
+        "type": "file",
+        "md5": "96f7e16fb7b1f5712e19af96e48b5f91"
+    },
+    {
+        "path": "best-laptops-for-kenyan-university-students-under-kes-50000-updated-2026",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/best-laptops-for-kenyan-university-students-under-kes-50000-updated-2026/index.html",
+        "type": "file",
+        "md5": "e055711407bd311bc3fdfdf594dd3cea"
+    },
+    {
+        "path": "contact",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/contact/index.html",
+        "type": "file",
+        "md5": "6374cb4083536cb918add9a22e3f0127"
+    },
+    {
+        "path": "do-you-really-need-an-i7-why-an-8th-gen-i5-is-the-smartest-buy-in-kenya-right-now",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/do-you-really-need-an-i7-why-an-8th-gen-i5-is-the-smartest-buy-in-kenya-right-now/index.html",
+        "type": "file",
+        "md5": "6ffee338784903cf1e1755fedfd2f913"
+    },
+    {
+        "path": "fayaweb-2",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/fayaweb-2/index.html",
+        "type": "file",
+        "md5": "af5dfc42ed5092d6a1df9c12645a11e9"
+    },
+    {
+        "path": "feed.json",
+        "type": "file",
+        "md5": "7f928b74a3ceedcc88e535910fcf16b8"
+    },
+    {
+        "path": "feed.xml",
+        "type": "file",
+        "md5": "1f8f0c3de3594f1a911c67cc31ef9c7b"
+    },
+    {
+        "path": "honor-play-10-review-what-do-you-actually-get-for-kes-11599-and-what-do-you-sacrifice",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/honor-play-10-review-what-do-you-actually-get-for-kes-11599-and-what-do-you-sacrifice/index.html",
+        "type": "file",
+        "md5": "d0bb92e8e51e84d1b148a140312a5e43"
+    },
+    {
+        "path": "how-to-check-a-refurbished-laptop-before-paying-without-getting-scammed-in-nairobi",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/how-to-check-a-refurbished-laptop-before-paying-without-getting-scammed-in-nairobi/index.html",
+        "type": "file",
+        "md5": "99c0037255ad56d041f806f58a93fd1f"
+    },
+    {
+        "path": "hp-vs-lenovo-which-refurbished-laptop-brand-actually-deserves-your-kes-30000",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/hp-vs-lenovo-which-refurbished-laptop-brand-actually-deserves-your-kes-30000/index.html",
+        "type": "file",
+        "md5": "d1b5b15f80087530f7297df1cf165b32"
+    },
+    {
+        "path": "i-tested-the-cheapest-phones-under-kes-10000-here-is-the-only-one-i-would-buy",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/i-tested-the-cheapest-phones-under-kes-10000-here-is-the-only-one-i-would-buy/index.html",
+        "type": "file",
+        "md5": "fdc5c9220dc83aa3a075a592b49fee9f"
+    },
+    {
+        "path": "i-used-a-kes-35000-laptop-for-a-month-here-is-what-broke-and-what-survived",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/i-used-a-kes-35000-laptop-for-a-month-here-is-what-broke-and-what-survived/index.html",
+        "type": "file",
+        "md5": "85734cdfd188da6dd6741797b101b951"
+    },
+    {
+        "path": "index.html",
+        "type": "file",
+        "md5": "5443be8595280825e39e2eb0e76172d7"
+    },
+    {
+        "path": "infinix-hot-60i-review-the-nfc-budget-phone-that-actually-makes-sense",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/infinix-hot-60i-review-the-nfc-budget-phone-that-actually-makes-sense/index.html",
+        "type": "file",
+        "md5": "3376727e1df486cff11e599d80415e40"
+    },
+    {
+        "path": "is-the-samsung-galaxy-a06-still-worth-buying-in-2026-an-honest-buyer-take",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/is-the-samsung-galaxy-a06-still-worth-buying-in-2026-an-honest-buyer-take/index.html",
+        "type": "file",
+        "md5": "d84b69a8b98e08f09bc950584c33d9b3"
+    },
+    {
+        "path": "kenyas-cyber-threats-surge-29-as-mobile-money-hits-54-million",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/kenyas-cyber-threats-surge-29-as-mobile-money-hits-54-million/index.html",
+        "type": "file",
+        "md5": "d0bdae728eec7d2db1aa433be647c3cc"
+    },
+    {
+        "path": "local-ai-just-got-real-for-kenyan-businesses-heres-why-it-matters",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/local-ai-just-got-real-for-kenyan-businesses-heres-why-it-matters/index.html",
+        "type": "file",
+        "md5": "d2517b494c1958892f3e7f254ac941f4"
+    },
+    {
+        "path": "media",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "media/posts",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "media/posts/1",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/1/Redmi-15C.jpg",
+        "type": "file",
+        "md5": "4e1d84c6ed0ed9916200c12a67f88923"
+    },
+    {
+        "path": "media/posts/1/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/1/responsive/Redmi-15C-2xl.jpg",
+        "type": "file",
+        "md5": "9f0ed5ee8c4c926d7e5fb6c59e35fd0e"
+    },
+    {
+        "path": "/media/posts/1/responsive/Redmi-15C-lg.jpg",
+        "type": "file",
+        "md5": "9bff40f5b7ae3d7d0fa329f74d60db11"
+    },
+    {
+        "path": "/media/posts/1/responsive/Redmi-15C-md.jpg",
+        "type": "file",
+        "md5": "27ce6c6a13c50b03d46f32d9c66be1ba"
+    },
+    {
+        "path": "/media/posts/1/responsive/Redmi-15C-sm.jpg",
+        "type": "file",
+        "md5": "b803ddf527cb2055c5993baed5c5ca38"
+    },
+    {
+        "path": "/media/posts/1/responsive/Redmi-15C-xl.jpg",
+        "type": "file",
+        "md5": "9f0ed5ee8c4c926d7e5fb6c59e35fd0e"
+    },
+    {
+        "path": "/media/posts/1/responsive/Redmi-15C-xs.jpg",
+        "type": "file",
+        "md5": "41ca2c66ca9791b33b63893ea13bf5ac"
+    },
+    {
+        "path": "media/posts/10",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "media/posts/10/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/10/responsive/Spiked-rubber-ball-Safaricom-2xl.jpg",
+        "type": "file",
+        "md5": "3a533baf7a4c789bfcbb3a24ad3369b7"
+    },
+    {
+        "path": "/media/posts/10/responsive/Spiked-rubber-ball-Safaricom-lg.jpg",
+        "type": "file",
+        "md5": "bfaff48f602ae55ea49449a5dea1b356"
+    },
+    {
+        "path": "/media/posts/10/responsive/Spiked-rubber-ball-Safaricom-md.jpg",
+        "type": "file",
+        "md5": "353166547e604b2bc1d2e78478cc2c25"
+    },
+    {
+        "path": "/media/posts/10/responsive/Spiked-rubber-ball-Safaricom-sm.jpg",
+        "type": "file",
+        "md5": "f18b62b13ec0824064ccb44157c0ddba"
+    },
+    {
+        "path": "/media/posts/10/responsive/Spiked-rubber-ball-Safaricom-xl.jpg",
+        "type": "file",
+        "md5": "3a533baf7a4c789bfcbb3a24ad3369b7"
+    },
+    {
+        "path": "/media/posts/10/responsive/Spiked-rubber-ball-Safaricom-xs.jpg",
+        "type": "file",
+        "md5": "3e4178218b689278750964bdc1c6c888"
+    },
+    {
+        "path": "/media/posts/10/Spiked-rubber-ball-Safaricom.jpg",
+        "type": "file",
+        "md5": "b97c4215c6cedb820661558a9532daba"
+    },
+    {
+        "path": "media/posts/11",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/11/Laptop-illustration.jpg",
+        "type": "file",
+        "md5": "b5aa24c0479377eaf64c4cc0022c4246"
+    },
+    {
+        "path": "media/posts/11/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/11/responsive/Laptop-illustration-2xl.jpg",
+        "type": "file",
+        "md5": "63ef390bd97ada0b7b80a0507a41cdb3"
+    },
+    {
+        "path": "/media/posts/11/responsive/Laptop-illustration-lg.jpg",
+        "type": "file",
+        "md5": "09962aafb5b7d2c636d42286ab180a10"
+    },
+    {
+        "path": "/media/posts/11/responsive/Laptop-illustration-md.jpg",
+        "type": "file",
+        "md5": "5c2bf4eff82c4105833f62a37fc947c6"
+    },
+    {
+        "path": "/media/posts/11/responsive/Laptop-illustration-sm.jpg",
+        "type": "file",
+        "md5": "0b9615666b952dd349a92a8a2b78d670"
+    },
+    {
+        "path": "/media/posts/11/responsive/Laptop-illustration-xl.jpg",
+        "type": "file",
+        "md5": "63ef390bd97ada0b7b80a0507a41cdb3"
+    },
+    {
+        "path": "/media/posts/11/responsive/Laptop-illustration-xs.jpg",
+        "type": "file",
+        "md5": "52cb438e686f2c81a3f8298b76db51f8"
+    },
+    {
+        "path": "media/posts/12",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/12/HP-EliteBook-840-G5.jpg",
+        "type": "file",
+        "md5": "64ffe50f599523d1dcfe2372a2f9f02e"
+    },
+    {
+        "path": "media/posts/12/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/12/responsive/HP-EliteBook-840-G5-2xl.jpg",
+        "type": "file",
+        "md5": "f04d6b963e0ddbb969eaf67331d49020"
+    },
+    {
+        "path": "/media/posts/12/responsive/HP-EliteBook-840-G5-lg.jpg",
+        "type": "file",
+        "md5": "fc8673d6b03b5cf0fa7deca8bcf04054"
+    },
+    {
+        "path": "/media/posts/12/responsive/HP-EliteBook-840-G5-md.jpg",
+        "type": "file",
+        "md5": "fa09f1bb563bd621e9bbc76adb602121"
+    },
+    {
+        "path": "/media/posts/12/responsive/HP-EliteBook-840-G5-sm.jpg",
+        "type": "file",
+        "md5": "46daba28216c41d05b410bb84780acf6"
+    },
+    {
+        "path": "/media/posts/12/responsive/HP-EliteBook-840-G5-xl.jpg",
+        "type": "file",
+        "md5": "f04d6b963e0ddbb969eaf67331d49020"
+    },
+    {
+        "path": "/media/posts/12/responsive/HP-EliteBook-840-G5-xs.jpg",
+        "type": "file",
+        "md5": "fdff3f04c163b6e81ce7396b12fe4baf"
+    },
+    {
+        "path": "media/posts/13",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "media/posts/13/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/13/responsive/Snail-slow-laptop-2xl.jpg",
+        "type": "file",
+        "md5": "6891b4ad9673a5a11c8d82edde77bff1"
+    },
+    {
+        "path": "/media/posts/13/responsive/Snail-slow-laptop-lg.jpg",
+        "type": "file",
+        "md5": "a64b97a787525a475e630e711bfda597"
+    },
+    {
+        "path": "/media/posts/13/responsive/Snail-slow-laptop-md.jpg",
+        "type": "file",
+        "md5": "a476a2805d42b74a4b29cc72cdf6485f"
+    },
+    {
+        "path": "/media/posts/13/responsive/Snail-slow-laptop-sm.jpg",
+        "type": "file",
+        "md5": "674c381598d1344e230fc95afd9bf7cc"
+    },
+    {
+        "path": "/media/posts/13/responsive/Snail-slow-laptop-xl.jpg",
+        "type": "file",
+        "md5": "6891b4ad9673a5a11c8d82edde77bff1"
+    },
+    {
+        "path": "/media/posts/13/responsive/Snail-slow-laptop-xs.jpg",
+        "type": "file",
+        "md5": "218edb56d961ca2d77f47415480ab9dc"
+    },
+    {
+        "path": "/media/posts/13/Snail-slow-laptop.jpg",
+        "type": "file",
+        "md5": "45bde612c2544cb1e3bf05c482bc6aaa"
+    },
+    {
+        "path": "media/posts/14",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/14/Hp-vs-Lenovo.jpg",
+        "type": "file",
+        "md5": "04e130dba6a2f3e7548138df0196b817"
+    },
+    {
+        "path": "media/posts/14/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/14/responsive/Hp-vs-Lenovo-2xl.jpg",
+        "type": "file",
+        "md5": "1bc8983e0af5da80a817f845d1390c03"
+    },
+    {
+        "path": "/media/posts/14/responsive/Hp-vs-Lenovo-lg.jpg",
+        "type": "file",
+        "md5": "14c6404db0336c06609fc641e1f98410"
+    },
+    {
+        "path": "/media/posts/14/responsive/Hp-vs-Lenovo-md.jpg",
+        "type": "file",
+        "md5": "6245e71ef54eb400f0cd1bf4b3b5000f"
+    },
+    {
+        "path": "/media/posts/14/responsive/Hp-vs-Lenovo-sm.jpg",
+        "type": "file",
+        "md5": "c0091996160d31ff84216c16988777ba"
+    },
+    {
+        "path": "/media/posts/14/responsive/Hp-vs-Lenovo-xl.jpg",
+        "type": "file",
+        "md5": "1bc8983e0af5da80a817f845d1390c03"
+    },
+    {
+        "path": "/media/posts/14/responsive/Hp-vs-Lenovo-xs.jpg",
+        "type": "file",
+        "md5": "a7f7616bd695271e801ccaa4395690a2"
+    },
+    {
+        "path": "media/posts/15",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/15/Celeron.jpg",
+        "type": "file",
+        "md5": "2a45f0b1fffd91ad56c187aac0b528f4"
+    },
+    {
+        "path": "media/posts/15/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/15/responsive/Celeron-2xl.jpg",
+        "type": "file",
+        "md5": "cdc8a3226adc8ea09ae0210aaea92de8"
+    },
+    {
+        "path": "/media/posts/15/responsive/Celeron-lg.jpg",
+        "type": "file",
+        "md5": "69421192f2ba402f0f4dfbc77d94fce4"
+    },
+    {
+        "path": "/media/posts/15/responsive/Celeron-md.jpg",
+        "type": "file",
+        "md5": "71e85972f499817abd87633e38a7e3e0"
+    },
+    {
+        "path": "/media/posts/15/responsive/Celeron-sm.jpg",
+        "type": "file",
+        "md5": "d49cbe6bd4152e3876287b57398c8f25"
+    },
+    {
+        "path": "/media/posts/15/responsive/Celeron-xl.jpg",
+        "type": "file",
+        "md5": "cdc8a3226adc8ea09ae0210aaea92de8"
+    },
+    {
+        "path": "/media/posts/15/responsive/Celeron-xs.jpg",
+        "type": "file",
+        "md5": "9d0e2010db918abef0c9011cc8ba48aa"
+    },
+    {
+        "path": "media/posts/16",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "media/posts/16/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/16/responsive/student-2xl.jpg",
+        "type": "file",
+        "md5": "9a6568e5818c1167ec91395743941f49"
+    },
+    {
+        "path": "/media/posts/16/responsive/student-lg.jpg",
+        "type": "file",
+        "md5": "498e2984234ed976584d4c9bebee9ddf"
+    },
+    {
+        "path": "/media/posts/16/responsive/student-md.jpg",
+        "type": "file",
+        "md5": "96368d9a4c7727a5f8130a19e8e8067e"
+    },
+    {
+        "path": "/media/posts/16/responsive/student-sm.jpg",
+        "type": "file",
+        "md5": "13ba296bb8edd615176ae396df02586e"
+    },
+    {
+        "path": "/media/posts/16/responsive/student-xl.jpg",
+        "type": "file",
+        "md5": "9a6568e5818c1167ec91395743941f49"
+    },
+    {
+        "path": "/media/posts/16/responsive/student-xs.jpg",
+        "type": "file",
+        "md5": "4b7427993523a5215a30a7e909e2da24"
+    },
+    {
+        "path": "/media/posts/16/student.jpg",
+        "type": "file",
+        "md5": "ce1b44377c39c950dff355a46844aca2"
+    },
+    {
+        "path": "media/posts/17",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/17/Hand-Laptop.jpg",
+        "type": "file",
+        "md5": "2ee141747f8f0b35258fa0646279f7c5"
+    },
+    {
+        "path": "media/posts/17/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/17/responsive/Hand-Laptop-2xl.jpg",
+        "type": "file",
+        "md5": "e84d0d3a8546f714ff4dc6c4fb7781f9"
+    },
+    {
+        "path": "/media/posts/17/responsive/Hand-Laptop-lg.jpg",
+        "type": "file",
+        "md5": "2b684977591a978d6e4de3db67a8a33a"
+    },
+    {
+        "path": "/media/posts/17/responsive/Hand-Laptop-md.jpg",
+        "type": "file",
+        "md5": "ead9cebaae710244326e257fd0a1c985"
+    },
+    {
+        "path": "/media/posts/17/responsive/Hand-Laptop-sm.jpg",
+        "type": "file",
+        "md5": "ff22780f26a01a97c42a4798b745ba3b"
+    },
+    {
+        "path": "/media/posts/17/responsive/Hand-Laptop-xl.jpg",
+        "type": "file",
+        "md5": "e84d0d3a8546f714ff4dc6c4fb7781f9"
+    },
+    {
+        "path": "/media/posts/17/responsive/Hand-Laptop-xs.jpg",
+        "type": "file",
+        "md5": "e8618132d42a7118bfb26012ee0a2d8c"
+    },
+    {
+        "path": "media/posts/18",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/18/Laptops-for-students.jpg",
+        "type": "file",
+        "md5": "9c71bf10629245d735f1bde130feec4c"
+    },
+    {
+        "path": "media/posts/18/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/18/responsive/Laptops-for-students-2xl.jpg",
+        "type": "file",
+        "md5": "2cdbe5bbaea1594758fdf0ee85601411"
+    },
+    {
+        "path": "/media/posts/18/responsive/Laptops-for-students-lg.jpg",
+        "type": "file",
+        "md5": "a998edba42859c83d7054e44796ad78c"
+    },
+    {
+        "path": "/media/posts/18/responsive/Laptops-for-students-md.jpg",
+        "type": "file",
+        "md5": "91b03365ec301ef23bdc1c9914cb1ce5"
+    },
+    {
+        "path": "/media/posts/18/responsive/Laptops-for-students-sm.jpg",
+        "type": "file",
+        "md5": "0b4d849781fa358da2ff1082f282c770"
+    },
+    {
+        "path": "/media/posts/18/responsive/Laptops-for-students-xl.jpg",
+        "type": "file",
+        "md5": "2cdbe5bbaea1594758fdf0ee85601411"
+    },
+    {
+        "path": "/media/posts/18/responsive/Laptops-for-students-xs.jpg",
+        "type": "file",
+        "md5": "0555034546fbb0933c1c9a490235f6c0"
+    },
+    {
+        "path": "media/posts/19",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "media/posts/19/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/19/responsive/SSD-vs-HDD-2xl.jpg",
+        "type": "file",
+        "md5": "0b762e6039a00ed24a7ad763027eeda8"
+    },
+    {
+        "path": "/media/posts/19/responsive/SSD-vs-HDD-lg.jpg",
+        "type": "file",
+        "md5": "0b194808e9444a15226d0c20a1fd1a2f"
+    },
+    {
+        "path": "/media/posts/19/responsive/SSD-vs-HDD-md.jpg",
+        "type": "file",
+        "md5": "083ced45a44aabce5001b7b3c400e411"
+    },
+    {
+        "path": "/media/posts/19/responsive/SSD-vs-HDD-sm.jpg",
+        "type": "file",
+        "md5": "93375d3ced6b1495099e1fcfa2ddf982"
+    },
+    {
+        "path": "/media/posts/19/responsive/SSD-vs-HDD-xl.jpg",
+        "type": "file",
+        "md5": "0b762e6039a00ed24a7ad763027eeda8"
+    },
+    {
+        "path": "/media/posts/19/responsive/SSD-vs-HDD-xs.jpg",
+        "type": "file",
+        "md5": "7dcef227dc7ae98faeede12ee37adb50"
+    },
+    {
+        "path": "/media/posts/19/SSD-vs-HDD.jpg",
+        "type": "file",
+        "md5": "a8a298d4f1966181f6078c87325cdeba"
+    },
+    {
+        "path": "media/posts/2",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/2/Honor-Play-10.jpg",
+        "type": "file",
+        "md5": "397388c4db93ef0bbbc77de2db54b91a"
+    },
+    {
+        "path": "media/posts/2/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/2/responsive/Honor-Play-10-2xl.jpg",
+        "type": "file",
+        "md5": "8278fb02fd332cc96cbe32c75115a5d2"
+    },
+    {
+        "path": "/media/posts/2/responsive/Honor-Play-10-lg.jpg",
+        "type": "file",
+        "md5": "2755d93a58cc04f72102cf2ae4618e1f"
+    },
+    {
+        "path": "/media/posts/2/responsive/Honor-Play-10-md.jpg",
+        "type": "file",
+        "md5": "b41bfeaac5dbcbc5ae5121b91509235a"
+    },
+    {
+        "path": "/media/posts/2/responsive/Honor-Play-10-sm.jpg",
+        "type": "file",
+        "md5": "81771d5ec0db32976105069557397932"
+    },
+    {
+        "path": "/media/posts/2/responsive/Honor-Play-10-xl.jpg",
+        "type": "file",
+        "md5": "8278fb02fd332cc96cbe32c75115a5d2"
+    },
+    {
+        "path": "/media/posts/2/responsive/Honor-Play-10-xs.jpg",
+        "type": "file",
+        "md5": "df8ccd30dbba18845784610476295126"
+    },
+    {
+        "path": "media/posts/20",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/20/Gamming-Laptop.jpg",
+        "type": "file",
+        "md5": "29e84a9993e9cb6e3a3fa92469f0f3f0"
+    },
+    {
+        "path": "media/posts/20/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/20/responsive/Gamming-Laptop-2xl.jpg",
+        "type": "file",
+        "md5": "9f137b3d2d41df89ae17fbc670bc18e7"
+    },
+    {
+        "path": "/media/posts/20/responsive/Gamming-Laptop-lg.jpg",
+        "type": "file",
+        "md5": "3f167b9e9091e6ab740b094da2e21c43"
+    },
+    {
+        "path": "/media/posts/20/responsive/Gamming-Laptop-md.jpg",
+        "type": "file",
+        "md5": "57b38ed992337e2fba9fd7801a6689a0"
+    },
+    {
+        "path": "/media/posts/20/responsive/Gamming-Laptop-sm.jpg",
+        "type": "file",
+        "md5": "56751eedc9edfab4f6297f8d78303ec4"
+    },
+    {
+        "path": "/media/posts/20/responsive/Gamming-Laptop-xl.jpg",
+        "type": "file",
+        "md5": "9f137b3d2d41df89ae17fbc670bc18e7"
+    },
+    {
+        "path": "/media/posts/20/responsive/Gamming-Laptop-xs.jpg",
+        "type": "file",
+        "md5": "4ec5f8daadb87a8e3ac572ac07f779e0"
+    },
+    {
+        "path": "media/posts/22",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/22/Absa-Ad.jpg",
+        "type": "file",
+        "md5": "45319c4d1cbfb3fb0c62c386a1c2dd4e"
+    },
+    {
+        "path": "/media/posts/22/airtel-ad-2.jpg",
+        "type": "file",
+        "md5": "da97a762f20ce5f970c861556e9a99b8"
+    },
+    {
+        "path": "/media/posts/22/Airtel-Ad.png",
+        "type": "file",
+        "md5": "4f68a174667fd9b46658d9679e745afe"
+    },
+    {
+        "path": "/media/posts/22/IBM-Bank-AD.jpg",
+        "type": "file",
+        "md5": "adf29278c488b833127c437ed2c849e8"
+    },
+    {
+        "path": "/media/posts/22/Inche-Dennis.png",
+        "type": "file",
+        "md5": "cbe7c28d6a6a12e8f1f9c761790c27fd"
+    },
+    {
+        "path": "/media/posts/22/Jubilee-Group-Ad.jpg",
+        "type": "file",
+        "md5": "5bce3c2708b06c4d175ae9f037772f29"
+    },
+    {
+        "path": "/media/posts/22/Oraimo-Ad.jpg",
+        "type": "file",
+        "md5": "2e91fcb473885ea95284b98d297b9393"
+    },
+    {
+        "path": "media/posts/22/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/22/responsive/Absa-Ad-2xl.jpg",
+        "type": "file",
+        "md5": "908aa6d72ece8ac41a744252ca146cf8"
+    },
+    {
+        "path": "/media/posts/22/responsive/Absa-Ad-lg.jpg",
+        "type": "file",
+        "md5": "fa0c245d1941f15e77d0dff97fcdb118"
+    },
+    {
+        "path": "/media/posts/22/responsive/Absa-Ad-md.jpg",
+        "type": "file",
+        "md5": "f3af5e59c8a99599f3b6efc1360c3054"
+    },
+    {
+        "path": "/media/posts/22/responsive/Absa-Ad-sm.jpg",
+        "type": "file",
+        "md5": "b5cda84225054fb8693919cabef05503"
+    },
+    {
+        "path": "/media/posts/22/responsive/Absa-Ad-xl.jpg",
+        "type": "file",
+        "md5": "eb49254c6eb5d4dde1bce4e2ac0a9f2d"
+    },
+    {
+        "path": "/media/posts/22/responsive/Absa-Ad-xs.jpg",
+        "type": "file",
+        "md5": "1060e8dcbcc0362f2e1f899c7961ddd4"
+    },
+    {
+        "path": "/media/posts/22/responsive/airtel-ad-2-2xl.jpg",
+        "type": "file",
+        "md5": "ce30ee09e70c6b0c2156f98b8ff1ea89"
+    },
+    {
+        "path": "/media/posts/22/responsive/airtel-ad-2-lg.jpg",
+        "type": "file",
+        "md5": "ce30ee09e70c6b0c2156f98b8ff1ea89"
+    },
+    {
+        "path": "/media/posts/22/responsive/airtel-ad-2-md.jpg",
+        "type": "file",
+        "md5": "ce30ee09e70c6b0c2156f98b8ff1ea89"
+    },
+    {
+        "path": "/media/posts/22/responsive/airtel-ad-2-sm.jpg",
+        "type": "file",
+        "md5": "8def3f56d20254e3777b5d6fe2a6482a"
+    },
+    {
+        "path": "/media/posts/22/responsive/airtel-ad-2-xl.jpg",
+        "type": "file",
+        "md5": "ce30ee09e70c6b0c2156f98b8ff1ea89"
+    },
+    {
+        "path": "/media/posts/22/responsive/airtel-ad-2-xs.jpg",
+        "type": "file",
+        "md5": "f1d9ce6ad1b98855194a8d3e9e47611f"
+    },
+    {
+        "path": "/media/posts/22/responsive/Airtel-Ad-2xl.png",
+        "type": "file",
+        "md5": "4948ffbccd011ee00a3e818303b83d69"
+    },
+    {
+        "path": "/media/posts/22/responsive/Airtel-Ad-lg.png",
+        "type": "file",
+        "md5": "4948ffbccd011ee00a3e818303b83d69"
+    },
+    {
+        "path": "/media/posts/22/responsive/Airtel-Ad-md.png",
+        "type": "file",
+        "md5": "4948ffbccd011ee00a3e818303b83d69"
+    },
+    {
+        "path": "/media/posts/22/responsive/Airtel-Ad-sm.png",
+        "type": "file",
+        "md5": "4948ffbccd011ee00a3e818303b83d69"
+    },
+    {
+        "path": "/media/posts/22/responsive/Airtel-Ad-xl.png",
+        "type": "file",
+        "md5": "4948ffbccd011ee00a3e818303b83d69"
+    },
+    {
+        "path": "/media/posts/22/responsive/Airtel-Ad-xs.png",
+        "type": "file",
+        "md5": "f82406f858dddca1f25686dffeb9b78c"
+    },
+    {
+        "path": "/media/posts/22/responsive/IBM-Bank-AD-2xl.jpg",
+        "type": "file",
+        "md5": "7ba49dfc84fc1235af8f8a2323d1c8d6"
+    },
+    {
+        "path": "/media/posts/22/responsive/IBM-Bank-AD-lg.jpg",
+        "type": "file",
+        "md5": "78999fc82c0a8e0ce5f488d9d8ca8f00"
+    },
+    {
+        "path": "/media/posts/22/responsive/IBM-Bank-AD-md.jpg",
+        "type": "file",
+        "md5": "4bcf74de1837649d44fead8034823a40"
+    },
+    {
+        "path": "/media/posts/22/responsive/IBM-Bank-AD-sm.jpg",
+        "type": "file",
+        "md5": "062f33bfbdaa5d1ce6f650951316aa85"
+    },
+    {
+        "path": "/media/posts/22/responsive/IBM-Bank-AD-xl.jpg",
+        "type": "file",
+        "md5": "10dd7ac5ca2113fe80c02503780e0188"
+    },
+    {
+        "path": "/media/posts/22/responsive/IBM-Bank-AD-xs.jpg",
+        "type": "file",
+        "md5": "76abf873a0d908e0deba73b616a1e7fd"
+    },
+    {
+        "path": "/media/posts/22/responsive/Inche-Dennis-2xl.png",
+        "type": "file",
+        "md5": "e788877a092be707a669c31abcc40e5d"
+    },
+    {
+        "path": "/media/posts/22/responsive/Inche-Dennis-lg.png",
+        "type": "file",
+        "md5": "e788877a092be707a669c31abcc40e5d"
+    },
+    {
+        "path": "/media/posts/22/responsive/Inche-Dennis-md.png",
+        "type": "file",
+        "md5": "e788877a092be707a669c31abcc40e5d"
+    },
+    {
+        "path": "/media/posts/22/responsive/Inche-Dennis-sm.png",
+        "type": "file",
+        "md5": "327024132992ed620b4697816b9f8905"
+    },
+    {
+        "path": "/media/posts/22/responsive/Inche-Dennis-xl.png",
+        "type": "file",
+        "md5": "e788877a092be707a669c31abcc40e5d"
+    },
+    {
+        "path": "/media/posts/22/responsive/Inche-Dennis-xs.png",
+        "type": "file",
+        "md5": "ee04a753e1192c8872a437b387d622c1"
+    },
+    {
+        "path": "/media/posts/22/responsive/Jubilee-Group-Ad-2xl.jpg",
+        "type": "file",
+        "md5": "006cd085f9e5a48041a0ad95a74ec903"
+    },
+    {
+        "path": "/media/posts/22/responsive/Jubilee-Group-Ad-lg.jpg",
+        "type": "file",
+        "md5": "006cd085f9e5a48041a0ad95a74ec903"
+    },
+    {
+        "path": "/media/posts/22/responsive/Jubilee-Group-Ad-md.jpg",
+        "type": "file",
+        "md5": "006cd085f9e5a48041a0ad95a74ec903"
+    },
+    {
+        "path": "/media/posts/22/responsive/Jubilee-Group-Ad-sm.jpg",
+        "type": "file",
+        "md5": "3136aca08a28268f3733b38411afaa09"
+    },
+    {
+        "path": "/media/posts/22/responsive/Jubilee-Group-Ad-xl.jpg",
+        "type": "file",
+        "md5": "006cd085f9e5a48041a0ad95a74ec903"
+    },
+    {
+        "path": "/media/posts/22/responsive/Jubilee-Group-Ad-xs.jpg",
+        "type": "file",
+        "md5": "d0bf1fc57841f1a8ee36b77e273d0f0d"
+    },
+    {
+        "path": "/media/posts/22/responsive/Oraimo-Ad-2xl.jpg",
+        "type": "file",
+        "md5": "b9bc95d76e396799999eb3748806ebcb"
+    },
+    {
+        "path": "/media/posts/22/responsive/Oraimo-Ad-lg.jpg",
+        "type": "file",
+        "md5": "b9bc95d76e396799999eb3748806ebcb"
+    },
+    {
+        "path": "/media/posts/22/responsive/Oraimo-Ad-md.jpg",
+        "type": "file",
+        "md5": "b9bc95d76e396799999eb3748806ebcb"
+    },
+    {
+        "path": "/media/posts/22/responsive/Oraimo-Ad-sm.jpg",
+        "type": "file",
+        "md5": "6f6f82cce7641c0082a61a1e91965007"
+    },
+    {
+        "path": "/media/posts/22/responsive/Oraimo-Ad-xl.jpg",
+        "type": "file",
+        "md5": "b9bc95d76e396799999eb3748806ebcb"
+    },
+    {
+        "path": "/media/posts/22/responsive/Oraimo-Ad-xs.jpg",
+        "type": "file",
+        "md5": "f57c77b9b338e4ca997237fa036253ae"
+    },
+    {
+        "path": "/media/posts/22/responsive/Safaricom-Ad-2xl.png",
+        "type": "file",
+        "md5": "3dadf076dc45dcf32f2418a0db03d1c6"
+    },
+    {
+        "path": "/media/posts/22/responsive/Safaricom-Ad-lg.png",
+        "type": "file",
+        "md5": "3dadf076dc45dcf32f2418a0db03d1c6"
+    },
+    {
+        "path": "/media/posts/22/responsive/Safaricom-Ad-md.png",
+        "type": "file",
+        "md5": "3dadf076dc45dcf32f2418a0db03d1c6"
+    },
+    {
+        "path": "/media/posts/22/responsive/Safaricom-Ad-sm.png",
+        "type": "file",
+        "md5": "3dadf076dc45dcf32f2418a0db03d1c6"
+    },
+    {
+        "path": "/media/posts/22/responsive/Safaricom-Ad-xl.png",
+        "type": "file",
+        "md5": "3dadf076dc45dcf32f2418a0db03d1c6"
+    },
+    {
+        "path": "/media/posts/22/responsive/Safaricom-Ad-xs.png",
+        "type": "file",
+        "md5": "bd56c0932838373334d3283c053c934d"
+    },
+    {
+        "path": "/media/posts/22/responsive/Website-2-2xl.jpg",
+        "type": "file",
+        "md5": "a7b35205ee6fcf687a6afb5b47eba518"
+    },
+    {
+        "path": "/media/posts/22/responsive/Website-2-2xl.png",
+        "type": "file",
+        "md5": "4476dcd0995cac7e25673ef0a38b0ff1"
+    },
+    {
+        "path": "/media/posts/22/responsive/Website-2-lg.jpg",
+        "type": "file",
+        "md5": "2cd5dbd91f84a23124480e95c2573136"
+    },
+    {
+        "path": "/media/posts/22/responsive/Website-2-lg.png",
+        "type": "file",
+        "md5": "4476dcd0995cac7e25673ef0a38b0ff1"
+    },
+    {
+        "path": "/media/posts/22/responsive/Website-2-md.jpg",
+        "type": "file",
+        "md5": "973af0e2a2b0040ab2781c1d2602c252"
+    },
+    {
+        "path": "/media/posts/22/responsive/Website-2-md.png",
+        "type": "file",
+        "md5": "dc1e992924a9f4e89ed58791ccacba11"
+    },
+    {
+        "path": "/media/posts/22/responsive/Website-2-sm.jpg",
+        "type": "file",
+        "md5": "3a96a1f6b9d6718e2e74897923cbb5ee"
+    },
+    {
+        "path": "/media/posts/22/responsive/Website-2-sm.png",
+        "type": "file",
+        "md5": "ef73bd4cd95576567076a232bf1672d6"
+    },
+    {
+        "path": "/media/posts/22/responsive/Website-2-xl.jpg",
+        "type": "file",
+        "md5": "3b2aea6d2561eeccce7899f3465cad95"
+    },
+    {
+        "path": "/media/posts/22/responsive/Website-2-xl.png",
+        "type": "file",
+        "md5": "4476dcd0995cac7e25673ef0a38b0ff1"
+    },
+    {
+        "path": "/media/posts/22/responsive/Website-2-xs.jpg",
+        "type": "file",
+        "md5": "9669cd18cb8a1a0911e2a578109a273d"
+    },
+    {
+        "path": "/media/posts/22/responsive/Website-2-xs.png",
+        "type": "file",
+        "md5": "dcb9d51b17b6bd0c4e0ef8c623c3c908"
+    },
+    {
+        "path": "/media/posts/22/Safaricom-Ad.png",
+        "type": "file",
+        "md5": "67b3be25214011b37f8813cf8e74aaf7"
+    },
+    {
+        "path": "/media/posts/22/Website-2.jpg",
+        "type": "file",
+        "md5": "a61aa3512b80416303f18dd45cdf1a13"
+    },
+    {
+        "path": "/media/posts/22/Website-2.png",
+        "type": "file",
+        "md5": "eb63b8067c7878fa424e1b8e0671866e"
+    },
+    {
+        "path": "media/posts/24",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "media/posts/24/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/24/responsive/Solar-powered-phone-2xl.jpg",
+        "type": "file",
+        "md5": "18df8c97df0cdb7571e03c7df8286dd2"
+    },
+    {
+        "path": "/media/posts/24/responsive/Solar-powered-phone-lg.jpg",
+        "type": "file",
+        "md5": "d40133c5cc7547f0ca67b7285decc29e"
+    },
+    {
+        "path": "/media/posts/24/responsive/Solar-powered-phone-md.jpg",
+        "type": "file",
+        "md5": "88d9b44be5a17efdfa5310e8d4482e6c"
+    },
+    {
+        "path": "/media/posts/24/responsive/Solar-powered-phone-sm.jpg",
+        "type": "file",
+        "md5": "4ef15f0126676cdbea71ee652576506a"
+    },
+    {
+        "path": "/media/posts/24/responsive/Solar-powered-phone-xl.jpg",
+        "type": "file",
+        "md5": "18df8c97df0cdb7571e03c7df8286dd2"
+    },
+    {
+        "path": "/media/posts/24/responsive/Solar-powered-phone-xs.jpg",
+        "type": "file",
+        "md5": "5bcbaaf16538477650fcb3a599d97fee"
+    },
+    {
+        "path": "/media/posts/24/Solar-powered-phone.jpg",
+        "type": "file",
+        "md5": "cf5d7fb3f42c4615dfd517fe140c0c3b"
+    },
+    {
+        "path": "media/posts/25",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/25/Crypto-market-leaders-Binance-Circle-and-Coinbase..jpg",
+        "type": "file",
+        "md5": "d56eccc2d665972bc5fbd3d2a402301f"
+    },
+    {
+        "path": "media/posts/25/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/25/responsive/Crypto-market-leaders-Binance-Circle-and-Coinbase.-2xl.jpg",
+        "type": "file",
+        "md5": "a3b211bb2c3c035b6d64f55852dbeb47"
+    },
+    {
+        "path": "/media/posts/25/responsive/Crypto-market-leaders-Binance-Circle-and-Coinbase.-lg.jpg",
+        "type": "file",
+        "md5": "b2227b81a0a487de89fb853b44c29fc5"
+    },
+    {
+        "path": "/media/posts/25/responsive/Crypto-market-leaders-Binance-Circle-and-Coinbase.-md.jpg",
+        "type": "file",
+        "md5": "ac2c2c4e73d06f9e09d83c594f1c535b"
+    },
+    {
+        "path": "/media/posts/25/responsive/Crypto-market-leaders-Binance-Circle-and-Coinbase.-sm.jpg",
+        "type": "file",
+        "md5": "c587ab37797f62a6f2e3535877833bfd"
+    },
+    {
+        "path": "/media/posts/25/responsive/Crypto-market-leaders-Binance-Circle-and-Coinbase.-xl.jpg",
+        "type": "file",
+        "md5": "a3b211bb2c3c035b6d64f55852dbeb47"
+    },
+    {
+        "path": "/media/posts/25/responsive/Crypto-market-leaders-Binance-Circle-and-Coinbase.-xs.jpg",
+        "type": "file",
+        "md5": "e647b4a90c8e826fa5b44b6203b0ce23"
+    },
+    {
+        "path": "media/posts/26",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/26/AI-Bot-Illustration.jpg",
+        "type": "file",
+        "md5": "c585920efbed321578cde37450b981bf"
+    },
+    {
+        "path": "media/posts/26/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/26/responsive/AI-Bot-Illustration-2xl.jpg",
+        "type": "file",
+        "md5": "c43923c4b5344bc50efe7cdbcba4bd35"
+    },
+    {
+        "path": "/media/posts/26/responsive/AI-Bot-Illustration-lg.jpg",
+        "type": "file",
+        "md5": "6484a56d31cb13dc29b1544563e95b69"
+    },
+    {
+        "path": "/media/posts/26/responsive/AI-Bot-Illustration-md.jpg",
+        "type": "file",
+        "md5": "08c8cc1a034a5b75fb13adb975200b09"
+    },
+    {
+        "path": "/media/posts/26/responsive/AI-Bot-Illustration-sm.jpg",
+        "type": "file",
+        "md5": "da09064337e2d10815577e350960c4b6"
+    },
+    {
+        "path": "/media/posts/26/responsive/AI-Bot-Illustration-xl.jpg",
+        "type": "file",
+        "md5": "c43923c4b5344bc50efe7cdbcba4bd35"
+    },
+    {
+        "path": "/media/posts/26/responsive/AI-Bot-Illustration-xs.jpg",
+        "type": "file",
+        "md5": "1775b849888696972c08448357f438a0"
+    },
+    {
+        "path": "media/posts/27",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/27/cyber-attacker-2.jpg",
+        "type": "file",
+        "md5": "5468b5ac0fae214f704e0c446c25379f"
+    },
+    {
+        "path": "media/posts/27/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/27/responsive/cyber-attacker-2-2xl.jpg",
+        "type": "file",
+        "md5": "2ce686e08f585527a4c7b87a54b0a831"
+    },
+    {
+        "path": "/media/posts/27/responsive/cyber-attacker-2-lg.jpg",
+        "type": "file",
+        "md5": "d764ea2196c02af87ab801b8cbd8b1f6"
+    },
+    {
+        "path": "/media/posts/27/responsive/cyber-attacker-2-md.jpg",
+        "type": "file",
+        "md5": "857c10a4703fedc106f001cb99a5050a"
+    },
+    {
+        "path": "/media/posts/27/responsive/cyber-attacker-2-sm.jpg",
+        "type": "file",
+        "md5": "4c8bed25dd0e004208549d69df28d133"
+    },
+    {
+        "path": "/media/posts/27/responsive/cyber-attacker-2-xl.jpg",
+        "type": "file",
+        "md5": "2ce686e08f585527a4c7b87a54b0a831"
+    },
+    {
+        "path": "/media/posts/27/responsive/cyber-attacker-2-xs.jpg",
+        "type": "file",
+        "md5": "b51f90c1a011dc90907c1309f05b8e6b"
+    },
+    {
+        "path": "media/posts/3",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "media/posts/3/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/3/responsive/Samsung-A07-vs-Infinix-60i-2xl.jpg",
+        "type": "file",
+        "md5": "ba8034c1b9996633dc5917fea85baf76"
+    },
+    {
+        "path": "/media/posts/3/responsive/Samsung-A07-vs-Infinix-60i-lg.jpg",
+        "type": "file",
+        "md5": "d43ff1bee877384edbd321e1f4253234"
+    },
+    {
+        "path": "/media/posts/3/responsive/Samsung-A07-vs-Infinix-60i-md.jpg",
+        "type": "file",
+        "md5": "2db1015099c930bd80354ed0ac5e7e64"
+    },
+    {
+        "path": "/media/posts/3/responsive/Samsung-A07-vs-Infinix-60i-sm.jpg",
+        "type": "file",
+        "md5": "f026202300da1e6e5ab4501b22a5ff35"
+    },
+    {
+        "path": "/media/posts/3/responsive/Samsung-A07-vs-Infinix-60i-xl.jpg",
+        "type": "file",
+        "md5": "ba8034c1b9996633dc5917fea85baf76"
+    },
+    {
+        "path": "/media/posts/3/responsive/Samsung-A07-vs-Infinix-60i-xs.jpg",
+        "type": "file",
+        "md5": "a4d78bef3328a9659081227c6f5e149f"
+    },
+    {
+        "path": "/media/posts/3/Samsung-A07-vs-Infinix-60i.jpg",
+        "type": "file",
+        "md5": "1abe9dad54b98c5c3da2b297606a5ae5"
+    },
+    {
+        "path": "media/posts/4",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/4/Itel-A90.jpg",
+        "type": "file",
+        "md5": "b83d677f1e08b8ab653e64c1ab5549ba"
+    },
+    {
+        "path": "media/posts/4/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/4/responsive/Itel-A90-2xl.jpg",
+        "type": "file",
+        "md5": "8a43f715a1ff66f6fae720e2a2bad7fe"
+    },
+    {
+        "path": "/media/posts/4/responsive/Itel-A90-lg.jpg",
+        "type": "file",
+        "md5": "45022be77ed357dae195e039cdade9a9"
+    },
+    {
+        "path": "/media/posts/4/responsive/Itel-A90-md.jpg",
+        "type": "file",
+        "md5": "a0f7d9f4d48d15473cdda524e9dc4b25"
+    },
+    {
+        "path": "/media/posts/4/responsive/Itel-A90-sm.jpg",
+        "type": "file",
+        "md5": "096110143a30d3d887b534cc101074c6"
+    },
+    {
+        "path": "/media/posts/4/responsive/Itel-A90-xl.jpg",
+        "type": "file",
+        "md5": "8a43f715a1ff66f6fae720e2a2bad7fe"
+    },
+    {
+        "path": "/media/posts/4/responsive/Itel-A90-xs.jpg",
+        "type": "file",
+        "md5": "77b62a5806ea91bb1b24255d4d47c0b0"
+    },
+    {
+        "path": "media/posts/5",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "media/posts/5/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/5/responsive/Spiky-rubber-balls-2xl.jpg",
+        "type": "file",
+        "md5": "40f8f7ac8c01503e8af6c30da7457e87"
+    },
+    {
+        "path": "/media/posts/5/responsive/Spiky-rubber-balls-lg.jpg",
+        "type": "file",
+        "md5": "50e6240c3aaa6bb0c06e7cbc243a2433"
+    },
+    {
+        "path": "/media/posts/5/responsive/Spiky-rubber-balls-md.jpg",
+        "type": "file",
+        "md5": "71aeefaa098991c735052540e623b57d"
+    },
+    {
+        "path": "/media/posts/5/responsive/Spiky-rubber-balls-sm.jpg",
+        "type": "file",
+        "md5": "099222365893461ed5ba13b39942de11"
+    },
+    {
+        "path": "/media/posts/5/responsive/Spiky-rubber-balls-xl.jpg",
+        "type": "file",
+        "md5": "40f8f7ac8c01503e8af6c30da7457e87"
+    },
+    {
+        "path": "/media/posts/5/responsive/Spiky-rubber-balls-xs.jpg",
+        "type": "file",
+        "md5": "7ba9b6c07fe8c7f62131eda910339475"
+    },
+    {
+        "path": "/media/posts/5/Spiky-rubber-balls.jpg",
+        "type": "file",
+        "md5": "3d953b9881b1f9b8247d04b0963661cc"
+    },
+    {
+        "path": "media/posts/6",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/6/old-laptop.jpg",
+        "type": "file",
+        "md5": "11c5956a48bea6473cd4d62605625c5e"
+    },
+    {
+        "path": "media/posts/6/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/6/responsive/old-laptop-2xl.jpg",
+        "type": "file",
+        "md5": "951df260bd4ef8b98d5332bf04036215"
+    },
+    {
+        "path": "/media/posts/6/responsive/old-laptop-lg.jpg",
+        "type": "file",
+        "md5": "1d632a93bac8ca3489366b137c791452"
+    },
+    {
+        "path": "/media/posts/6/responsive/old-laptop-md.jpg",
+        "type": "file",
+        "md5": "0e82e02dab20ae67a06aecc89c6b6c7d"
+    },
+    {
+        "path": "/media/posts/6/responsive/old-laptop-sm.jpg",
+        "type": "file",
+        "md5": "c1548c8b4bf6aa6988f8dd4591785ca9"
+    },
+    {
+        "path": "/media/posts/6/responsive/old-laptop-xl.jpg",
+        "type": "file",
+        "md5": "951df260bd4ef8b98d5332bf04036215"
+    },
+    {
+        "path": "/media/posts/6/responsive/old-laptop-xs.jpg",
+        "type": "file",
+        "md5": "49ffb3f6c10c76487a05e7a10432b213"
+    },
+    {
+        "path": "media/posts/7",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/7/Itel-A06-2.jpg",
+        "type": "file",
+        "md5": "0fdefb7f28d0c0939c5a588551dc14c1"
+    },
+    {
+        "path": "media/posts/7/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/7/responsive/Itel-A06-2-2xl.jpg",
+        "type": "file",
+        "md5": "c738ba2aec7cfd18a18cd0d6d30a18f5"
+    },
+    {
+        "path": "/media/posts/7/responsive/Itel-A06-2-lg.jpg",
+        "type": "file",
+        "md5": "a6b534b8f284eb3826b1211575aa33ed"
+    },
+    {
+        "path": "/media/posts/7/responsive/Itel-A06-2-md.jpg",
+        "type": "file",
+        "md5": "eab5f6350905609c75bde16ac91da15d"
+    },
+    {
+        "path": "/media/posts/7/responsive/Itel-A06-2-sm.jpg",
+        "type": "file",
+        "md5": "6595ef526e110bf6949171bbcd95362b"
+    },
+    {
+        "path": "/media/posts/7/responsive/Itel-A06-2-xl.jpg",
+        "type": "file",
+        "md5": "c738ba2aec7cfd18a18cd0d6d30a18f5"
+    },
+    {
+        "path": "/media/posts/7/responsive/Itel-A06-2-xs.jpg",
+        "type": "file",
+        "md5": "ffb7fdf2922b281d89ab945460772ff3"
+    },
+    {
+        "path": "media/posts/8",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/8/Infinix-60i-2.jpg",
+        "type": "file",
+        "md5": "540aa62b1f410993c9c93c4a789ed4c3"
+    },
+    {
+        "path": "media/posts/8/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/8/responsive/Infinix-60i-2-2xl.jpg",
+        "type": "file",
+        "md5": "989a2a90d521c01bf8547a7f95b4e612"
+    },
+    {
+        "path": "/media/posts/8/responsive/Infinix-60i-2-lg.jpg",
+        "type": "file",
+        "md5": "d68160e0cfe4e66df668660694ce8127"
+    },
+    {
+        "path": "/media/posts/8/responsive/Infinix-60i-2-md.jpg",
+        "type": "file",
+        "md5": "8342eb2a54bbeaed95b30af6dc21fd82"
+    },
+    {
+        "path": "/media/posts/8/responsive/Infinix-60i-2-sm.jpg",
+        "type": "file",
+        "md5": "2a049f6a69edf2e6e991427bdb9bd840"
+    },
+    {
+        "path": "/media/posts/8/responsive/Infinix-60i-2-xl.jpg",
+        "type": "file",
+        "md5": "989a2a90d521c01bf8547a7f95b4e612"
+    },
+    {
+        "path": "/media/posts/8/responsive/Infinix-60i-2-xs.jpg",
+        "type": "file",
+        "md5": "c59c11492f0fcac7873387c03b69b443"
+    },
+    {
+        "path": "media/posts/9",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "media/posts/9/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/posts/9/responsive/Samsung-Galaxy-A06-2xl.jpg",
+        "type": "file",
+        "md5": "b21a4dad1f1e1962badafd89a89b9ea0"
+    },
+    {
+        "path": "/media/posts/9/responsive/Samsung-Galaxy-A06-lg.jpg",
+        "type": "file",
+        "md5": "f17b31dd85f68a6227e1de39b3ab0ff7"
+    },
+    {
+        "path": "/media/posts/9/responsive/Samsung-Galaxy-A06-md.jpg",
+        "type": "file",
+        "md5": "a5d5aa0883fceeeae10ec313fd6fb388"
+    },
+    {
+        "path": "/media/posts/9/responsive/Samsung-Galaxy-A06-sm.jpg",
+        "type": "file",
+        "md5": "639173aaef97062aef044e94195424da"
+    },
+    {
+        "path": "/media/posts/9/responsive/Samsung-Galaxy-A06-xl.jpg",
+        "type": "file",
+        "md5": "b21a4dad1f1e1962badafd89a89b9ea0"
+    },
+    {
+        "path": "/media/posts/9/responsive/Samsung-Galaxy-A06-xs.jpg",
+        "type": "file",
+        "md5": "a80d1f4dc6b26019a0b6cfb3b92484fc"
+    },
+    {
+        "path": "/media/posts/9/Samsung-Galaxy-A06.jpg",
+        "type": "file",
+        "md5": "691db87c96b6b03329fd002cebf30200"
+    },
+    {
+        "path": "media/website",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/website/author-1.jpg",
+        "type": "file",
+        "md5": "453f78e56243a3e56ef1e4883427d15c"
+    },
+    {
+        "path": "/media/website/Author-F..jpg",
+        "type": "file",
+        "md5": "924dccde1b10e2952b7287e96990f012"
+    },
+    {
+        "path": "/media/website/logo-2.jpg",
+        "type": "file",
+        "md5": "d9c8dfed71055f295deda260fe4de157"
+    },
+    {
+        "path": "/media/website/logo.jpg",
+        "type": "file",
+        "md5": "d9c8dfed71055f295deda260fe4de157"
+    },
+    {
+        "path": "media/website/responsive",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/media/website/responsive/author-1-xs.jpg",
+        "type": "file",
+        "md5": "ffc76df3707ba3abf7ffce627f3d67b9"
+    },
+    {
+        "path": "/media/website/responsive/Author-F.-xs.jpg",
+        "type": "file",
+        "md5": "de2e9645ac96d74b7351e49c1098e8d8"
+    },
+    {
+        "path": "/media/website/responsive/logo-2-xs.jpg",
+        "type": "file",
+        "md5": "0bdb19c9e1182ac23bd090b46c08691d"
+    },
+    {
+        "path": "/media/website/responsive/logo-xs.jpg",
+        "type": "file",
+        "md5": "0bdb19c9e1182ac23bd090b46c08691d"
+    },
+    {
+        "path": "page",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "page/2",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/page/2/index.html",
+        "type": "file",
+        "md5": "04bfe6109871d3d9e190465a955cb3da"
+    },
+    {
+        "path": "robots.txt",
+        "type": "file",
+        "md5": "90adc7e7fd4ba3e200f8a1ddeaa3f4ef"
+    },
+    {
+        "path": "safaricom-vs-airtel-the-data-bundle-truth-nobody-tells-you-2026-price-breakdown",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/safaricom-vs-airtel-the-data-bundle-truth-nobody-tells-you-2026-price-breakdown/index.html",
+        "type": "file",
+        "md5": "e1ba4c4ad93e572f4f1fdcf57ab5b63c"
+    },
+    {
+        "path": "samsung-a07-vs-infinix-hot-60i-which-sub-kes-15000-phone-should-you-buy",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/samsung-a07-vs-infinix-hot-60i-which-sub-kes-15000-phone-should-you-buy/index.html",
+        "type": "file",
+        "md5": "3c05dac3b94ce66613fd0bcb767ffaa6"
+    },
+    {
+        "path": "sitemap.xml",
+        "type": "file",
+        "md5": "0c3588e3019ca427db0c4d31bc53a330"
+    },
+    {
+        "path": "sitemap.xsl",
+        "type": "file",
+        "md5": "03c2f9a7fdcc46ff05c435907614a0b8"
+    },
+    {
+        "path": "ssd-vs-hdd-the-kes-5000-upgrade-that-will-make-your-old-laptop-feel-brand-new",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/ssd-vs-hdd-the-kes-5000-upgrade-that-will-make-your-old-laptop-feel-brand-new/index.html",
+        "type": "file",
+        "md5": "87cda77d526d67d78fd0fd17e3e16cad"
+    },
+    {
+        "path": "stop-buying-4gb-ram-laptops-the-minimum-specs-your-money-should-buy-in-kenya-today",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/stop-buying-4gb-ram-laptops-the-minimum-specs-your-money-should-buy-in-kenya-today/index.html",
+        "type": "file",
+        "md5": "7597456aeff646a2d05a44115a170fa4"
+    },
+    {
+        "path": "stop-wasting-money-on-cheap-phones-5-things-to-check-before-you-buy-under-kes-15000",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/stop-wasting-money-on-cheap-phones-5-things-to-check-before-you-buy-under-kes-15000/index.html",
+        "type": "file",
+        "md5": "7225f9f71ee3dbeac60828b22bfec5d4"
+    },
+    {
+        "path": "tags",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "tags/buying-guides",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/tags/buying-guides/index.html",
+        "type": "file",
+        "md5": "3a1d5b50c3e734fb7699f5c15636d1c0"
+    },
+    {
+        "path": "tags/comparisons",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/tags/comparisons/index.html",
+        "type": "file",
+        "md5": "172a529588552305247fcd8ad3b1372c"
+    },
+    {
+        "path": "/tags/index.html",
+        "type": "file",
+        "md5": "eeca02ebb8544aefbfc5e0defb2752f8"
+    },
+    {
+        "path": "tags/news",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/tags/news/index.html",
+        "type": "file",
+        "md5": "0136ef37934818b242a5c4140201dbb4"
+    },
+    {
+        "path": "tags/opinion",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/tags/opinion/index.html",
+        "type": "file",
+        "md5": "47d5a5504bbbc54bde50c19c0d4e3085"
+    },
+    {
+        "path": "tags/phones",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/tags/phones/index.html",
+        "type": "file",
+        "md5": "d5d023dcf5aacb9608eaee2001ef67f7"
+    },
+    {
+        "path": "the-binance-hack-just-hit-close-to-home-heres-what-it-means-for-kenyan-crypto-traders",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/the-binance-hack-just-hit-close-to-home-heres-what-it-means-for-kenyan-crypto-traders/index.html",
+        "type": "file",
+        "md5": "6e29fc2140008cca35c988a7f8b3c874"
+    },
+    {
+        "path": "the-celeron-trap-why-that-brand-new-kes-28000-laptop-will-ruin-your-campus-life",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/the-celeron-trap-why-that-brand-new-kes-28000-laptop-will-ruin-your-campus-life/index.html",
+        "type": "file",
+        "md5": "c445bb4fb2d9cbc652ee92ec2a93dd5a"
+    },
+    {
+        "path": "the-kes-13000-question-is-the-redmi-15c-kenyas-best-budget-phone-right-now",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/the-kes-13000-question-is-the-redmi-15c-kenyas-best-budget-phone-right-now/index.html",
+        "type": "file",
+        "md5": "f1144f119a4c23026f2cfa7eb873d598"
+    },
+    {
+        "path": "the-kes-25000-question-is-a-refurbished-laptop-actually-safer-than-a-cheap-new-one",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/the-kes-25000-question-is-a-refurbished-laptop-actually-safer-than-a-cheap-new-one/index.html",
+        "type": "file",
+        "md5": "df6a45993e19966a66cfd1fc3cb00648"
+    },
+    {
+        "path": "the-real-cost-of-cheap-data-how-safaricoms-b-live-changes-are-hurting-small-buyers",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/the-real-cost-of-cheap-data-how-safaricoms-b-live-changes-are-hurting-small-buyers/index.html",
+        "type": "file",
+        "md5": "941d75eadf587651d71c508d450766e1"
+    },
+    {
+        "path": "the-real-reason-half-of-kenya-is-still-offline-isnt-the-network",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/the-real-reason-half-of-kenya-is-still-offline-isnt-the-network/index.html",
+        "type": "file",
+        "md5": "ee619ec91366939ca6f47f29683e8cd9"
+    },
+    {
+        "path": "why-your-kes-100000-gaming-laptop-overheats-and-how-to-fix-it",
+        "type": "directory",
+        "md5": false
+    },
+    {
+        "path": "/why-your-kes-100000-gaming-laptop-overheats-and-how-to-fix-it/index.html",
+        "type": "file",
+        "md5": "dcb447c66252ba89689826e6fc96089e"
+    }
+]
