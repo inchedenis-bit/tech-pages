@@ -14,10 +14,8 @@
   var WORKER_URL = 'https://terrain-ai-proxy.inchedenis.workers.dev';
 
   var css = `
-  #wp-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);z-index:999999;opacity:0;pointer-events:none;transition:opacity .3s ease;display:flex;align-items:center;justify-content:center;padding:15px;box-sizing:border-box}
-  #wp-overlay.active{opacity:1;pointer-events:auto}
-  #wp-box{background:#f7f9fc;border-radius:16px;box-shadow:0 20px 60px rgba(10,30,80,.25);width:100%;max-width:1100px;height:90vh;display:flex;flex-direction:column;overflow:hidden;transform:translateY(20px) scale(.95);transition:transform .3s cubic-bezier(.4,0,.2,1);position:relative;border:1px solid #e2e8f0}
-  #wp-overlay.active #wp-box{transform:translateY(0) scale(1)}
+  #wp-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);z-index:999999;opacity:1;pointer-events:auto;transition:opacity .3s ease;display:flex;align-items:center;justify-content:center;padding:15px;box-sizing:border-box}
+  #wp-box{background:#f7f9fc;border-radius:16px;box-shadow:0 20px 60px rgba(10,30,80,.25);width:100%;max-width:1100px;height:90vh;display:flex;flex-direction:column;overflow:hidden;position:relative;border:1px solid #e2e8f0}
   #wp-close{position:absolute;top:15px;right:15px;z-index:100;background:#f1f5f9;border:none;width:32px;height:32px;border-radius:50%;font-size:20px;color:#64748b;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s ease}
   #wp-close:hover{background:#ef4444;color:#fff;transform:rotate(90deg)}
   #wp-auth-view{display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;width:100%;background:#0f172a;padding:40px 20px;box-sizing:border-box}
@@ -220,7 +218,7 @@
   `;
 
   var html = `
-  <div id="wp-overlay" style="display:flex;">
+  <div id="wp-overlay" class="active">
     <div id="wp-box">
       <button id="wp-close">&times;</button>
       <div id="wp-auth-view">
@@ -435,6 +433,9 @@
 
     function closePortal() {
       overlay.classList.remove('active');
+      if (window.parent !== window) {
+        window.parent.postMessage('close-portal', '*');
+      }
     }
     document.getElementById('wp-close')?.addEventListener('click', closePortal);
     overlay.addEventListener('click', function (e) { if (e.target === overlay) closePortal(); });
