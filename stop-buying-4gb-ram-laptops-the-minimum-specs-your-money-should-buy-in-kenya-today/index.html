@@ -1327,7 +1327,7 @@
     });
   };
 
-})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="#" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-13T23:56">November 13, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
+})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="#" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-14T15:44">November 14, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
     position: fixed;
     top: 0; left: 0;
     height: 3px;
@@ -3780,11 +3780,14 @@
                 </div>
               </div>
               
-              <div class="wp-section-title">Submit New Article</div>
+              <div class="wp-section-title" id="wp-submit-title">Submit New Article</div>
               <div class="wp-submit-box" id="wp-submit-area">
                 <input type="text" id="wp-art-title" placeholder="Article Title">
                 <textarea id="wp-art-content" placeholder="Paste article content here..."></textarea>
-                <button id="wp-submit-article" class="wp-btn" style="width:auto;padding:12px 24px;">Submit for Review</button>
+                <div style="display:flex; gap:10px;">
+                  <button id="wp-submit-article" class="wp-btn" style="width:auto;padding:12px 24px;">Submit for Review</button>
+                  <button id="wp-cancel-edit" class="wp-btn" style="display:none;width:auto;padding:12px 24px;background:#e2e8f0;color:#475569;">Cancel Edit</button>
+                </div>
                 <div id="wp-policy-warning" style="display:none; color:#ef4444; font-size:13px; font-weight:600; margin-top:10px;">⚠️ You must accept the Writer Policy to submit articles.</div>
                 <div id="wp-draft-indicator" class="wp-draft-indicator">✅ Draft saved</div>
               </div>
@@ -4315,6 +4318,7 @@
       document.getElementById('wp-ledger-modal').style.display = 'none';
     });
 
+    // 🟢 EDITED: HANDLES BOTH SUBMIT AND UPDATE
     document.getElementById('wp-submit-article')?.addEventListener('click', async function () {
       if (currentWriter.policy_agreed === 0) {
          showToast('warning', 'Policy Required', 'You must accept the Writer Policy before submitting.');
@@ -4329,12 +4333,23 @@
         return; 
       }
 
-      var assignmentId = document.getElementById('wp-submit-area').getAttribute('data-assignment-id');
+      var submitArea = document.getElementById('wp-submit-area');
+      var assignmentId = submitArea.getAttribute('data-assignment-id');
+      var articleId = submitArea.getAttribute('data-article-id');
       
       var bodyData = { writerId: currentWriter.id, title: title, content: content };
-      if (assignmentId) bodyData.assignmentId = parseInt(assignmentId);
+      var endpoint = '/writer/submit';
+      var isEdit = false;
 
-      var res = await fetch(WORKER_URL + '/writer/submit', {
+      if (articleId) {
+        bodyData.articleId = parseInt(articleId);
+        endpoint = '/writer/update-article';
+        isEdit = true;
+      } else if (assignmentId) {
+        bodyData.assignmentId = parseInt(assignmentId);
+      }
+
+      var res = await fetch(WORKER_URL + endpoint, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(bodyData)
@@ -4342,10 +4357,18 @@
       var data = await res.json();
       
       if (data.success) {
-        showToast('success', 'Article Submitted', 'Your article is now pending review.');
+        showToast('success', isEdit ? 'Article Updated' : 'Article Submitted', isEdit ? 'Your edits are pending review.' : 'Your article is now pending review.');
+        
         document.getElementById('wp-art-title').value = '';
         document.getElementById('wp-art-content').value = '';
-        document.getElementById('wp-submit-area').removeAttribute('data-assignment-id');
+        submitArea.removeAttribute('data-assignment-id');
+        submitArea.removeAttribute('data-article-id');
+        
+        // Reset UI to normal submit state
+        document.getElementById('wp-submit-title').textContent = 'Submit New Article';
+        document.getElementById('wp-submit-article').textContent = 'Submit for Review';
+        document.getElementById('wp-cancel-edit').style.display = 'none';
+
         var dashRes = await fetch(WORKER_URL + '/writer/dashboard?writerId=' + currentWriter.id);
         var dashData = await dashRes.json();
         if (dashData.success) {
@@ -4353,10 +4376,10 @@
           allAssignments = dashData.assignments;
           document.getElementById('wp-stat-total').textContent = dashData.articles.length;
           document.getElementById('wp-stat-pending').textContent = dashData.pendingCount;
-          showDashboard(); // Refresh full state
+          showDashboard(); 
         }
       } else {
-        showToast('warning', 'Submission Error', data.error || 'Failed to submit article.');
+        showToast('warning', 'Error', data.error || 'Failed to submit article.');
       }
     });
 
@@ -4795,8 +4818,15 @@
       }
       contentHTML += escapeHtml(article.content);
 
+      // 🟢 ADDED "EDIT" BUTTON IF ARTICLE IS NOT APPROVED
+      var editBtnHTML = '';
+      if (article.status !== 'approved') {
+        editBtnHTML = `<button id="wp-modal-edit-btn" style="background:#f59e0b;color:#fff;border:none;padding:10px 20px;border-radius:6px;font-weight:700;font-size:14px;cursor:pointer;margin-bottom:20px;display:block;width:100%;">✏️ Edit this Article</button>`;
+      }
+
       contentHTML += `
         <div class="thread-container">
+          ${editBtnHTML}
           <h4 style="margin: 0 0 10px 0; color: #1e293b; font-size: 16px;">💬 Feedback Thread</h4>
           <div id="thread-messages" style="margin-bottom: 15px;">
             <p style="color: #94a3b8; font-size: 13px; font-style: italic;">Loading replies...</p>
@@ -4810,6 +4840,14 @@
 
       document.getElementById('wp-modal-body').innerHTML = contentHTML;
       document.getElementById('wp-article-modal').style.display = 'flex';
+
+      // Wire up the Edit button
+      var editBtn = document.getElementById('wp-modal-edit-btn');
+      if (editBtn) {
+        editBtn.addEventListener('click', function() {
+          editArticle(article);
+        });
+      }
 
       try {
         var rRes = await fetch(WORKER_URL + '/writer/replies?articleId=' + article.id);
@@ -4872,6 +4910,42 @@
         }
       });
     }
+
+    // 🟢 NEW FUNCTION: PULLS DATA INTO THE SUBMIT BOX FOR EDITING
+    function editArticle(article) {
+      document.getElementById('wp-article-modal').style.display = 'none';
+      
+      var submitArea = document.getElementById('wp-submit-area');
+      submitArea.setAttribute('data-article-id', article.id);
+      submitArea.removeAttribute('data-assignment-id');
+      
+      document.getElementById('wp-art-title').value = article.title;
+      document.getElementById('wp-art-content').value = article.content;
+      
+      document.getElementById('wp-submit-title').textContent = 'Edit Article';
+      document.getElementById('wp-submit-article').textContent = 'Update Article';
+      document.getElementById('wp-cancel-edit').style.display = 'block';
+      
+      switchToTab('dashboard');
+      document.getElementById('wp-art-title').focus();
+      showToast('success', 'Edit Mode', 'Make your changes and hit Update Article.');
+    }
+
+    // 🟢 NEW EVENT LISTENER: CANCEL EDIT
+    document.getElementById('wp-cancel-edit')?.addEventListener('click', function() {
+      var submitArea = document.getElementById('wp-submit-area');
+      submitArea.removeAttribute('data-article-id');
+      submitArea.removeAttribute('data-assignment-id');
+      
+      document.getElementById('wp-art-title').value = '';
+      document.getElementById('wp-art-content').value = '';
+      
+      document.getElementById('wp-submit-title').textContent = 'Submit New Article';
+      document.getElementById('wp-submit-article').textContent = 'Submit for Review';
+      this.style.display = 'none';
+      
+      showToast('success', 'Edit Cancelled', 'You can now write a new article.');
+    });
 
     function escapeHtml(str) {
       if (!str) return '';
