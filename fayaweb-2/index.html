@@ -512,7 +512,22 @@
     font-family: inherit; width: 100%;
   }
   .article-title-btn:hover { color: #3973D4; }
-  .toggle-arrow { font-size: 10px; color: #64748b; transition: transform 0.2s; display: inline-block; }
+
+  /* ✅ FIX: stops the site's global button styles (focus/active) from painting a black layer */
+  #admin-overlay .article-title-btn,
+  #admin-overlay .article-title-btn:hover,
+  #admin-overlay .article-title-btn:focus,
+  #admin-overlay .article-title-btn:focus-visible,
+  #admin-overlay .article-title-btn:active {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    outline: none !important;
+    border: none !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .toggle-arrow { font-size: 10px; color: #64748b; transition: transform 0.2s; display: inline-block; font-family: Arial, sans-serif; }
   .toggle-arrow.open { transform: rotate(90deg); color: #3973D4; }
   
   .meta-row { display: none; background: #0f172a !important; }
@@ -1002,7 +1017,7 @@
         tr.innerHTML = `
           <td>
             <button class="article-title-btn" data-action="toggle" data-idx="${index}">
-              <span class="toggle-arrow" id="arrow-${index}">▶</span>
+              <span class="toggle-arrow" id="arrow-${index}">&#9654;&#xFE0E;</span>
               ${a.title}
             </button>
           </td>
@@ -1059,12 +1074,14 @@
       });
 
       // Attach event listeners safely
+      // ✅ FIX: use currentTarget (the button itself), not target (which may be the child arrow span)
       tbody.querySelectorAll('button[data-action]').forEach(btn => {
         btn.addEventListener('click', (e) => {
-          const action = e.target.getAttribute('data-action');
+          const el = e.currentTarget;
+          const action = el.getAttribute('data-action');
           
           if (action === 'toggle') {
-            const idx = parseInt(e.target.closest('button').getAttribute('data-idx'), 10);
+            const idx = parseInt(el.getAttribute('data-idx'), 10);
             const meta = document.getElementById(`meta-${idx}`);
             const arrow = document.getElementById(`arrow-${idx}`);
             if (meta.style.display === 'table-row') {
@@ -1076,16 +1093,17 @@
               meta.classList.add('open');
               arrow.classList.add('open');
             }
+            el.blur();
           } else if (action === 'read') {
-            const idx = parseInt(e.target.getAttribute('data-idx'), 10);
+            const idx = parseInt(el.getAttribute('data-idx'), 10);
             const art = currentWriterArticles[idx];
             openFullArticle(art.title, art.content, art);
           } else if (action === 'approve') {
-            approveWriterArticle(e.target.getAttribute('data-id'));
+            approveWriterArticle(el.getAttribute('data-id'));
           } else if (action === 'reject') {
-            rejectWriterArticle(e.target.getAttribute('data-id'));
+            rejectWriterArticle(el.getAttribute('data-id'));
           } else if (action === 'thread') {
-            const idx = parseInt(e.target.getAttribute('data-idx'), 10);
+            const idx = parseInt(el.getAttribute('data-idx'), 10);
             const art = currentWriterArticles[idx];
             openThread(art.id, art.title, art.editor_notes || '');
           }
@@ -1588,14 +1606,14 @@
         }
       } else {
         toast('error', 'Error', 'Could not send reply.');
-        btn.textContent = originalText;
-        btn.disabled = false;
       }
     } catch (e) {
       toast('error', 'Error', 'Network error.');
-      btn.textContent = originalText;
-      btn.disabled = false;
     }
+
+    // Always restore the Send button (previously it stayed stuck on "Sending..." after success)
+    btn.textContent = originalText;
+    btn.disabled = false;
   };
 
   window.closeThread = function() {
@@ -1673,7 +1691,7 @@
     }
   };
 
-})();</script></head><body class="page-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="#" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-16T14:36">November 16, 2026</time></div></div><main class="main page"><div class="banner banner--before-content"><style>/* 1. The entire body starts slightly transparent */
+})();</script></head><body class="page-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="#" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-16T19:14">November 16, 2026</time></div></div><main class="main page"><div class="banner banner--before-content"><style>/* 1. The entire body starts slightly transparent */
   body {
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
