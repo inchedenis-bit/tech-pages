@@ -7,12 +7,12 @@
     {
         "path": "/123/index.html",
         "type": "file",
-        "md5": "a7c7e137563e29d20ca703ab5dbc5dcb"
+        "md5": "12ca002ed65775b06ae504c05331c9d8"
     },
     {
         "path": "404.html",
         "type": "file",
-        "md5": "13b5ca9a7316ed39de028034348201ee"
+        "md5": "80d30f853a5ef37c51e09c4338739e7e"
     },
     {
         "path": "admin-access",
@@ -22,7 +22,7 @@
     {
         "path": "/admin-access/index.html",
         "type": "file",
-        "md5": "bbad6ce244e0837d3ca9154acc5f1412"
+        "md5": "c93db0df30171c8dc7330dd985d17e7c"
     },
     {
         "path": "assets",
@@ -107,7 +107,7 @@
     {
         "path": "/authors/dennis-n/index.html",
         "type": "file",
-        "md5": "25462acbbefc355fec0c76352459e72e"
+        "md5": "4d36881bd71d07f995a25684101c3d47"
     },
     {
         "path": "authors/dennis-n/page",
@@ -122,7 +122,7 @@
     {
         "path": "/authors/dennis-n/page/2/index.html",
         "type": "file",
-        "md5": "6a2b0933710ce22ccbc9e8b9a3710c22"
+        "md5": "c8a7c71a5b63a66817092b3ff402904f"
     },
     {
         "path": "authors/dennis-n/page/3",
@@ -132,7 +132,7 @@
     {
         "path": "/authors/dennis-n/page/3/index.html",
         "type": "file",
-        "md5": "e925b69da0f989ddaba4022d8b452393"
+        "md5": "ea8baab2390dec3fefeb2b90eb28f959"
     },
     {
         "path": "authors/fred-hill",
@@ -142,7 +142,7 @@
     {
         "path": "/authors/fred-hill/index.html",
         "type": "file",
-        "md5": "15ac6088f099e7b8dbe849884416e7b4"
+        "md5": "7b76ffe1684b9d1d147ef9887f88abf3"
     },
     {
         "path": "authors/lina-maya",
@@ -152,7 +152,7 @@
     {
         "path": "/authors/lina-maya/index.html",
         "type": "file",
-        "md5": "04d6e32cf97af889b4051b2610376312"
+        "md5": "96f6b7f880770d10e29f99354042215d"
     },
     {
         "path": "best-laptops-for-kenyan-university-students-under-kes-50000",
@@ -162,7 +162,7 @@
     {
         "path": "/best-laptops-for-kenyan-university-students-under-kes-50000/index.html",
         "type": "file",
-        "md5": "1a19d7bd8bbba2ee716d7d7f15197c69"
+        "md5": "72567583900294c7cfcdfb0fbfec5b99"
     },
     {
         "path": "best-laptops-for-kenyan-university-students-under-kes-50000-updated-2026",
@@ -172,7 +172,7 @@
     {
         "path": "/best-laptops-for-kenyan-university-students-under-kes-50000-updated-2026/index.html",
         "type": "file",
-        "md5": "81ca86b0f7c91483ca0a4e9afa93b553"
+        "md5": "00b7444e2a05af322ad1f2e73fae4510"
     },
     {
         "path": "contact",
@@ -182,7 +182,7 @@
     {
         "path": "/contact/index.html",
         "type": "file",
-        "md5": "9bb075dc202806e9e587e26d91a1e0e9"
+        "md5": "af215004ecf5a5a6813f068247e2a789"
     },
     {
         "path": "do-you-really-need-an-i7-why-an-8th-gen-i5-is-the-smartest-buy-in-kenya-right-now",
@@ -192,7 +192,7 @@
     {
         "path": "/do-you-really-need-an-i7-why-an-8th-gen-i5-is-the-smartest-buy-in-kenya-right-now/index.html",
         "type": "file",
-        "md5": "a1ea6f23b30299492d108f0e7fa8daca"
+        "md5": "17005951bd8bd4bd7509772abd984fcf"
     },
     {
         "path": "fayaweb-2",
@@ -202,7 +202,7 @@
     {
         "path": "/fayaweb-2/index.html",
         "type": "file",
-        "md5": "2e82fb928613b855ebe0cf79b98d9679"
+        "md5": "354de1f25cb4eff213cf1e21be66c2e4"
     },
     {
         "path": "feed.json",
@@ -222,7 +222,7 @@
     {
         "path": "/honor-play-10-review-what-do-you-actually-get-for-kes-11599-and-what-do-you-sacrifice/index.html",
         "type": "file",
-        "md5": "dcf03d89ddb870e102168a9f4bef78fa"
+        "md5": "592bd3f948aa56f0fdf038fdd2612018"
     },
     {
         "path": "how-to-check-a-refurbished-laptop-before-paying-without-getting-scammed-in-nairobi",
@@ -232,7 +232,7 @@
     {
         "path": "/how-to-check-a-refurbished-laptop-before-paying-without-getting-scammed-in-nairobi/index.html",
         "type": "file",
-        "md5": "f1f220041e82b2ebcf4282d5e6d84f15"
+        "md5": "d8b980825b7daff95f0b1094ad6d4683"
     },
     {
         "path": "hp-vs-lenovo-which-refurbished-laptop-brand-actually-deserves-your-kes-30000",
@@ -242,7 +242,7 @@
     {
         "path": "/hp-vs-lenovo-which-refurbished-laptop-brand-actually-deserves-your-kes-30000/index.html",
         "type": "file",
-        "md5": "303212074abfd4494f0b2719737561cc"
+        "md5": "155dd66761f26bce924c6d1e55602286"
     },
     {
         "path": "i-tested-the-cheapest-phones-under-kes-10000-here-is-the-only-one-i-would-buy",
@@ -252,7 +252,7 @@
     {
         "path": "/i-tested-the-cheapest-phones-under-kes-10000-here-is-the-only-one-i-would-buy/index.html",
         "type": "file",
-        "md5": "9c307aebb30235a0e01a408b6aad5e79"
+        "md5": "265cabfaf7dbe35a1994d79098b1d7df"
     },
     {
         "path": "i-used-a-kes-35000-laptop-for-a-month-here-is-what-broke-and-what-survived",
@@ -262,12 +262,12 @@
     {
         "path": "/i-used-a-kes-35000-laptop-for-a-month-here-is-what-broke-and-what-survived/index.html",
         "type": "file",
-        "md5": "28a4482d4feb1d5378e240aac4ce2993"
+        "md5": "b3cb0a18bd9793c9e1bece96992ef300"
     },
     {
         "path": "index.html",
         "type": "file",
-        "md5": "e99550e62dee9f37c70daf8a5c63c564"
+        "md5": "8e1e4a1ffed26ffb103ff542f655ae87"
     },
     {
         "path": "infinix-hot-60i-review-the-nfc-budget-phone-that-actually-makes-sense",
@@ -277,7 +277,7 @@
     {
         "path": "/infinix-hot-60i-review-the-nfc-budget-phone-that-actually-makes-sense/index.html",
         "type": "file",
-        "md5": "20c9a2b13cae0e93faf8b013ee5d1b9f"
+        "md5": "0e93e34854b5b89654a7dce7863b1407"
     },
     {
         "path": "is-the-samsung-galaxy-a06-still-worth-buying-in-2026-an-honest-buyer-take",
@@ -287,7 +287,7 @@
     {
         "path": "/is-the-samsung-galaxy-a06-still-worth-buying-in-2026-an-honest-buyer-take/index.html",
         "type": "file",
-        "md5": "e8ba9a425e6a1d186446f99bf91a941f"
+        "md5": "d08f7bbfa81ecc96416f5ab44e39d62a"
     },
     {
         "path": "kenyas-cyber-threats-surge-29-as-mobile-money-hits-54-million",
@@ -297,7 +297,7 @@
     {
         "path": "/kenyas-cyber-threats-surge-29-as-mobile-money-hits-54-million/index.html",
         "type": "file",
-        "md5": "6a91f6ee7c241a079a464b16cc5ef63e"
+        "md5": "f26652647984aac1e37cd99a9994d53d"
     },
     {
         "path": "local-ai-just-got-real-for-kenyan-businesses-heres-why-it-matters",
@@ -307,7 +307,7 @@
     {
         "path": "/local-ai-just-got-real-for-kenyan-businesses-heres-why-it-matters/index.html",
         "type": "file",
-        "md5": "2cb3c877c0ffae79265cdfc1260525b0"
+        "md5": "e1da15939a287051f14fe5fce4d388b3"
     },
     {
         "path": "media",
@@ -1822,7 +1822,7 @@
     {
         "path": "/page/2/index.html",
         "type": "file",
-        "md5": "5a68a7b01fd6f07ead9f9323f7784515"
+        "md5": "99279bfb1cffe87cc539a9ba2cf1a302"
     },
     {
         "path": "robots.txt",
@@ -1837,7 +1837,7 @@
     {
         "path": "/safaricom-vs-airtel-the-data-bundle-truth-nobody-tells-you-2026-price-breakdown/index.html",
         "type": "file",
-        "md5": "f9309db71aa3d099dcf7d34296cbf740"
+        "md5": "ea76cb17b8401a5a4a388021324de1ad"
     },
     {
         "path": "samsung-a07-vs-infinix-hot-60i-which-sub-kes-15000-phone-should-you-buy",
@@ -1847,7 +1847,7 @@
     {
         "path": "/samsung-a07-vs-infinix-hot-60i-which-sub-kes-15000-phone-should-you-buy/index.html",
         "type": "file",
-        "md5": "afb7c79123926c66eb8fb6820ab1700f"
+        "md5": "71d518bf199afb85bc9aaffffda568ce"
     },
     {
         "path": "sitemap.xml",
@@ -1867,7 +1867,7 @@
     {
         "path": "/ssd-vs-hdd-the-kes-5000-upgrade-that-will-make-your-old-laptop-feel-brand-new/index.html",
         "type": "file",
-        "md5": "8eac89224c471b72f4335895b05677ce"
+        "md5": "5180a1eba536fdc377fee0cf9838da08"
     },
     {
         "path": "stop-buying-4gb-ram-laptops-the-minimum-specs-your-money-should-buy-in-kenya-today",
@@ -1877,7 +1877,7 @@
     {
         "path": "/stop-buying-4gb-ram-laptops-the-minimum-specs-your-money-should-buy-in-kenya-today/index.html",
         "type": "file",
-        "md5": "501edd5d1e1eab89c1f89e374fb43ff3"
+        "md5": "50c246189ea3512c5b0b4da6ec112277"
     },
     {
         "path": "stop-wasting-money-on-cheap-phones-5-things-to-check-before-you-buy-under-kes-15000",
@@ -1887,7 +1887,7 @@
     {
         "path": "/stop-wasting-money-on-cheap-phones-5-things-to-check-before-you-buy-under-kes-15000/index.html",
         "type": "file",
-        "md5": "8702ab6824ca56cf6b7dcd50637e8a51"
+        "md5": "aee2f1ebfb033c1e4037f1c0aeb41e0a"
     },
     {
         "path": "tags",
@@ -1902,7 +1902,7 @@
     {
         "path": "/tags/buying-guides/index.html",
         "type": "file",
-        "md5": "b76a863247f795d2cb2cc68d527a57ae"
+        "md5": "767bc40db5fb1075d1c262c4ac41d186"
     },
     {
         "path": "tags/comparisons",
@@ -1912,12 +1912,12 @@
     {
         "path": "/tags/comparisons/index.html",
         "type": "file",
-        "md5": "99a091dbd879d2c161bc4753c46f3085"
+        "md5": "13b71e7dfa0af67bb16d1067898040a6"
     },
     {
         "path": "/tags/index.html",
         "type": "file",
-        "md5": "1001cab4fadf219e59090c7aebd28bcd"
+        "md5": "79f928ae9bf98a346561e905c8e71615"
     },
     {
         "path": "tags/news",
@@ -1927,7 +1927,7 @@
     {
         "path": "/tags/news/index.html",
         "type": "file",
-        "md5": "283ec3dc70c12b7f4bf09168908d09b2"
+        "md5": "bc4ff45025679964d69e09ede2d26727"
     },
     {
         "path": "tags/opinion",
@@ -1937,7 +1937,7 @@
     {
         "path": "/tags/opinion/index.html",
         "type": "file",
-        "md5": "9d0d87fbbf93fcba725eec1df6c9e3a1"
+        "md5": "2eea50181f2a4d61783fb5377e6084de"
     },
     {
         "path": "tags/phones",
@@ -1947,7 +1947,7 @@
     {
         "path": "/tags/phones/index.html",
         "type": "file",
-        "md5": "c38e643fc74c1aa58fc3c2d67f3ae11d"
+        "md5": "e968b9792b9545e5381c1531c27c8f1d"
     },
     {
         "path": "the-binance-hack-just-hit-close-to-home-heres-what-it-means-for-kenyan-crypto-traders",
@@ -1957,7 +1957,7 @@
     {
         "path": "/the-binance-hack-just-hit-close-to-home-heres-what-it-means-for-kenyan-crypto-traders/index.html",
         "type": "file",
-        "md5": "49b9099166dfac9c9e673e33f606fd6b"
+        "md5": "ca74ca68f6f618d28ebd0bf4fba14897"
     },
     {
         "path": "the-celeron-trap-why-that-brand-new-kes-28000-laptop-will-ruin-your-campus-life",
@@ -1967,7 +1967,7 @@
     {
         "path": "/the-celeron-trap-why-that-brand-new-kes-28000-laptop-will-ruin-your-campus-life/index.html",
         "type": "file",
-        "md5": "a2ea255f4ee481e6004837dc34f65028"
+        "md5": "b2d712dd76c72ed33e6ec08784149fda"
     },
     {
         "path": "the-kes-13000-question-is-the-redmi-15c-kenyas-best-budget-phone-right-now",
@@ -1977,7 +1977,7 @@
     {
         "path": "/the-kes-13000-question-is-the-redmi-15c-kenyas-best-budget-phone-right-now/index.html",
         "type": "file",
-        "md5": "454bebfc5b777331b93614f7bd292b5a"
+        "md5": "e8ec6e0973079f8ed1fc28a1379112c9"
     },
     {
         "path": "the-kes-25000-question-is-a-refurbished-laptop-actually-safer-than-a-cheap-new-one",
@@ -1987,7 +1987,7 @@
     {
         "path": "/the-kes-25000-question-is-a-refurbished-laptop-actually-safer-than-a-cheap-new-one/index.html",
         "type": "file",
-        "md5": "24cf67a04fe10247f78e91843b6cdb05"
+        "md5": "00100d98c463dcdd522562bc54186786"
     },
     {
         "path": "the-real-cost-of-cheap-data-how-safaricoms-b-live-changes-are-hurting-small-buyers",
@@ -1997,7 +1997,7 @@
     {
         "path": "/the-real-cost-of-cheap-data-how-safaricoms-b-live-changes-are-hurting-small-buyers/index.html",
         "type": "file",
-        "md5": "b1a45574e4c4f2db53838ab09f9e9e1e"
+        "md5": "c463e3036c3dcd1662f2ae7d3da397bc"
     },
     {
         "path": "the-real-reason-half-of-kenya-is-still-offline-isnt-the-network",
@@ -2007,7 +2007,7 @@
     {
         "path": "/the-real-reason-half-of-kenya-is-still-offline-isnt-the-network/index.html",
         "type": "file",
-        "md5": "1899633aa8637dfd92f1624cfd2741b2"
+        "md5": "920d43d012f4f2be875846c754fdf8a2"
     },
     {
         "path": "why-your-kes-100000-gaming-laptop-overheats-and-how-to-fix-it",
@@ -2017,6 +2017,6 @@
     {
         "path": "/why-your-kes-100000-gaming-laptop-overheats-and-how-to-fix-it/index.html",
         "type": "file",
-        "md5": "4e066ac1f77f1946cb470e67c3d4ce5e"
+        "md5": "d055fccce5880a2de91621617b1d5220"
     }
 ]
