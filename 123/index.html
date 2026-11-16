@@ -1673,7 +1673,7 @@
     }
   };
 
-})();</script></head><body class="page-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="#" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-16T13:54">November 16, 2026</time></div></div><main class="main page"><div class="banner banner--before-content"><style>/* 1. The entire body starts slightly transparent */
+})();</script></head><body class="page-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="#" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-16T14:36">November 16, 2026</time></div></div><main class="main page"><div class="banner banner--before-content"><style>/* 1. The entire body starts slightly transparent */
   body {
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
@@ -3533,10 +3533,12 @@
                   <div id="wp-score-ai" style="font-size: 13px;">AI Detection: ...</div>
                 </div>
 
-                <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                <div style="display:flex; gap:10px; flex-wrap:wrap; align-items:center;">
                   <button id="wp-check-scores" class="wp-btn" style="width:auto;padding:12px 24px;background:#f59e0b;">🔍 Check Scores</button>
                   <button id="wp-submit-article" class="wp-btn" style="width:auto;padding:12px 24px;">Submit for Review</button>
                   <button id="wp-cancel-edit" class="wp-btn" style="display:none;width:auto;padding:12px 24px;background:#e2e8f0;color:#475569;">Cancel Edit</button>
+                  <!-- 🟢 Checks remaining counter -->
+                  <div id="wp-checks-counter" style="display:none; font-size: 12px;"></div>
                 </div>
                 <div id="wp-policy-warning" style="display:none; color:#ef4444; font-size:13px; font-weight:600; margin-top:10px;">⚠️ You must accept the Writer Policy to submit articles.</div>
                 <div id="wp-draft-indicator" class="wp-draft-indicator">✅ Draft saved</div>
@@ -3712,6 +3714,8 @@
     var lastUpdateTime = 0;
     var indicatorTickInterval = null;
     var isLivePaused = false;
+    var checksRemaining = null;
+    var checksLimit = 10;
 
     function showToast(type, title, message) {
       var container = document.getElementById('wp-toast-container');
@@ -4033,12 +4037,41 @@
       if (txt && !isLivePaused) txt.textContent = label;
     }
 
+    function renderChecksCounter() {
+      var el = document.getElementById('wp-checks-counter');
+      if (!el) return;
+
+      if (checksRemaining === null) {
+        el.textContent = '';
+        el.style.display = 'none';
+        return;
+      }
+
+      el.style.display = 'inline-block';
+      var isLow = checksRemaining <= 2;
+      var isEmpty = checksRemaining === 0;
+      var color = isEmpty ? '#ef4444' : (isLow ? '#f59e0b' : '#64748b');
+      var icon = isEmpty ? '🚫' : '🔍';
+      var label = isEmpty
+        ? 'No checks remaining (resets midnight)'
+        : `${checksRemaining}/${checksLimit} AI checks left today`;
+
+      el.innerHTML = `<span style="color:${color};font-weight:600;">${icon} ${label}</span>`;
+    }
+
     async function pollLiveUpdates() {
       if (!currentWriter || isLivePaused) return;
       try {
         var res = await fetch(WORKER_URL + '/writer/check-updates?writerId=' + currentWriter.id);
         var data = await res.json();
         if (!data.success) { updateLiveIndicator('error', 'Update check failed'); return; }
+
+        // 🟢 Read check count from poll response
+        if (data.breakdown) {
+          checksRemaining = data.breakdown.checksRemaining;
+          checksLimit = data.breakdown.checksLimit || 10;
+          renderChecksCounter();
+        }
 
         lastUpdateTime = data.serverTime || Date.now();
         tickRelativeTime();
@@ -4131,6 +4164,8 @@
       document.getElementById('wp-article-modal').style.display = 'none';
       document.getElementById('wp-ledger-modal').style.display = 'none';
       policyModal.style.display = 'none';
+      checksRemaining = null;
+      renderChecksCounter();
     }
 
     document.getElementById('wp-logout')?.addEventListener('click', performLogout);
@@ -4227,7 +4262,7 @@
         var res = await fetch(WORKER_URL + '/writer/check-scores', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ title: title, content: content })
+          body: JSON.stringify({ title: title, content: content, writerId: currentWriter.id })
         });
         var data = await res.json();
         
@@ -4240,8 +4275,22 @@
           
           document.getElementById('wp-score-seo').innerHTML = `SEO Score: <strong style="color:${seoColor}">${data.seoScore}/100</strong>`;
           document.getElementById('wp-score-ai').innerHTML = `AI Detection: <strong style="color:${aiColor}">${data.aiScore}%</strong> <span style="font-size:11px;color:#64748b;">(${data.aiFeedback})</span>`;
+
+          // 🟢 Update local counter from response
+          if (data.checksRemaining !== undefined) {
+            checksRemaining = data.checksRemaining;
+            checksLimit = data.checksLimit || 10;
+            renderChecksCounter();
+          }
+
           showToast('success', 'Analysis Complete', 'Scores updated below.');
         } else {
+          // 🟢 Handle rate limit hits
+          if (data.checksRemaining !== undefined) {
+            checksRemaining = data.checksRemaining;
+            checksLimit = data.checksLimit || 10;
+            renderChecksCounter();
+          }
           showToast('warning', 'Analysis Failed', data.error || 'Could not check scores.');
         }
       } catch (e) {
