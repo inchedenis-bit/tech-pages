@@ -1284,7 +1284,7 @@
       document.getElementById('assign-title').textContent = 'Assign Task (From Pitch)';
       document.getElementById('assign-title-input').value = pendingPitchData.title;
       document.getElementById('assign-desc-input').value = pendingPitchData.description;
-      pendingPitchData = null; // Reset for next time
+      // We don't reset pendingPitchData here anymore. We reset it on close.
     } else {
       document.getElementById('assign-title').textContent = 'Assign Task to ' + (writerName || 'Writer');
       document.getElementById('assign-title-input').value = '';
@@ -1300,7 +1300,7 @@
   window.closeAssignModal = function() {
     document.getElementById('assign-modal').style.display = 'none';
     assignWriterId = null;
-    pendingPitchData = null; // Just in case it was cancelled
+    pendingPitchData = null; // Reset after closing
   };
 
   window.submitAssignment = async function() {
@@ -1325,7 +1325,8 @@
           writerId: assignWriterId,
           title,
           description,
-          dueDate: dueDate || null
+          dueDate: dueDate || null,
+          pitchId: pendingPitchData ? pendingPitchData.pitchId : null // 🟢 Pass pitchId if converting
         })
       });
       const data = await res.json();
@@ -1416,23 +1417,12 @@
 
     // 2. Save it in memory
     pendingPitchData = {
+      pitchId: pitch.id, // 🟢 Added this so we can update it later
       title: pitch.title,
       description: pitch.description
     };
 
-    // 3. Mark as approved in the background so it disappears from "pending"
-    fetch(`${WORKER_URL}/admin/convert-pitch`, {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ 
-        key: window.ADMIN_KEY, 
-        pitchId: pitchId, 
-        writerId: writerId, 
-        title: pitch.title, 
-        description: pitch.description 
-      })
-    });
-
-    // 4. Open the Assign Modal (it will see pendingPitchData and auto-fill)
+    // 3. Open the Assign Modal
     openAssignModal(writerId, pitch.writer_name);
   };
 
@@ -1683,7 +1673,7 @@
     }
   };
 
-})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="#" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-16T13:13">November 16, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
+})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="#" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-16T13:54">November 16, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
     position: fixed;
     top: 0; left: 0;
     height: 3px;
