@@ -1691,7 +1691,7 @@
     }
   };
 
-})();</script></head><body class="page-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="#" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-17T15:37">November 17, 2026</time></div></div><main class="main page"><div class="banner banner--before-content"><style>/* 1. The entire body starts slightly transparent */
+})();</script></head><body class="page-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="#" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-18T01:56">November 18, 2026</time></div></div><main class="main page"><div class="banner banner--before-content"><style>/* 1. The entire body starts slightly transparent */
   body {
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
@@ -2616,118 +2616,10 @@
   taInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendAI(); }
   });
-})();</script><style>#back-to-top {
-    position: fixed;
-    bottom: 24px;
-    left: 24px;
-    z-index: 99998;
-    width: 46px;
-    height: 46px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    cursor: pointer;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(14px) saturate(180%);
-    -webkit-backdrop-filter: blur(14px) saturate(180%);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transform: translateY(12px);
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease, background 0.2s ease;
-  }
-  
-  #back-to-top.visible {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-  
-  #back-to-top:hover {
-    background: linear-gradient(135deg, #1e6fff 0%, #0a4fd6 100%);
-    border-color: transparent;
-    transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(30, 111, 255, 0.5);
-  }
-
-  /* The Arrow Container */
-  #back-to-top .arrow {
-    position: relative;
-    width: 16px; 
-    height: 20px;
-    display: flex;
-    justify-content: center;
-    transition: transform 0.2s ease;
-  }
-
-  /* The Arrow Head (the ^) */
-  #back-to-top .arrow::before {
-    content: '';
-    position: absolute;
-    top: 2px;
-    width: 12px;
-    height: 12px;
-    border-top: 2.5px solid #ffffff;
-    border-left: 2.5px solid #ffffff;
-    transform: rotate(45deg);
-    border-radius: 1px;
-  }
-
-  /* The Arrow Stem (the |) */
-  #back-to-top .arrow::after {
-    content: '';
-    position: absolute;
-    top: 4px;
-    width: 2.5px;
-    height: 14px;
-    background-color: #ffffff;
-    border-radius: 2px;
-  }
-
-  #back-to-top:hover .arrow {
-    transform: translateY(-2px); /* Slight bounce on hover */
-  }
-
-  @media (max-width: 480px) {
-    #back-to-top {
-      bottom: 88px;
-      left: 16px;
-      width: 42px;
-      height: 42px;
-    }
-    #back-to-top .arrow {
-      transform: scale(0.85);
-    }
-    #back-to-top:hover .arrow {
-      transform: scale(0.85) translateY(-2px);
-    }
-  }</style><button id="back-to-top" aria-label="Back to top"><div class="arrow"></div></button><script>(function () {
-  const btn = document.getElementById('back-to-top');
-  if (!btn) return;
-
-  const SHOW_AFTER = 400; 
-
-  function onScroll() {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
-    if (scrollTop > SHOW_AFTER) {
-      btn.classList.add('visible');
-    } else {
-      btn.classList.remove('visible');
-    }
-  }
-
-  btn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll(); 
-})();</script><style>/* The Toggle Button */
+})();</script><style>/* ─── 1. TOGGLE BUTTON ─────────────────────────────── */
   #dark-mode-toggle {
     position: fixed;
-    top: 80px; /* Adjust if it overlaps your header */
+    top: 80px;
     right: 24px;
     z-index: 99999;
     width: 44px;
@@ -2744,34 +2636,28 @@
     justify-content: center !important;
     padding: 0 !important;
     margin: 0 !important;
-    transition: all 0.3s ease;
+    transition: transform 0.25s ease, box-shadow 0.3s ease,
+                background 0.3s ease, border-color 0.3s ease;
   }
-  
   #dark-mode-toggle:hover {
     transform: scale(1.08);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
   }
 
-  /* 🎯 LOCK THE SHAPES SO THE THEME CANNOT DISTORT THEM */
   #dark-mode-toggle .css-icon {
     display: block !important;
     flex-shrink: 0 !important;
     box-sizing: border-box !important;
     transition: all 0.3s ease;
   }
-
-  /* 🎯 THE CSS MOON */
   #dark-mode-toggle .css-moon {
     width: 18px !important;
     height: 18px !important;
     border-radius: 50% !important;
     border: none !important;
-    /* Draws the crescent perfectly */
-    box-shadow: inset -5px -4px 0 0 #1e293b !important; 
+    box-shadow: inset -5px -4px 0 0 #1e293b !important;
     transform: rotate(-15deg) !important;
   }
-
-  /* 🎯 THE CSS SUN */
   #dark-mode-toggle .css-sun {
     display: none !important;
     width: 12px !important;
@@ -2779,46 +2665,177 @@
     border-radius: 50% !important;
     border: none !important;
     background: #f8fafc !important;
-    /* Draws the rays */
-    box-shadow: 
-      0 -14px 0 -4px #f8fafc, 
-      0 14px 0 -4px #f8fafc,  
-      14px 0 0 -4px #f8fafc,  
-      -14px 0 0 -4px #f8fafc, 
-      10px 10px 0 -4px #f8fafc, 
-      -10px -10px 0 -4px #f8fafc, 
-      10px -10px 0 -4px #f8fafc, 
-      -10px 10px 0 -4px #f8fafc !important; 
+    box-shadow:
+      0 -14px 0 -4px #f8fafc, 0 14px 0 -4px #f8fafc,
+      14px 0 0 -4px #f8fafc, -14px 0 0 -4px #f8fafc,
+      10px 10px 0 -4px #f8fafc, -10px -10px 0 -4px #f8fafc,
+      10px -10px 0 -4px #f8fafc, -10px 10px 0 -4px #f8fafc !important;
   }
 
-  /* 🌙 THE DARK MODE MAGIC */
+  /* ─── 2. DARK THEME PALETTE ────────────────────────── */
   html.dark-mode-active {
-    filter: invert(1) hue-rotate(180deg);
-    background-color: #0f172a;
+    color-scheme: dark;
+    background-color: #0f1420 !important;
   }
 
-  /* Fix images and specific widgets so they don't invert */
-  html.dark-mode-active img,
+  html.dark-mode-active body {
+    background-color: #0f1420 !important;
+    color: #d7dde8 !important;
+  }
+
+  /* ─── 3. TEXT & HEADINGS ───────────────────────────── */
+  html.dark-mode-active h1,
+  html.dark-mode-active h2,
+  html.dark-mode-active h3,
+  html.dark-mode-active h4,
+  html.dark-mode-active h5,
+  html.dark-mode-active h6 {
+    color: #f1f5fb !important;
+  }
+  html.dark-mode-active p,
+  html.dark-mode-active li,
+  html.dark-mode-active td,
+  html.dark-mode-active th,
+  html.dark-mode-active label,
+  html.dark-mode-active small,
+  html.dark-mode-active figcaption,
+  html.dark-mode-active time {
+    color: #d7dde8 !important;
+  }
+  html.dark-mode-active a { color: #60a5fa !important; }
+  html.dark-mode-active a:hover { color: #93c5fd !important; }
+  html.dark-mode-active strong { color: #f1f5fb !important; }
+
+  /* ─── 4. SURFACES: header, footer, article, cards, sidebars ── */
+  html.dark-mode-active header,
+  html.dark-mode-active footer,
+  html.dark-mode-active nav,
+  html.dark-mode-active aside,
+  html.dark-mode-active section,
+  html.dark-mode-active main,
+  html.dark-mode-active article,
+  html.dark-mode-active .post,
+  html.dark-mode-active .post__content,
+  html.dark-mode-active .post__inner,
+  html.dark-mode-active .sidebar,
+  html.dark-mode-active .widget,
+  html.dark-mode-active .card,
+  html.dark-mode-active .post-card,
+  html.dark-mode-active .hero,
+  html.dark-mode-active .header,
+  html.dark-mode-active .footer,
+  html.dark-mode-active .content,
+  html.dark-mode-active .container {
+    background-color: #0f1420 !important;
+    color: #d7dde8 !important;
+    border-color: #253048 !important;
+  }
+
+  /* Give elevated widgets/cards slightly lighter bg */
+  html.dark-mode-active .widget,
+  html.dark-mode-active .card,
+  html.dark-mode-active .post-card,
+  html.dark-mode-active blockquote,
+  html.dark-mode-active pre,
+  html.dark-mode-active code {
+    background-color: #1a2133 !important;
+  }
+
+  /* ─── 5. BORDERS & DIVIDERS ────────────────────────── */
+  html.dark-mode-active hr,
+  html.dark-mode-active input,
+  html.dark-mode-active textarea,
+  html.dark-mode-active select,
+  html.dark-mode-active table,
+  html.dark-mode-active th,
+  html.dark-mode-active td {
+    border-color: #253048 !important;
+  }
+
+  /* ─── 6. FORM FIELDS ───────────────────────────────── */
+  html.dark-mode-active input,
+  html.dark-mode-active textarea,
+  html.dark-mode-active select {
+    background-color: #1a2133 !important;
+    color: #d7dde8 !important;
+  }
+  html.dark-mode-active input::placeholder,
+  html.dark-mode-active textarea::placeholder {
+    color: #6b7a90 !important;
+  }
+
+  /* ─── 7. CODE BLOCKS ───────────────────────────────── */
+  html.dark-mode-active pre,
+  html.dark-mode-active code {
+    background-color: #141a28 !important;
+    color: #e2e8f2 !important;
+    border-color: #253048 !important;
+  }
+
+  /* ─── 8. TABLES ────────────────────────────────────── */
+  html.dark-mode-active table { background-color: #0f1420 !important; }
+  html.dark-mode-active tr:nth-child(even) { background-color: #151b2a !important; }
+
+  /* ─── 9. BLOCKQUOTES ───────────────────────────────── */
+  html.dark-mode-active blockquote {
+    background-color: #1a2133 !important;
+    border-left: 4px solid #60a5fa !important;
+    color: #b9c4d4 !important;
+  }
+
+  /* ─── 10. DROPDOWNS / MENUS ────────────────────────── */
+  html.dark-mode-active .dropdown,
+  html.dark-mode-active .menu,
+  html.dark-mode-active .navigation,
+  html.dark-mode-active .nav {
+    background-color: #1a2133 !important;
+    color: #d7dde8 !important;
+    border-color: #253048 !important;
+  }
+  html.dark-mode-active .dropdown a,
+  html.dark-mode-active .menu a,
+  html.dark-mode-active .navigation a,
+  html.dark-mode-active .nav a {
+    color: #d7dde8 !important;
+  }
+  html.dark-mode-active .dropdown a:hover,
+  html.dark-mode-active .menu a:hover,
+  html.dark-mode-active .navigation a:hover,
+  html.dark-mode-active .nav a:hover {
+    color: #60a5fa !important;
+  }
+
+  /* ─── 11. MEDIA: dim images, don't touch video/iframes ── */
+  html.dark-mode-active img {
+    opacity: 0.92;
+    transition: opacity 0.25s ease;
+  }
+  html.dark-mode-active img:hover { opacity: 1; }
+
+  /* Leave embedded widgets as-is */
   html.dark-mode-active video,
   html.dark-mode-active iframe,
   html.dark-mode-active #terrain-ai-wrapper,
   html.dark-mode-active #traffic-popup {
-    filter: invert(1) hue-rotate(180deg);
+    filter: none;
   }
 
-  /* Toggle button colors when in dark mode */
+  /* ─── 12. SMOOTH TRANSITIONS ───────────────────────── */
+  html, body,
+  header, footer, nav, aside, section, main, article,
+  .post, .post__content, .sidebar, .widget, .card,
+  pre, code, blockquote, input, textarea, select, table {
+    transition: background-color 0.3s ease, color 0.3s ease,
+                border-color 0.3s ease;
+  }
+
+  /* ─── 13. TOGGLE BUTTON IN DARK MODE ───────────────── */
   html.dark-mode-active #dark-mode-toggle {
-    background: #1e293b;
+    background: #1a2133;
     border-color: rgba(255, 255, 255, 0.1);
   }
-  
-  html.dark-mode-active #dark-mode-toggle .css-moon {
-    display: none !important;
-  }
-  
-  html.dark-mode-active #dark-mode-toggle .css-sun {
-    display: block !important;
-  }</style><button id="dark-mode-toggle" aria-label="Toggle Dark Mode"><div class="css-icon css-moon"></div><div class="css-icon css-sun"></div></button><script>(function () {
+  html.dark-mode-active #dark-mode-toggle .css-moon { display: none !important; }
+  html.dark-mode-active #dark-mode-toggle .css-sun  { display: block !important; }</style><button id="dark-mode-toggle" aria-label="Toggle Dark Mode"><div class="css-icon css-moon"></div><div class="css-icon css-sun"></div></button><script>(function () {
   const toggleBtn = document.getElementById('dark-mode-toggle');
   const html = document.documentElement;
 
@@ -2830,7 +2847,10 @@
   // Handle click
   toggleBtn.addEventListener('click', () => {
     html.classList.toggle('dark-mode-active');
-    localStorage.setItem('theme', html.classList.contains('dark-mode-active') ? 'dark' : 'light');
+    localStorage.setItem(
+      'theme',
+      html.classList.contains('dark-mode-active') ? 'dark' : 'light'
+    );
   });
 })();</script><script>(function () {
   // 🛡️ 1. ONLY RUN ON THE HOMEPAGE
