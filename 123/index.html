@@ -1691,7 +1691,7 @@
     }
   };
 
-})();</script></head><body class="page-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="#" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-18T01:56">November 18, 2026</time></div></div><main class="main page"><div class="banner banner--before-content"><style>/* 1. The entire body starts slightly transparent */
+})();</script></head><body class="page-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="#" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-18T02:47">November 18, 2026</time></div></div><main class="main page"><div class="banner banner--before-content"><style>/* 1. The entire body starts slightly transparent */
   body {
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
@@ -2835,7 +2835,216 @@
     border-color: rgba(255, 255, 255, 0.1);
   }
   html.dark-mode-active #dark-mode-toggle .css-moon { display: none !important; }
-  html.dark-mode-active #dark-mode-toggle .css-sun  { display: block !important; }</style><button id="dark-mode-toggle" aria-label="Toggle Dark Mode"><div class="css-icon css-moon"></div><div class="css-icon css-sun"></div></button><script>(function () {
+  html.dark-mode-active #dark-mode-toggle .css-sun  { display: block !important; }
+
+  /* ═══════════════════════════════════════════════════
+     NEW FIXES — EXACT SELECTORS FROM YOUR ACTUAL MARKUP
+     (Your existing rules above are untouched)
+     ═══════════════════════════════════════════════════ */
+
+  /* ─── 14. WHATSAPP CHAT PANEL (#live-chat-panel) ───── */
+  html.dark-mode-active #live-chat-panel {
+    background-color: #0b141a !important;
+    border-color: #253048 !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6) !important;
+  }
+  html.dark-mode-active #live-chat-panel .lc-header {
+    background-color: #0f3d2e !important;
+    color: #e2e8f2 !important;
+  }
+  html.dark-mode-active #live-chat-panel .lc-header-name {
+    color: #ffffff !important;
+  }
+  html.dark-mode-active #live-chat-panel .lc-header-status {
+    color: #cbd5e1 !important;
+  }
+  html.dark-mode-active #live-chat-panel .lc-clear-btn {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+  }
+
+  /* Messages area — replaces the light WhatsApp wallpaper */
+  html.dark-mode-active #live-chat-panel .lc-messages {
+    background-color: #0b141a !important;
+    background-image: none !important;
+  }
+
+  /* Incoming (bot) messages — light gray card on dark bg */
+  html.dark-mode-active #live-chat-panel .lc-msg.bot {
+    background-color: #202c33 !important;
+    color: #e9edef !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3) !important;
+  }
+  /* Outgoing (user) messages — WhatsApp dark-mode green */
+  html.dark-mode-active #live-chat-panel .lc-msg.user {
+    background-color: #005c4b !important;
+    color: #e9edef !important;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.3) !important;
+  }
+  html.dark-mode-active #live-chat-panel .lc-msg-text {
+    color: inherit !important;
+  }
+  html.dark-mode-active #live-chat-panel .lc-msg-meta {
+    color: #8696a0 !important;
+  }
+  html.dark-mode-active #live-chat-panel .lc-status-icon.sending { color: #8696a0 !important; }
+  html.dark-mode-active #live-chat-panel .lc-status-icon.sent    { color: #53bdeb !important; }
+  html.dark-mode-active #live-chat-panel .lc-status-icon.error   { color: #f87171 !important; }
+
+  /* Input bar */
+  html.dark-mode-active #live-chat-panel .lc-input-area {
+    background-color: #1f2c34 !important;
+    border-top-color: #253048 !important;
+  }
+  html.dark-mode-active #live-chat-panel .lc-input {
+    background-color: #2a3942 !important;
+    color: #e9edef !important;
+    box-shadow: none !important;
+  }
+  html.dark-mode-active #live-chat-panel .lc-input::placeholder {
+    color: #8696a0 !important;
+  }
+  html.dark-mode-active #live-chat-panel .lc-send {
+    background-color: #00a884 !important;
+  }
+
+  /* ─── 15. TECH-TERRAIN AI PANEL (#ta-panel) ────────── */
+  html.dark-mode-active #ta-panel {
+    background-color: #0f1420 !important;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6) !important;
+  }
+  /* Keep the blue gradient header (brand) but darken it slightly */
+  html.dark-mode-active #ta-panel #ta-header {
+    background: linear-gradient(135deg, #1e4fa8 0%, #17397f 100%) !important;
+    color: #ffffff !important;
+  }
+  html.dark-mode-active #ta-panel .ta-clear-btn {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #ffffff !important;
+  }
+
+  /* Messages area */
+  html.dark-mode-active #ta-panel #ta-messages {
+    background-color: #0f1420 !important;
+  }
+  /* Bot bubble */
+  html.dark-mode-active #ta-panel .ta-msg-bot {
+    background-color: #1a2133 !important;
+    color: #e2e8f2 !important;
+    border: 1px solid #253048 !important;
+  }
+  html.dark-mode-active #ta-panel .ta-msg-bot .ta-msg-time {
+    color: #8696a0 !important;
+  }
+  /* User bubble keeps brand-blue gradient */
+  html.dark-mode-active #ta-panel .ta-msg-user {
+    background: linear-gradient(135deg, #3973D4 0%, #2a5cb8 100%) !important;
+    color: #ffffff !important;
+  }
+
+  /* Typing dots */
+  html.dark-mode-active #ta-panel .ta-typing span {
+    background: #8696a0 !important;
+  }
+
+  /* Quick-reply chips row */
+  html.dark-mode-active #ta-panel #ta-chips {
+    background-color: #0f1420 !important;
+  }
+  html.dark-mode-active #ta-panel .ta-chip {
+    background-color: #1a2133 !important;
+    border-color: #3973D4 !important;
+    color: #93c5fd !important;
+  }
+  html.dark-mode-active #ta-panel .ta-chip:hover {
+    background: linear-gradient(135deg, #3973D4 0%, #2a5cb8 100%) !important;
+    color: #ffffff !important;
+    border-color: transparent !important;
+  }
+
+  /* Input area */
+  html.dark-mode-active #ta-panel #ta-input-area {
+    background-color: #0f1420 !important;
+    border-top-color: #253048 !important;
+  }
+  html.dark-mode-active #ta-panel #ta-input {
+    background-color: #1a2133 !important;
+    color: #e2e8f2 !important;
+    border-color: #253048 !important;
+  }
+  html.dark-mode-active #ta-panel #ta-input::placeholder {
+    color: #8696a0 !important;
+  }
+  html.dark-mode-active #ta-panel #ta-input:focus {
+    border-color: #60a5fa !important;
+  }
+  /* Footer disclaimer */
+  html.dark-mode-active #ta-panel #ta-footer {
+    background-color: #0f1420 !important;
+    color: #64748b !important;
+  }
+
+  /* ─── 16. ADVERTISEMENT / AD BOX (Exact target) ──────
+     This overrides the inline styles in your ad HTML. */
+  html.dark-mode-active #terrain-toggle-img {
+    /* Just keep the image visible, no opacity fade */
+    opacity: 1 !important;
+  }
+
+  /* The main ad container */
+  html.dark-mode-active div[style*="background-color: #f4f5f7"] {
+    background-color: #1a2133 !important;
+    border: 1px solid #253048 !important;
+  }
+
+  /* The ad headline ("Need a professional website?") */
+  html.dark-mode-active div[style*="background-color: #f4f5f7"] h4 {
+    color: #f1f5fb !important;
+  }
+
+  /* The ad body text ("We build hyper-fast...") */
+  html.dark-mode-active div[style*="background-color: #f4f5f7"] p {
+    color: #d7dde8 !important;
+    opacity: 1 !important;
+  }
+
+  /* The "Get a Quote" button */
+  html.dark-mode-active div[style*="background-color: #f4f5f7"] a {
+    color: #ffffff !important;
+    opacity: 1 !important;
+  }
+
+  /* ─── 17. SOCIAL BUTTONS (Facebook / Twitter / X) ────
+     Forces the button text to pure white */
+  html.dark-mode-active .social-button,
+  html.dark-mode-active .social-btn,
+  html.dark-mode-active .social-link,
+  html.dark-mode-active .follow-button,
+  html.dark-mode-active .follow-btn,
+  html.dark-mode-active a[class*="social"],
+  html.dark-mode-active a[class*="follow"],
+  html.dark-mode-active a[class*="facebook"],
+  html.dark-mode-active a[class*="twitter"],
+  html.dark-mode-active a[class*="facebook"] span,
+  html.dark-mode-active a[class*="twitter"] span,
+  html.dark-mode-active a[class*="facebook"] *,
+  html.dark-mode-active a[class*="twitter"] * {
+    color: #ffffff !important;
+  }
+  html.dark-mode-active a[class*="social"]:hover,
+  html.dark-mode-active a[class*="follow"]:hover,
+  html.dark-mode-active a[class*="facebook"]:hover,
+  html.dark-mode-active a[class*="twitter"]:hover {
+    color: #ffffff !important;
+    opacity: 0.92;
+  }
+  /* Specifically targets text inside the social buttons */
+  html.dark-mode-active .social-button *,
+  html.dark-mode-active .social-btn *,
+  html.dark-mode-active .follow-button *,
+  html.dark-mode-active .follow-btn * {
+    color: #ffffff !important;
+  }</style><button id="dark-mode-toggle" aria-label="Toggle Dark Mode"><div class="css-icon css-moon"></div><div class="css-icon css-sun"></div></button><script>(function () {
   const toggleBtn = document.getElementById('dark-mode-toggle');
   const html = document.documentElement;
 
