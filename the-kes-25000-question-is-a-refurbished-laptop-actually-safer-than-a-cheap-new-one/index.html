@@ -1691,7 +1691,7 @@
     }
   };
 
-})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="#" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-18T03:32">November 18, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
+})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="#" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-18T04:08">November 18, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
     position: fixed;
     top: 0; left: 0;
     height: 3px;
@@ -3894,6 +3894,46 @@
       color: #60a5fa !important;
       border-bottom-color: #60a5fa !important;
     }
+  }
+
+  /* ─── 19. WRITER PORTAL READABILITY FIXES ───────────────
+     Based on your screenshot, forces faded gray text in the 
+     tasks and tables to be crisp and high-contrast. */
+  
+  /* Task Cards */
+  html.dark-mode-active .task-card-desc {
+    color: #e2e8f2 !important; /* Crisp 80% white */
+  }
+  html.dark-mode-active .task-card-title {
+    color: #f1f5fb !important; /* Pure white for title */
+  }
+  html.dark-mode-active .task-card-footer {
+    border-top-color: #253048 !important;
+  }
+  /* The "No assignments yet" text */
+  html.dark-mode-active #wp-task-list > p {
+    color: #94a3b8 !important;
+  }
+
+  /* Tables in "My Articles" and "Pitches" */
+  html.dark-mode-active .wp-table td {
+    color: #e2e8f2 !important; /* Brighter table body text */
+  }
+  html.dark-mode-active .wp-table td strong {
+    color: #f1f5fb !important; /* Brighter article titles */
+  }
+  html.dark-mode-active .wp-table td div {
+    color: #e2e8f2 !important; /* Fixes the date/time sub-text */
+  }
+
+  /* Thread/Feedback Bubbles in Modals */
+  html.dark-mode-active .thread-bubble {
+    color: #e2e8f2 !important;
+    background-color: #1a2133 !important;
+    border-left-color: #60a5fa !important;
+  }
+  html.dark-mode-active .thread-bubble small {
+    color: #94a3b8 !important;
   }</style><button id="dark-mode-toggle" aria-label="Toggle Dark Mode"><div class="css-icon css-moon"></div><div class="css-icon css-sun"></div></button><script>(function () {
   const toggleBtn = document.getElementById('dark-mode-toggle');
   const html = document.documentElement;
