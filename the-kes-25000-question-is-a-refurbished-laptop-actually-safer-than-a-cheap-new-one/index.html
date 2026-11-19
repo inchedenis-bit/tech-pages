@@ -1067,6 +1067,12 @@
                 <div class="meta-label">Submitted</div>
                 <div class="meta-value">${a.submitted_at ? new Date(a.submitted_at).toLocaleDateString() : '—'}</div>
               </div>
+              <div class="meta-item">
+                <div class="meta-label">Danger Zone</div>
+                <div class="meta-value">
+                  <button class="mini-btn red" data-action="delete" data-idx="${index}" data-id="${a.id}">🗑️ Delete Article</button>
+                </div>
+              </div>
             </div>
           </td>
         `;
@@ -1106,6 +1112,10 @@
             const idx = parseInt(el.getAttribute('data-idx'), 10);
             const art = currentWriterArticles[idx];
             openThread(art.id, art.title, art.editor_notes || '');
+          } else if (action === 'delete') {
+            const idx = parseInt(el.getAttribute('data-idx'), 10);
+            const art = currentWriterArticles[idx];
+            deleteArticle(art.id, art.title);
           }
         });
       });
@@ -1649,6 +1659,30 @@
     });
   };
 
+  // 🟢 NEW: Delete Article (permanently removes from DB & writer portal)
+  window.deleteArticle = async function(articleId, title) {
+    if (!confirm(`Delete "${title}"?\n\nThis permanently removes it from the database and the writer's portal. This cannot be undone.`)) return;
+    if (!confirm('Are you absolutely sure? This is permanent.')) return;
+
+    try {
+      const res = await fetch(`${WORKER_URL}/admin/delete-article`, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ key: window.ADMIN_KEY, articleId })
+      });
+      const data = await res.json();
+
+      if (data.success) {
+        toast('success', 'Deleted', 'Article removed from database and writer portal.');
+        await loadWriterDetailData();
+        renderWriterDetail();
+      } else {
+        toast('error', 'Error', 'Could not delete article.');
+      }
+    } catch (e) {
+      toast('error', 'Error', 'Network error.');
+    }
+  };
+
   // 🟢 NEW: Link Publii URL to Database
   window.linkPubliiSlug = async function() {
     if (!currentFullArticle) return;
@@ -1691,7 +1725,7 @@
     }
   };
 
-})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="#" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-19T17:50">November 19, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
+})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="#" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-19T19:09">November 19, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
     position: fixed;
     top: 0; left: 0;
     height: 3px;
