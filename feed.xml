@@ -3,7 +3,7 @@
     <title>Tech-Terrain</title>
     <link href="https://terrain.co.ke/feed.xml" rel="self" />
     <link href="https://terrain.co.ke" />
-    <updated>2026-11-22T00:47:31+03:00</updated>
+    <updated>2026-11-22T02:44:49+03:00</updated>
     <author>
         <name>Editorial</name>
     </author>
@@ -29,7 +29,7 @@
         <content type="html">
             <![CDATA[
                     <p><img src="https://terrain.co.ke/media/posts/32/vodacom.jpg" class="type:primaryImage" alt="Vodafone Logo" /></p>
-                <p class="msg msg--highlight msg--success"><strong>TL;DR:</strong> Vodafone sold a 5% effective stake in Safaricom to its own subsidiary, Vodacom, for Sh68 billion. Because Vodafone controls Vodacom, the money effectively returned to Vodafone—meaning the parent company funded its own exit from that slice of the business. The Kenyan government, by contrast, received genuine external cash of Sh204 billion for its 15% stake.</p>
+                <p class="msg--highlight msg--info msg"><strong>TL;DR:</strong> Vodafone sold a 5% effective stake in Safaricom to its own subsidiary, Vodacom, for Sh68 billion. Because Vodafone controls Vodacom, the money effectively returned to Vodafone—meaning the parent company funded its own exit from that slice of the business. The Kenyan government, by contrast, received genuine external cash of Sh204 billion for its 15% stake.</p>
 <p class="ds-markdown-paragraph dropcap">The recent restructuring of Safaricom's ownership has raised eyebrows for a simple reason: Vodafone essentially used its own money to fund the purchase of its additional stake in East Africa's most profitable company. At the heart of the transaction is a Sh68 billion payment that Vodafone received from its African subsidiary, Vodacom, for transferring a 5% effective interest in Safaricom. In plain terms, Vodafone sold a slice of Safaricom to Vodacom, and the Sh68 billion price tag flowed back to the parent company.</p>
 <h2>The Intra-Group Transaction Explained</h2>
 <p class="ds-markdown-paragraph">To understand how this works, it helps to look at the broader deal. Vodacom agreed to acquire an additional 20% of Safaricom, lifting its total shareholding to 55%. The breakdown was as follows:</p>
@@ -55,6 +55,7 @@
 <li class="ds-markdown-paragraph"><strong>Public investors:</strong> 25%</li>
 </ul>
 <p class="ds-markdown-paragraph">But beneath the surface, the deal reveals how large multinationals can rearrange their African assets with minimal external cash outflow. Vodafone did not need to find a buyer for its Safaricom slice; it simply directed its own subsidiary to buy it, using funds that ultimately belonged to the group anyway. The Sh68 billion never left the family.</p>
+<div id="manual-stats" style="display: none;" data-views="878" data-shares="27" data-thumbs="2" data-love="9" data-fire="1"></div>
             ]]>
         </content>
     </entry>
