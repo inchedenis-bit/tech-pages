@@ -7,12 +7,12 @@
     {
         "path": "/123/index.html",
         "type": "file",
-        "md5": "819b0196a5944ddadc0f7862013f0e7e"
+        "md5": "630030a6fe659be919776fa2b89c81eb"
     },
     {
         "path": "404.html",
         "type": "file",
-        "md5": "7eee4b1511d6ca3ab9babbbd553e83d9"
+        "md5": "5f878a5ba9db79c4a22b1d1ea7e3ae4f"
     },
     {
         "path": "admin-access",
@@ -22,7 +22,7 @@
     {
         "path": "/admin-access/index.html",
         "type": "file",
-        "md5": "9b799f48dc2dc25e92e11df429cefb5c"
+        "md5": "8b875b785ca99594e3107b4f6710b704"
     },
     {
         "path": "assets",
@@ -107,7 +107,7 @@
     {
         "path": "/authors/ben-awino/index.html",
         "type": "file",
-        "md5": "3d137810249cfb8cc6c2c6053f54c5fe"
+        "md5": "466765e6db80320279bbf47ea1f49b5d"
     },
     {
         "path": "authors/dennis-n",
@@ -117,7 +117,7 @@
     {
         "path": "/authors/dennis-n/index.html",
         "type": "file",
-        "md5": "87e097492fd065542b40998d897fe2cc"
+        "md5": "a63e3654ad36143f3450cd2acf15b6a4"
     },
     {
         "path": "authors/dennis-n/page",
@@ -132,7 +132,7 @@
     {
         "path": "/authors/dennis-n/page/2/index.html",
         "type": "file",
-        "md5": "6be11232b22a47aa550319c58de216ac"
+        "md5": "c5bc5bc088724599f593fe8eb37af397"
     },
     {
         "path": "authors/dennis-n/page/3",
@@ -142,7 +142,7 @@
     {
         "path": "/authors/dennis-n/page/3/index.html",
         "type": "file",
-        "md5": "2c8abdddd1a4fde66a13ef7cdab96fd0"
+        "md5": "89c1bf477a30bcd03f66eba535798323"
     },
     {
         "path": "authors/fred-hill",
@@ -152,7 +152,7 @@
     {
         "path": "/authors/fred-hill/index.html",
         "type": "file",
-        "md5": "d4ccb725b85d8adc5c638146c7287f11"
+        "md5": "408d3c5a9ad8fe57f8489a9bcb97a68a"
     },
     {
         "path": "authors/lina-maya",
@@ -162,7 +162,7 @@
     {
         "path": "/authors/lina-maya/index.html",
         "type": "file",
-        "md5": "cde94a0894dad011b5e334c062d716aa"
+        "md5": "b76a5469e3beadeb5f7965988310344c"
     },
     {
         "path": "best-laptops-for-kenyan-university-students-under-kes-50000",
@@ -172,7 +172,7 @@
     {
         "path": "/best-laptops-for-kenyan-university-students-under-kes-50000/index.html",
         "type": "file",
-        "md5": "a4da1c0a12406fbb159e818562691f6d"
+        "md5": "fdfb428b590283f54be668f7f5e32cb2"
     },
     {
         "path": "best-laptops-for-kenyan-university-students-under-kes-50000-updated-2026",
@@ -182,7 +182,7 @@
     {
         "path": "/best-laptops-for-kenyan-university-students-under-kes-50000-updated-2026/index.html",
         "type": "file",
-        "md5": "b7f718ddd5f60624ca90ce0d0f6e692a"
+        "md5": "6f560bf8303444cc8faeef43173022dc"
     },
     {
         "path": "contact",
@@ -192,7 +192,7 @@
     {
         "path": "/contact/index.html",
         "type": "file",
-        "md5": "90e54529c8ac69ae59461a57a9b9ab0d"
+        "md5": "3b68782ab1e2d863d2e36d3a1d1d2ff5"
     },
     {
         "path": "do-you-really-need-an-i7-why-an-8th-gen-i5-is-the-smartest-buy-in-kenya-right-now",
@@ -202,7 +202,7 @@
     {
         "path": "/do-you-really-need-an-i7-why-an-8th-gen-i5-is-the-smartest-buy-in-kenya-right-now/index.html",
         "type": "file",
-        "md5": "b88a75199e3312ba841971aad82f8b80"
+        "md5": "f9905aad7335bc6667e73a911429e456"
     },
     {
         "path": "fayaweb-2",
@@ -212,17 +212,17 @@
     {
         "path": "/fayaweb-2/index.html",
         "type": "file",
-        "md5": "8c8f4478e45fef2fc4ac6a59dc949efe"
+        "md5": "0c36f32eee8bd89e5261238faf5d49c6"
     },
     {
         "path": "feed.json",
         "type": "file",
-        "md5": "053fe0ab551f3c6519e4f96defa631a8"
+        "md5": "81d74013875c819a8e866a2a058cf95b"
     },
     {
         "path": "feed.xml",
         "type": "file",
-        "md5": "eb7645a82185843f132d71eb28542011"
+        "md5": "5f95b76ecc55d2558287e63f515c1242"
     },
     {
         "path": "honor-play-10-review-what-do-you-actually-get-for-kes-11599-and-what-do-you-sacrifice",
@@ -232,7 +232,7 @@
     {
         "path": "/honor-play-10-review-what-do-you-actually-get-for-kes-11599-and-what-do-you-sacrifice/index.html",
         "type": "file",
-        "md5": "7aa3aa9e85db158a90abda58fc64f338"
+        "md5": "40399eac07798cb6f8b331796d01380a"
     },
     {
         "path": "how-to-check-a-refurbished-laptop-before-paying-without-getting-scammed-in-nairobi",
@@ -242,7 +242,7 @@
     {
         "path": "/how-to-check-a-refurbished-laptop-before-paying-without-getting-scammed-in-nairobi/index.html",
         "type": "file",
-        "md5": "c6c01ec42d2f2a4e00a74f00d88f6099"
+        "md5": "8f2b697aeaa17b4120e922b065688c77"
     },
     {
         "path": "hp-vs-lenovo-which-refurbished-laptop-brand-actually-deserves-your-kes-30000",
@@ -252,7 +252,7 @@
     {
         "path": "/hp-vs-lenovo-which-refurbished-laptop-brand-actually-deserves-your-kes-30000/index.html",
         "type": "file",
-        "md5": "d81bf03d907e8e2b6492eb880d76fbe4"
+        "md5": "607beecb3791a48330466b1e8d407544"
     },
     {
         "path": "i-tested-the-cheapest-phones-under-kes-10000-here-is-the-only-one-i-would-buy",
@@ -262,7 +262,7 @@
     {
         "path": "/i-tested-the-cheapest-phones-under-kes-10000-here-is-the-only-one-i-would-buy/index.html",
         "type": "file",
-        "md5": "0c1b4a70d47a698d14ff7b46364cc4ad"
+        "md5": "85e59911b5cdbbacf6b4582fd873303a"
     },
     {
         "path": "i-used-a-kes-35000-laptop-for-a-month-here-is-what-broke-and-what-survived",
@@ -272,12 +272,12 @@
     {
         "path": "/i-used-a-kes-35000-laptop-for-a-month-here-is-what-broke-and-what-survived/index.html",
         "type": "file",
-        "md5": "f71b435d60dbe21d5551b9e77be65005"
+        "md5": "334d274ad9b3c0a7f0d8c85b26e1f423"
     },
     {
         "path": "index.html",
         "type": "file",
-        "md5": "9cf2c6afb1ece752b26df5b2b0af5219"
+        "md5": "058f1a219c714e6899eac0b6b64e342b"
     },
     {
         "path": "infinix-hot-60i-review-the-nfc-budget-phone-that-actually-makes-sense",
@@ -287,7 +287,7 @@
     {
         "path": "/infinix-hot-60i-review-the-nfc-budget-phone-that-actually-makes-sense/index.html",
         "type": "file",
-        "md5": "3113567240b07ed47451c743b1265fff"
+        "md5": "80437fb0515cc78cf3e4ee6fd1021452"
     },
     {
         "path": "is-the-samsung-galaxy-a06-still-worth-buying-in-2026-an-honest-buyer-take",
@@ -297,7 +297,7 @@
     {
         "path": "/is-the-samsung-galaxy-a06-still-worth-buying-in-2026-an-honest-buyer-take/index.html",
         "type": "file",
-        "md5": "abf9434a2d93f98dfe1fa366e26ca96b"
+        "md5": "c27127c9cfa58b1b701b72eb1b9d3c7b"
     },
     {
         "path": "kenyas-cyber-threats-surge-29-as-mobile-money-hits-54-million",
@@ -307,7 +307,7 @@
     {
         "path": "/kenyas-cyber-threats-surge-29-as-mobile-money-hits-54-million/index.html",
         "type": "file",
-        "md5": "dc37d31099c314f7d62f7b6f1018a9e8"
+        "md5": "da501c4a2ef74596393b44521b7a1f86"
     },
     {
         "path": "local-ai-just-got-real-for-kenyan-businesses-heres-why-it-matters",
@@ -317,7 +317,7 @@
     {
         "path": "/local-ai-just-got-real-for-kenyan-businesses-heres-why-it-matters/index.html",
         "type": "file",
-        "md5": "54afdcbee4f1b58425a4b19289cb30f9"
+        "md5": "104b74a0e4cabacc8907ef66deacd34d"
     },
     {
         "path": "media",
@@ -2042,7 +2042,7 @@
     {
         "path": "/page/2/index.html",
         "type": "file",
-        "md5": "c4f5260931af24d8a62d56e46ba1ad66"
+        "md5": "5dd86dad7429cfb9303abdfecfe02d39"
     },
     {
         "path": "robots.txt",
@@ -2057,7 +2057,7 @@
     {
         "path": "/safaricom-vs-airtel-the-data-bundle-truth-nobody-tells-you-2026-price-breakdown/index.html",
         "type": "file",
-        "md5": "ce522099d2fe129dfea5b45343957c61"
+        "md5": "df1b4c66fcb3650907ab016574386038"
     },
     {
         "path": "samsung-a07-vs-infinix-hot-60i-which-sub-kes-15000-phone-should-you-buy",
@@ -2067,12 +2067,12 @@
     {
         "path": "/samsung-a07-vs-infinix-hot-60i-which-sub-kes-15000-phone-should-you-buy/index.html",
         "type": "file",
-        "md5": "401048e4dbbf7577809d08b2240b4d68"
+        "md5": "81cad9dbff848d3dd877797046f20e1b"
     },
     {
         "path": "sitemap.xml",
         "type": "file",
-        "md5": "4da615d33b05714f721df4f5b3a44cc4"
+        "md5": "b6c31bfdd1b177a183cdea63db55fcc4"
     },
     {
         "path": "sitemap.xsl",
@@ -2087,7 +2087,7 @@
     {
         "path": "/ssd-vs-hdd-the-kes-5000-upgrade-that-will-make-your-old-laptop-feel-brand-new/index.html",
         "type": "file",
-        "md5": "91b035da79e7c50c36c43a932e8d9347"
+        "md5": "71a64f9641f76c094f6c55d8273fe060"
     },
     {
         "path": "stop-buying-4gb-ram-laptops-the-minimum-specs-your-money-should-buy-in-kenya-today",
@@ -2097,7 +2097,7 @@
     {
         "path": "/stop-buying-4gb-ram-laptops-the-minimum-specs-your-money-should-buy-in-kenya-today/index.html",
         "type": "file",
-        "md5": "fb3adff78f229d8267a06939326f58d4"
+        "md5": "02081173ca23c347a8ca9d6184922593"
     },
     {
         "path": "stop-wasting-money-on-cheap-phones-5-things-to-check-before-you-buy-under-kes-15000",
@@ -2107,7 +2107,7 @@
     {
         "path": "/stop-wasting-money-on-cheap-phones-5-things-to-check-before-you-buy-under-kes-15000/index.html",
         "type": "file",
-        "md5": "8515751ef75abb74dea0aa20ac835854"
+        "md5": "74bfcfcd0ac12ab312804b12cc489c50"
     },
     {
         "path": "tags",
@@ -2122,7 +2122,7 @@
     {
         "path": "/tags/buying-guides/index.html",
         "type": "file",
-        "md5": "dfb30d932e68894622e7e45fa3f9482c"
+        "md5": "022e1f5174f1e4bb2d6cbc096611126c"
     },
     {
         "path": "tags/comparisons",
@@ -2132,12 +2132,12 @@
     {
         "path": "/tags/comparisons/index.html",
         "type": "file",
-        "md5": "76e95ee1e3a66d44b3268a0953946357"
+        "md5": "422f0f568e82994dd8153bce4dfcf981"
     },
     {
         "path": "/tags/index.html",
         "type": "file",
-        "md5": "37ced44c13f7299621417c0747c4edf6"
+        "md5": "c487f1f41d067ad75071424f61b23fb3"
     },
     {
         "path": "tags/news",
@@ -2147,7 +2147,7 @@
     {
         "path": "/tags/news/index.html",
         "type": "file",
-        "md5": "5f1d58ea2872f4ce8121020992bacbeb"
+        "md5": "83067925877ed6f6d4af2899e69cc2ab"
     },
     {
         "path": "tags/opinion",
@@ -2157,7 +2157,7 @@
     {
         "path": "/tags/opinion/index.html",
         "type": "file",
-        "md5": "2360e9dece872eb73f2f4fbf2d87dc7a"
+        "md5": "c466abac80cee42c2ad81f93dd217025"
     },
     {
         "path": "tags/phones",
@@ -2167,7 +2167,7 @@
     {
         "path": "/tags/phones/index.html",
         "type": "file",
-        "md5": "021f265d51f45abb575e82997e3a244f"
+        "md5": "4807758999c6b92b25e215434accc8cd"
     },
     {
         "path": "the-30-day-rule-what-kenya-power-left-out-of-its-shock-bill-defense",
@@ -2177,7 +2177,7 @@
     {
         "path": "/the-30-day-rule-what-kenya-power-left-out-of-its-shock-bill-defense/index.html",
         "type": "file",
-        "md5": "24bb591a454bca0778e8b061ba2e5c73"
+        "md5": "a2a9106f9e7fe4d979b61e624673f1fa"
     },
     {
         "path": "the-binance-hack-just-hit-close-to-home-heres-what-it-means-for-kenyan-crypto-traders",
@@ -2187,7 +2187,7 @@
     {
         "path": "/the-binance-hack-just-hit-close-to-home-heres-what-it-means-for-kenyan-crypto-traders/index.html",
         "type": "file",
-        "md5": "6bfbe2c63783abb1afe010b1101753f0"
+        "md5": "2b4fe9e72481e1d08b70008ab2515d55"
     },
     {
         "path": "the-celeron-trap-why-that-brand-new-kes-28000-laptop-will-ruin-your-campus-life",
@@ -2197,7 +2197,7 @@
     {
         "path": "/the-celeron-trap-why-that-brand-new-kes-28000-laptop-will-ruin-your-campus-life/index.html",
         "type": "file",
-        "md5": "3edc921eb41d35c804d28ec33a895fcd"
+        "md5": "9ac51e265cd36b7ca3b69e38e3896b54"
     },
     {
         "path": "the-kes-13000-question-is-the-redmi-15c-kenyas-best-budget-phone-right-now",
@@ -2207,7 +2207,7 @@
     {
         "path": "/the-kes-13000-question-is-the-redmi-15c-kenyas-best-budget-phone-right-now/index.html",
         "type": "file",
-        "md5": "863110c60d5a7fdc2c14604ad20a03fe"
+        "md5": "909b544ec39b2a6e9135d84b25f5cee1"
     },
     {
         "path": "the-kes-25000-question-is-a-refurbished-laptop-actually-safer-than-a-cheap-new-one",
@@ -2217,7 +2217,7 @@
     {
         "path": "/the-kes-25000-question-is-a-refurbished-laptop-actually-safer-than-a-cheap-new-one/index.html",
         "type": "file",
-        "md5": "0f85599c2968da22bd43d834977c2cd0"
+        "md5": "02cbe7bfa4a4b497a82869d12e8ebd84"
     },
     {
         "path": "the-real-cost-of-cheap-data-how-safaricoms-b-live-changes-are-hurting-small-buyers",
@@ -2227,7 +2227,7 @@
     {
         "path": "/the-real-cost-of-cheap-data-how-safaricoms-b-live-changes-are-hurting-small-buyers/index.html",
         "type": "file",
-        "md5": "29442b2e7d9c59456e2ff2230e90a959"
+        "md5": "f070cbb3376a0da6e988d69a164d0bdc"
     },
     {
         "path": "the-real-reason-half-of-kenya-is-still-offline-isnt-the-network",
@@ -2237,7 +2237,7 @@
     {
         "path": "/the-real-reason-half-of-kenya-is-still-offline-isnt-the-network/index.html",
         "type": "file",
-        "md5": "5745c2f6402c30a79a95bb0baa91351e"
+        "md5": "bf766de7604d7a9b3c13fcabfee5c167"
     },
     {
         "path": "vodafone-safaricom-sh68-billion-buyout",
@@ -2247,7 +2247,7 @@
     {
         "path": "/vodafone-safaricom-sh68-billion-buyout/index.html",
         "type": "file",
-        "md5": "aed610e46a64243f802b79a19761dff8"
+        "md5": "528c082d7001668cb387cc204c16e349"
     },
     {
         "path": "why-your-kes-100000-gaming-laptop-overheats-and-how-to-fix-it",
@@ -2257,6 +2257,6 @@
     {
         "path": "/why-your-kes-100000-gaming-laptop-overheats-and-how-to-fix-it/index.html",
         "type": "file",
-        "md5": "10c381e851e1f70b7817f2a1d9f5ebb3"
+        "md5": "428c714a441e2bf20153b9e9cc7e4e6d"
     }
 ]
