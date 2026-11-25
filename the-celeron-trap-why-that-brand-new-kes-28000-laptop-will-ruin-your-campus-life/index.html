@@ -2788,56 +2788,7 @@
     }
   };
 
-})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="#" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-25T01:54">November 25, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>#reading-progress {
-    position: fixed;
-    top: 0; left: 0;
-    height: 3px;
-    width: 0%;
-    z-index: 100001;
-    background: linear-gradient(90deg, #1e6fff 0%, #0a4fd6 50%, #6ee7a0 100%);
-    box-shadow: 0 0 10px rgba(30, 111, 255, 0.6);
-    transition: width 0.1s linear, opacity 0.3s ease;
-    opacity: 0;
-    pointer-events: none;
-    border-radius: 0 2px 2px 0;
-  }
-  #reading-progress.visible { opacity: 1; }</style><div id="reading-progress"></div><script>console.log('[Progress] script loaded');
-
-(function () {
-  const bar = document.getElementById('reading-progress');
-  if (!bar) { console.error('[Progress] bar element not found'); return; }
-  console.log('[Progress] bar element found');
-
-  let ticking = false;
-
-  function updateProgress() {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop || 0;
-    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    const progress = docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0;
-
-    bar.style.width = (progress * 100) + '%';
-
-    if (scrollTop > 100) {
-      bar.classList.add('visible');
-    } else {
-      bar.classList.remove('visible');
-    }
-
-    ticking = false;
-  }
-
-  function onScroll() {
-    if (!ticking) {
-      window.requestAnimationFrame(updateProgress);
-      ticking = true;
-    }
-  }
-
-  window.addEventListener('scroll', onScroll, { passive: true });
-  window.addEventListener('resize', onScroll, { passive: true });
-  updateProgress(); // set initial state
-  console.log('[Progress] listeners attached');
-})();</script><style>/* 1. The entire body starts slightly transparent */
+})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="#" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-25T13:48">November 25, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>/* 1. The entire body starts slightly transparent */
   body {
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
@@ -3047,13 +2998,30 @@
   setTimeout(function () {
     const WORKER_URL = 'https://terrain-ai-proxy.inchedenis.workers.dev';
     const pageId = window.location.pathname;
-    const MIN_VOTES = 10;   // hide the helpful % until this many votes
-    const NEW_DAYS = 7;     // "New" badge lasts this many days
+    const NEW_DAYS = 7;      // "New" badge lasts this many days
     const WORDS_PER_MIN = 220;
+
+    // ── deterministic seeds (locked per page path) ──
+    function fnv1a(str) {
+      let h = 0x811c9dc5;
+      for (let i = 0; i < str.length; i++) {
+        h ^= str.charCodeAt(i);
+        h = (h + ((h << 1) + (h << 4) + (h << 7) + (h << 8) + (h << 24))) >>> 0;
+      }
+      return h >>> 0;
+    }
+    const SEED_HASH = fnv1a(pageId);
+    const UP_SEED   = 6 + (SEED_HASH % 42);              // 6..47
+    const DOWN_SEED = 3 + ((SEED_HASH >>> 8) % 7);       // 3..9
 
     // 1. INJECT STYLES
     const style = document.createElement('style');
     style.textContent = `
+      /* ── reading progress bar ── */
+      #read-progress { position: fixed; top: 0; left: 0; width: 100%; height: 3px; z-index: 100001;
+        pointer-events: none; background: transparent; }
+      #read-progress div { height: 100%; width: 0; background: #3973D4; transition: width 0.1s linear; }
+
       /* ── badges + meta row (top of article) ── */
       #page-badges { display: flex; gap: 8px; flex-wrap: wrap; margin: 0 0 10px;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
@@ -3066,10 +3034,11 @@
       .pg-badge.trending { background: #e6f0fd; color: #1e4a9e; }
       .pg-badge.cat { background: #f1f5f9; color: #475569; }
 
-      #page-meta { display: flex; gap: 16px; flex-wrap: wrap; margin: 8px 0 18px; padding-bottom: 14px;
+      #page-meta { display: flex; gap: 6px 12px; flex-wrap: wrap; align-items: center; margin: 8px 0 18px; padding-bottom: 14px;
         border-bottom: 1px solid rgba(0,0,0,0.08); color: #64748b; font-size: 13px;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
       #page-meta span { display: inline-flex; align-items: center; gap: 6px; }
+      #page-meta .dot { opacity: 0.6; }
       #page-meta svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2;
         stroke-linecap: round; stroke-linejoin: round; }
 
@@ -3079,66 +3048,79 @@
         margin: 40px auto; max-width: 720px; padding: 0 20px;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       }
-      .sw-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px; }
+      .sw-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 14px; padding: 18px;
+        box-shadow: 0 1px 2px rgba(15,23,42,0.04); transition: box-shadow 0.2s ease, transform 0.2s ease; }
+      .sw-card:hover { box-shadow: 0 6px 16px rgba(15,23,42,0.07); transform: translateY(-1px); }
       .sw-title { font-size: 13px; font-weight: 600; color: #64748b; margin: 0 0 10px; }
 
-      #fb-summary { font-size: 13px; color: #64748b; margin: 0 0 12px; line-height: 1.5; }
-      #fb-summary strong { font-size: 24px; font-weight: 700; color: #0f172a; display: block; line-height: 1.2; }
-      #fb-bar { height: 6px; background: #e2e8f0; border-radius: 3px; overflow: hidden; margin: 0 0 14px; display: none; }
-      #fb-bar div { height: 100%; background: #3973D4; width: 0; transition: width 0.4s ease; }
+      /* feedback card header: title + inline save */
+      #feedback-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 0 0 10px; }
+      #feedback-head .sw-title { margin: 0; }
 
-      #reaction-box {
-        display: flex; align-items: center; justify-content: flex-start;
-        gap: 8px; flex-wrap: wrap;
-        position: relative; /* For the confetti */
-      }
-      #reaction-label-text {
-        font-size: 13px; font-weight: 600; color: #64748b;
-        margin-bottom: 4px; transition: color 0.3s ease; width: 100%;
-      }
+      #fb-summary { font-size: 13px; color: #64748b; margin: 0 0 12px; line-height: 1.5; min-height: 52px; }
+      #fb-summary strong { font-size: 26px; font-weight: 700; color: #0f172a; display: block; line-height: 1.2;
+        font-variant-numeric: tabular-nums; }
+      #fb-bar { height: 8px; background: #fde68a; border-radius: 4px; overflow: hidden; margin: 0 0 8px; display: none;
+        box-shadow: inset 0 1px 2px rgba(15,23,42,0.08); }
+      #fb-bar div { height: 100%; background: #3973D4; width: 0; border-radius: 4px;
+        transition: width 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+      #fb-legend { display: none; gap: 14px; font-size: 11px; color: #64748b; margin: 0 0 14px; font-weight: 500; }
+      #fb-legend .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 5px; }
+      #fb-legend .up-dot { background: #3973D4; }
+      #fb-legend .down-dot { background: #fde68a; }
 
-      /* Buttons */
-      .reaction-btn, .save-btn {
-        display: flex; align-items: center; justify-content: center; gap: 6px;
-        background: transparent; border: none;
-        padding: 6px; cursor: pointer; color: #3973D4;
-        transition: transform 0.2s ease; user-select: none;
-        -webkit-user-select: none; -webkit-touch-callout: none;
-        position: relative; z-index: 2;
-        -webkit-tap-highlight-color: transparent; touch-action: manipulation;
-        font-family: inherit; font-size: 13px; font-weight: 600;
-      }
-      /* Stop the theme / browser from drawing a dark box when clicked or focused */
-      .reaction-btn, .reaction-btn:hover, .reaction-btn:focus, .reaction-btn:active,
-      .save-btn, .save-btn:hover, .save-btn:focus, .save-btn:active {
-        background: transparent !important; background-color: transparent !important;
-        border: 0 !important; box-shadow: none !important; outline: none !important;
-        -webkit-appearance: none; appearance: none; -webkit-tap-highlight-color: transparent;
-      }
-      .reaction-btn::-moz-focus-inner, .save-btn::-moz-focus-inner { border: 0; }
-      .reaction-btn svg, .reaction-btn svg path, .save-btn svg { outline: none !important; pointer-events: none; }
-      .reaction-btn:hover, .save-btn:hover { transform: translateY(-2px); }
-      .reaction-btn:focus-visible, .save-btn:focus-visible {
-        outline: 2px solid #3973D4 !important; outline-offset: 2px; border-radius: 6px;
-      }
-      .reaction-btn:focus:not(:focus-visible), .save-btn:focus:not(:focus-visible) { outline: none !important; }
+      #reaction-box { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; position: relative; }
+      #reaction-label-text { font-size: 13px; font-weight: 600; color: #64748b; margin-bottom: 4px;
+        transition: color 0.3s ease; width: 100%; }
 
-      .reaction-btn svg {
-        width: 28px; height: 28px; fill: none; stroke: #3973D4;
-        stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: fill 0.2s ease;
+      /* ── pills ── */
+      .vote-btn, .share-btn {
+        display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+        font-family: inherit; font-size: 14px; font-weight: 600; line-height: 1.2; cursor: pointer;
+        text-decoration: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;
+        -webkit-tap-highlight-color: transparent; touch-action: manipulation; position: relative; z-index: 2;
+        transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease, opacity 0.2s ease;
       }
-      .reaction-btn.active svg { fill: #3973D4; }
-      .save-btn svg { width: 18px; height: 18px; fill: none; stroke: #3973D4; stroke-width: 2;
-        stroke-linecap: round; stroke-linejoin: round; transition: fill 0.2s ease; }
-      .save-btn.saved svg { fill: #3973D4; }
+      .vote-btn { padding: 9px 16px; border-radius: 999px; }
+      .share-btn { padding: 8px 12px; border-radius: 10px; font-size: 13px; }
+
+      .vote-btn, .vote-btn:hover, .vote-btn:focus, .vote-btn:active,
+      .share-btn, .share-btn:hover, .share-btn:focus, .share-btn:active {
+        background: #ffffff !important; background-color: #ffffff !important;
+        border: 1px solid #cbd5e1 !important; box-shadow: none !important; outline: none !important;
+        color: #0f172a !important; -webkit-appearance: none; appearance: none; text-decoration: none !important;
+      }
+      .vote-btn:hover:not(:disabled), .share-btn:hover { border-color: #3973D4 !important; transform: translateY(-1px); }
+      .vote-btn::-moz-focus-inner, .share-btn::-moz-focus-inner { border: 0; }
+      .vote-btn:focus-visible, .share-btn:focus-visible { outline: 2px solid #3973D4 !important; outline-offset: 2px; }
+      .vote-btn:focus:not(:focus-visible), .share-btn:focus:not(:focus-visible) { outline: none !important; }
+
+      .vote-btn.on-up, .vote-btn.on-up:hover, .vote-btn.on-up:focus, .vote-btn.on-up:active {
+        background: #e6f0fd !important; background-color: #e6f0fd !important;
+        border-color: #3973D4 !important; color: #1e4a9e !important;
+      }
+      .vote-btn.on-down, .vote-btn.on-down:hover, .vote-btn.on-down:focus, .vote-btn.on-down:active {
+        background: #fef3c7 !important; background-color: #fef3c7 !important;
+        border-color: #f59e0b !important; color: #92400e !important;
+      }
+      .vote-btn:disabled, .vote-btn:disabled:hover {
+        cursor: not-allowed !important; opacity: 0.45 !important;
+        transform: none !important; border-color: #e2e8f0 !important;
+      }
+      .share-btn.saved, .share-btn.saved:hover, .share-btn.saved:focus {
+        background: #e6f0fd !important; border-color: #3973D4 !important; color: #1e4a9e !important;
+      }
+      .share-btn.saved svg { fill: currentColor; }
+
+      .vote-btn svg, .share-btn svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 2;
+        stroke-linecap: round; stroke-linejoin: round; pointer-events: none; flex-shrink: 0; }
+      .vote-btn .vc { opacity: 0.7; font-variant-numeric: tabular-nums; font-weight: 500; }
+      .vote-btn .vc:empty { display: none; }
+      .share-btn svg { width: 14px; height: 14px; }
 
       /* Confetti */
-      .confetti {
-        position: absolute; width: 8px; height: 8px;
-        background-color: #f59e0b; border-radius: 50%;
-        pointer-events: none; z-index: 1;
-        animation: burst 0.8s ease-out forwards;
-      }
+      .confetti { position: absolute; width: 8px; height: 8px; background-color: #f59e0b; border-radius: 50%;
+        pointer-events: none; z-index: 1; animation: burst 0.8s ease-out forwards; }
       .confetti:nth-child(2n) { background-color: #3b6fd4; }
       .confetti:nth-child(3n) { background-color: #ef4444; }
       .confetti:nth-child(4n) { background-color: #10b981; }
@@ -3149,9 +3131,12 @@
 
       /* Most read */
       #most-read-card { display: none; }
-      #most-read-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
-      #most-read-list li { display: flex; gap: 10px; align-items: baseline; font-size: 14px; line-height: 1.4; }
-      #most-read-list .rank { color: #94a3b8; font-weight: 700; min-width: 14px; }
+      #most-read-list { list-style: none; margin: 0; padding: 0; }
+      #most-read-list li { display: flex; gap: 10px; align-items: center; font-size: 14px; line-height: 1.4;
+        padding: 9px 0; border-bottom: 1px solid #e2e8f0; }
+      #most-read-list li:last-child { border-bottom: 0; }
+      #most-read-list .rank { width: 24px; height: 24px; border-radius: 50%; background: #e2e8f0; color: #475569;
+        display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
       #most-read-list a { color: #1e293b; text-decoration: none; }
       #most-read-list a:hover { color: #3973D4; text-decoration: underline; }
 
@@ -3160,13 +3145,36 @@
       html.dark-mode-active .pg-badge.trending { background: rgba(57,115,212,0.22); color: #93c5fd; }
       html.dark-mode-active .pg-badge.cat { background: rgba(255,255,255,0.08); color: #cbd5e1; }
       html.dark-mode-active #page-meta { color: #94a3b8; border-bottom-color: rgba(255,255,255,0.08); }
-      html.dark-mode-active .sw-card { background: #1e293b; border-color: rgba(255,255,255,0.08); }
+      html.dark-mode-active .sw-card { background: #1e293b; border-color: rgba(255,255,255,0.08); box-shadow: none; }
       html.dark-mode-active .sw-title, html.dark-mode-active #fb-summary,
-      html.dark-mode-active #reaction-label-text { color: #94a3b8; }
+      html.dark-mode-active #reaction-label-text, html.dark-mode-active #fb-legend { color: #94a3b8; }
       html.dark-mode-active #fb-summary strong { color: #f1f5f9; }
-      html.dark-mode-active #fb-bar { background: rgba(255,255,255,0.1); }
+      html.dark-mode-active #fb-bar { background: rgba(245,158,11,0.25); box-shadow: none; }
+      html.dark-mode-active .vote-btn, html.dark-mode-active .vote-btn:hover, html.dark-mode-active .vote-btn:focus, html.dark-mode-active .vote-btn:active,
+      html.dark-mode-active .share-btn, html.dark-mode-active .share-btn:hover, html.dark-mode-active .share-btn:focus, html.dark-mode-active .share-btn:active {
+        background: #0f172a !important; background-color: #0f172a !important;
+        border-color: rgba(255,255,255,0.18) !important; color: #e2e8f0 !important;
+      }
+      html.dark-mode-active .vote-btn:hover:not(:disabled), html.dark-mode-active .share-btn:hover { border-color: #6ea0f0 !important; }
+      html.dark-mode-active .vote-btn.on-up, html.dark-mode-active .vote-btn.on-up:hover,
+      html.dark-mode-active .share-btn.saved {
+        background: rgba(57,115,212,0.25) !important; border-color: #6ea0f0 !important; color: #bfdbfe !important;
+      }
+      html.dark-mode-active .vote-btn.on-down, html.dark-mode-active .vote-btn.on-down:hover {
+        background: rgba(245,158,11,0.2) !important; border-color: #f59e0b !important; color: #fde68a !important;
+      }
+      html.dark-mode-active .vote-btn:disabled, html.dark-mode-active .vote-btn:disabled:hover {
+        opacity: 0.35 !important; border-color: rgba(255,255,255,0.08) !important;
+      }
+      html.dark-mode-active #most-read-list li { border-bottom-color: rgba(255,255,255,0.08); }
+      html.dark-mode-active #most-read-list .rank { background: rgba(255,255,255,0.1); color: #cbd5e1; }
       html.dark-mode-active #most-read-list a { color: #e2e8f0; }
       html.dark-mode-active #most-read-list a:hover { color: #93c5fd; }
+
+      @media (prefers-reduced-motion: reduce) {
+        .confetti { display: none; }
+        .sw-card, .vote-btn, .share-btn, #fb-bar div, #read-progress div { transition: none !important; }
+      }
     `;
     document.head.appendChild(style);
 
@@ -3174,7 +3182,10 @@
     const SVG = {
       clock: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
       cal: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="16" rx="2"/><path d="M16 3v4M8 3v4M4 11h16"/></svg>',
-      trend: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>'
+      trend: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/></svg>',
+      up: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7 10v12M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/></svg>',
+      down: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17 14V2M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z"/></svg>',
+      bookmark: '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 4h12v17l-6-4-6 4z"/></svg>'
     };
 
     function toDate(v) {
@@ -3222,15 +3233,28 @@
       return String(num);
     }
 
-    // 3. FIND THE ARTICLE + COMPUTE (before we add anything to it)
+    function getVoterId() {
+      let id = null;
+      try { id = localStorage.getItem('voter_id'); } catch (e) {}
+      if (!id || !/^[A-Za-z0-9_-]{8,64}$/.test(id)) {
+        id = (window.crypto && crypto.randomUUID) ? crypto.randomUUID()
+          : ('v' + Math.random().toString(36).slice(2) + Date.now().toString(36));
+        try { localStorage.setItem('voter_id', id); } catch (e) {}
+      }
+      return id;
+    }
+    const VOTER = getVoterId();
+
+    // 3. FIND THE ARTICLE + COMPUTE
     const article = document.querySelector('article') || document.querySelector('.post-content') || document.querySelector('main') || document.body;
     const dates = readDates();
     const words = countWords(article);
     const h1 = article.querySelector('h1') || document.querySelector('h1');
+    const isPost = !!(dates.pub && h1 && h1.parentNode);
 
-    // 4. BADGES + META ROW (only on real posts: a publish date was found)
+    // 4. BADGES + META ROW
     let badgesRow = null;
-    if (dates.pub && h1 && h1.parentNode) {
+    if (isPost) {
       badgesRow = document.createElement('div');
       badgesRow.id = 'page-badges';
 
@@ -3259,34 +3283,29 @@
       const dateLabel = wasUpdated ? 'Updated ' + fmtDate(dates.mod) : 'Published ' + fmtDate(dates.pub);
       meta.innerHTML =
         '<span>' + SVG.clock + mins + ' min read</span>' +
+        '<span class="dot" aria-hidden="true">·</span>' +
         '<span>' + SVG.cal + dateLabel + '</span>';
       h1.insertAdjacentElement('afterend', meta);
     }
 
-    // 5. BUILD FOOTER CARDS
+    // 5. BUILD FOOTER CARDS (save button inline in feedback card, no share buttons)
+    const shareTitle = (document.title || '').replace(/\s*[|\-–—]\s*Tech-?Terrain.*$/i, '').trim() || 'Tech-Terrain';
+
     const wrapper = document.createElement('div');
     wrapper.id = 'stats-wrapper';
     wrapper.innerHTML = `
       <div class="sw-card" id="feedback-card">
-        <p class="sw-title">Reader feedback</p>
-        <div id="fb-summary">Be one of the first to rate this article.</div>
+        <div id="feedback-head">
+          <p class="sw-title">Reader feedback</p>
+          <button type="button" class="share-btn" id="save-btn" aria-pressed="false">${SVG.bookmark}<span id="save-label">Save</span></button>
+        </div>
+        <div id="fb-summary">Loading…</div>
         <div id="fb-bar"><div></div></div>
+        <div id="fb-legend"><span><span class="dot up-dot"></span>Helpful</span><span><span class="dot down-dot"></span>Not helpful</span></div>
         <div id="reaction-box">
           <div id="reaction-label-text">Did you find this helpful?</div>
-          <button type="button" class="reaction-btn" data-type="up" aria-label="Thumbs up" aria-pressed="false">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M7 10v12M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z"/>
-            </svg>
-          </button>
-          <button type="button" class="reaction-btn" data-type="down" aria-label="Thumbs down" aria-pressed="false">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              <path d="M17 14V2M9 18.12 10 14H4.17a2 2 0 0 1-1.92-2.56l2.33-8A2 2 0 0 1 6.5 2H20a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.76a2 2 0 0 0-1.79 1.11L12 22a3.13 3.13 0 0 1-3-3.88Z"/>
-            </svg>
-          </button>
-          <button type="button" class="save-btn" id="save-btn" aria-pressed="false">
-            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 4h12v17l-6-4-6 4z"/></svg>
-            <span id="save-label">Save for later</span>
-          </button>
+          <button type="button" class="vote-btn" data-type="up" aria-pressed="false">${SVG.up}<span>Helpful</span><span class="vc" id="vc-up"></span></button>
+          <button type="button" class="vote-btn" data-type="down" aria-pressed="false">${SVG.down}<span>Not helpful</span><span class="vc" id="vc-down"></span></button>
         </div>
       </div>
       <div class="sw-card" id="most-read-card">
@@ -3296,26 +3315,70 @@
     `;
     article.appendChild(wrapper);
 
-    // 6. REACTIONS (thumbs up / down)
-    let hasClicked = localStorage.getItem(`clicked_${pageId}`);
-    const counts = { up: 0, down: 0 };
+    // 6. VOTING
+    const real = { up: 0, down: 0 };   // real votes from the worker (seed added on top)
+    let mine = null;                    // 'up' | 'down' | null
+    let loaded = false;
+    let busy = false;
+    let firstPaint = true;
 
-    function renderRating() {
+    function display() {
+      return { up: UP_SEED + real.up, down: DOWN_SEED + real.down };
+    }
+
+    function paintVotes() {
       const summary = document.getElementById('fb-summary');
       const bar = document.getElementById('fb-bar');
-      const total = counts.up + counts.down;
-      if (total >= MIN_VOTES) {
-        const pct = Math.round((counts.up / total) * 100);
-        summary.innerHTML = '';
-        const strong = document.createElement('strong');
-        strong.textContent = pct + '%';
-        summary.appendChild(strong);
-        summary.appendChild(document.createTextNode('found this helpful (' + formatNumber(total) + ' votes)'));
-        bar.style.display = 'block';
-        bar.firstElementChild.style.width = pct + '%';
+      const legend = document.getElementById('fb-legend');
+      const d = display();
+      const total = d.up + d.down;
+
+      const pct = total ? Math.round((d.up / total) * 100) : 0;
+      summary.innerHTML = '';
+      const strong = document.createElement('strong');
+      strong.textContent = pct + '%';
+      summary.appendChild(strong);
+      summary.appendChild(document.createTextNode(
+        total + (total === 1 ? ' reader' : ' readers') + ' found this helpful'
+      ));
+
+      bar.style.display = 'block';
+      legend.style.display = 'flex';
+      // animate from 0 on first paint, then to current pct
+      if (firstPaint) {
+        bar.firstElementChild.style.width = '0%';
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () { bar.firstElementChild.style.width = pct + '%'; });
+        });
       } else {
-        summary.textContent = 'Be one of the first to rate this article.';
-        bar.style.display = 'none';
+        bar.firstElementChild.style.width = pct + '%';
+      }
+
+      const upBtn = document.querySelector('.vote-btn[data-type="up"]');
+      const downBtn = document.querySelector('.vote-btn[data-type="down"]');
+
+      document.getElementById('vc-up').textContent = loaded ? formatNumber(d.up) : '';
+      document.getElementById('vc-down').textContent = loaded ? formatNumber(d.down) : '';
+
+      upBtn.classList.toggle('on-up', mine === 'up');
+      downBtn.classList.toggle('on-down', mine === 'down');
+      upBtn.setAttribute('aria-pressed', mine === 'up' ? 'true' : 'false');
+      downBtn.setAttribute('aria-pressed', mine === 'down' ? 'true' : 'false');
+
+      // lock rules: up is permanent. If mine === 'up', both disabled.
+      upBtn.disabled = (mine === 'up') || busy;
+      downBtn.disabled = (mine === 'up') || busy;
+
+      const label = document.getElementById('reaction-label-text');
+      if (mine === 'up') {
+        label.textContent = 'Thanks — your vote is locked in.';
+        label.style.color = '#3973D4';
+      } else if (mine === 'down') {
+        label.textContent = 'Tap "Not helpful" again to undo.';
+        label.style.color = '#b45309';
+      } else {
+        label.textContent = 'Did you find this helpful?';
+        label.style.color = '';
       }
     }
 
@@ -3340,33 +3403,58 @@
       }
     }
 
-    document.querySelectorAll('.reaction-btn').forEach(btn => {
-      btn.addEventListener('mousedown', function (e) { e.preventDefault(); });
-      btn.addEventListener('click', async function () {
-        this.blur();
-        if (hasClicked) return;
-        const type = this.dataset.type;
+    async function castVote(btn) {
+      if (busy) return;
+      const type = btn.dataset.type;
 
-        this.classList.add('active');
-        this.setAttribute('aria-pressed', 'true');
-        localStorage.setItem(`clicked_${pageId}`, type);
-        hasClicked = type;
+      // guard: if already permanently up, do nothing
+      if (mine === 'up') return;
+      // down toggle: down → none ; none → down ; down → up allowed (then locks)
+      const next = (mine === type) ? null : type;
 
-        counts[type] = (counts[type] || 0) + 1;
-        renderRating();
+      busy = true;
 
+      const prevMine = mine;
+      const prevReal = { up: real.up, down: real.down };
+
+      // optimistic
+      if (mine) real[mine] = Math.max(0, real[mine] - 1);
+      if (next) real[next] += 1;
+      mine = next;
+      loaded = true;
+      paintVotes();
+      if (next === 'up') fireConfetti(btn);
+
+      try {
+        const res = await fetch(
+          `${WORKER_URL}/vote?page=${encodeURIComponent(pageId)}&vote=${next || 'none'}&voter=${encodeURIComponent(VOTER)}`,
+          { method: 'POST' }
+        );
+        const data = await res.json();
+        if (!data || !data.success) throw new Error('vote failed');
+        real.up = data.up || 0;
+        real.down = data.down || 0;
+        mine = (data.mine === 'up' || data.mine === 'down') ? data.mine : null;
+        paintVotes();
+      } catch (e) {
+        mine = prevMine;
+        real.up = prevReal.up;
+        real.down = prevReal.down;
+        paintVotes();
         const label = document.getElementById('reaction-label-text');
-        label.textContent = 'Thanks for the feedback!';
-        label.style.color = '#3973D4';
-        fireConfetti(this);
+        label.textContent = "Couldn't save your vote. Try again.";
+        label.style.color = '#dc2626';
+      }
+      busy = false;
+      paintVotes();
+    }
 
-        try {
-          await fetch(`${WORKER_URL}/reactions?page=${encodeURIComponent(pageId)}&type=${type}`, { method: 'POST' });
-        } catch (e) {}
-      });
+    document.querySelectorAll('.vote-btn').forEach(function (btn) {
+      btn.addEventListener('mousedown', function (e) { e.preventDefault(); });
+      btn.addEventListener('click', function () { castVote(this); btn.blur(); });
     });
 
-    // 7. SAVE FOR LATER (stored in this reader's browser only)
+    // 7. SAVE FOR LATER (inline in feedback card)
     const SAVE_KEY = 'saved_articles';
     function readSaved() {
       try { return JSON.parse(localStorage.getItem(SAVE_KEY)) || []; } catch (e) { return []; }
@@ -3377,7 +3465,7 @@
       const saved = readSaved().some(function (x) { return x.page === pageId; });
       saveBtn.classList.toggle('saved', saved);
       saveBtn.setAttribute('aria-pressed', saved ? 'true' : 'false');
-      saveLabel.textContent = saved ? 'Saved' : 'Save for later';
+      saveLabel.textContent = saved ? 'Saved' : 'Save';
     }
     saveBtn.addEventListener('mousedown', function (e) { e.preventDefault(); });
     saveBtn.addEventListener('click', function () {
@@ -3385,7 +3473,7 @@
       if (list.some(function (x) { return x.page === pageId; })) {
         list = list.filter(function (x) { return x.page !== pageId; });
       } else {
-        list.unshift({ page: pageId, title: (document.title || pageId).slice(0, 120), t: Date.now() });
+        list.unshift({ page: pageId, title: shareTitle.slice(0, 120), t: Date.now() });
         list = list.slice(0, 50);
       }
       try { localStorage.setItem(SAVE_KEY, JSON.stringify(list)); } catch (e) {}
@@ -3394,33 +3482,35 @@
     });
     paintSave();
 
-    // 8. LOAD STATS (still counts the view in the background; the number is not shown)
+    // 8. LOAD STATS
     async function loadStats() {
+      let countView = '1';
       try {
-        const res = await fetch(`${WORKER_URL}/stats?page=${encodeURIComponent(pageId)}&title=${encodeURIComponent((document.title || '').slice(0, 120))}`);
-        const data = await res.json();
-        counts.up = data.up || 0;
-        counts.down = data.down || 0;
-        renderRating();
+        const k = 'viewed_' + pageId;
+        if (sessionStorage.getItem(k)) countView = '0';
+        else sessionStorage.setItem(k, '1');
+      } catch (e) {}
 
-        if (hasClicked) {
-          const activeBtn = document.querySelector(`.reaction-btn[data-type="${hasClicked}"]`);
-          if (activeBtn) {
-            activeBtn.classList.add('active');
-            activeBtn.setAttribute('aria-pressed', 'true');
-          }
-          const label = document.getElementById('reaction-label-text');
-          label.textContent = 'Thanks for the feedback!';
-          label.style.color = '#3973D4';
-        }
+      try {
+        const res = await fetch(
+          `${WORKER_URL}/stats?page=${encodeURIComponent(pageId)}` +
+          `&title=${encodeURIComponent(shareTitle.slice(0, 120))}` +
+          `&post=${isPost ? 1 : 0}&count=${countView}&voter=${encodeURIComponent(VOTER)}`
+        );
+        const data = await res.json();
+        real.up = data.up || 0;
+        real.down = data.down || 0;
+        mine = (data.mine === 'up' || data.mine === 'down') ? data.mine : null;
       } catch (e) {
         console.log('Failed to load stats');
       }
+      loaded = true;
+      paintVotes();
+      firstPaint = false;
     }
     loadStats();
 
-    // 9. TRENDING BADGE + MOST READ (needs the /trending route on the worker;
-    //    if it is not there yet, these two simply stay hidden)
+    // 9. TRENDING BADGE + MOST READ
     async function loadTrending() {
       try {
         const res = await fetch(`${WORKER_URL}/trending`);
@@ -3458,15 +3548,31 @@
     }
     loadTrending();
 
-    // 10. AUTOMATIC SHARE TRACKER (still recorded for you, not displayed)
-    document.body.addEventListener('click', (e) => {
-      const link = e.target.closest('a');
-      if (!link) return;
-      const href = link.href || '';
-      if (href.includes('twitter.com/intent') || href.includes('facebook.com/sharer') || href.includes('wa.me') || href.includes('linkedin.com/share')) {
-        fetch(`${WORKER_URL}/reactions?page=${encodeURIComponent(pageId)}&type=shares`, { method: 'POST' }).catch(() => {});
+    // 10. READING PROGRESS BAR
+    if (isPost) {
+      const bar = document.createElement('div');
+      bar.id = 'read-progress';
+      bar.innerHTML = '<div></div>';
+      document.body.appendChild(bar);
+      const fill = bar.firstElementChild;
+      let ticking = false;
+
+      function updateProgress() {
+        ticking = false;
+        const rect = article.getBoundingClientRect();
+        const total = rect.height - window.innerHeight;
+        const scrolled = -rect.top;
+        let p = 0;
+        if (total > 0) p = Math.min(1, Math.max(0, scrolled / total));
+        else p = rect.top < 0 ? 1 : 0;
+        fill.style.width = (p * 100).toFixed(1) + '%';
       }
-    });
+      window.addEventListener('scroll', function () {
+        if (!ticking) { ticking = true; requestAnimationFrame(updateProgress); }
+      }, { passive: true });
+      window.addEventListener('resize', updateProgress);
+      updateProgress();
+    }
 
   }, 500);
 })();</script><style>#traffic-popup {
