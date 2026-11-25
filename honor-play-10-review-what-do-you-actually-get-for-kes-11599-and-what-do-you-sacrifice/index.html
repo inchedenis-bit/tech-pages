@@ -2788,7 +2788,7 @@
     }
   };
 
-})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="#" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-25T13:48">November 25, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>/* 1. The entire body starts slightly transparent */
+})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="#" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-25T14:22">November 25, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>/* 1. The entire body starts slightly transparent */
   body {
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
@@ -3001,7 +3001,7 @@
     const NEW_DAYS = 7;      // "New" badge lasts this many days
     const WORDS_PER_MIN = 220;
 
-    // ── deterministic seeds (locked per page path) ──
+    // ── deterministic seeds (locked per article, survives slug changes) ──
     function fnv1a(str) {
       let h = 0x811c9dc5;
       for (let i = 0; i < str.length; i++) {
@@ -3010,7 +3010,7 @@
       }
       return h >>> 0;
     }
-    const SEED_HASH = fnv1a(pageId);
+    const SEED_HASH = fnv1a(pageId + '|' + (document.title || ''));
     const UP_SEED   = 6 + (SEED_HASH % 42);              // 6..47
     const DOWN_SEED = 3 + ((SEED_HASH >>> 8) % 7);       // 3..9
 
@@ -3079,7 +3079,7 @@
         font-family: inherit; font-size: 14px; font-weight: 600; line-height: 1.2; cursor: pointer;
         text-decoration: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none;
         -webkit-tap-highlight-color: transparent; touch-action: manipulation; position: relative; z-index: 2;
-        transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease, opacity 0.2s ease;
+        transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease, color 0.15s ease;
       }
       .vote-btn { padding: 9px 16px; border-radius: 999px; }
       .share-btn { padding: 8px 12px; border-radius: 10px; font-size: 13px; }
@@ -3103,10 +3103,31 @@
         background: #fef3c7 !important; background-color: #fef3c7 !important;
         border-color: #f59e0b !important; color: #92400e !important;
       }
-      .vote-btn:disabled, .vote-btn:disabled:hover {
-        cursor: not-allowed !important; opacity: 0.45 !important;
-        transform: none !important; border-color: #e2e8f0 !important;
+
+      /* keep the locked-in up state looking selected, even while disabled */
+      .vote-btn.on-up:disabled, .vote-btn.on-up:disabled:hover {
+        background: #e6f0fd !important;
+        border-color: #3973D4 !important;
+        color: #1e4a9e !important;
+        cursor: default !important;
+        transform: none !important;
       }
+
+      /* disabled = "inactive sibling", not "ghost". No heavy fade. */
+      .vote-btn:disabled { cursor: default !important; transform: none !important; }
+
+      /* the non-selected down button after an up-lock: muted but legible */
+      .vote-btn[data-type="down"]:disabled,
+      .vote-btn[data-type="down"]:disabled:hover {
+        background: #f8fafc !important;
+        border-color: #e2e8f0 !important;
+        color: #94a3b8 !important;
+        opacity: 1 !important;
+        box-shadow: none !important;
+      }
+      .vote-btn[data-type="down"]:disabled svg { stroke: #94a3b8 !important; }
+      .vote-btn[data-type="down"]:disabled .vc { opacity: 0.6; }
+
       .share-btn.saved, .share-btn.saved:hover, .share-btn.saved:focus {
         background: #e6f0fd !important; border-color: #3973D4 !important; color: #1e4a9e !important;
       }
@@ -3163,9 +3184,24 @@
       html.dark-mode-active .vote-btn.on-down, html.dark-mode-active .vote-btn.on-down:hover {
         background: rgba(245,158,11,0.2) !important; border-color: #f59e0b !important; color: #fde68a !important;
       }
-      html.dark-mode-active .vote-btn:disabled, html.dark-mode-active .vote-btn:disabled:hover {
-        opacity: 0.35 !important; border-color: rgba(255,255,255,0.08) !important;
+      /* keep locked-in up state looking selected in dark mode */
+      html.dark-mode-active .vote-btn.on-up:disabled,
+      html.dark-mode-active .vote-btn.on-up:disabled:hover {
+        background: rgba(57,115,212,0.25) !important;
+        border-color: #6ea0f0 !important;
+        color: #bfdbfe !important;
+        cursor: default !important;
+        transform: none !important;
       }
+      /* dark mode: muted down button after lock */
+      html.dark-mode-active .vote-btn[data-type="down"]:disabled,
+      html.dark-mode-active .vote-btn[data-type="down"]:disabled:hover {
+        background: rgba(255,255,255,0.04) !important;
+        border-color: rgba(255,255,255,0.10) !important;
+        color: #64748b !important;
+        opacity: 1 !important;
+      }
+      html.dark-mode-active .vote-btn[data-type="down"]:disabled svg { stroke: #64748b !important; }
       html.dark-mode-active #most-read-list li { border-bottom-color: rgba(255,255,255,0.08); }
       html.dark-mode-active #most-read-list .rank { background: rgba(255,255,255,0.1); color: #cbd5e1; }
       html.dark-mode-active #most-read-list a { color: #e2e8f0; }
