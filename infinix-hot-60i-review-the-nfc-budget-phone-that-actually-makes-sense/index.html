@@ -2788,7 +2788,7 @@
     }
   };
 
-})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="#" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-25T14:22">November 25, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>/* 1. The entire body starts slightly transparent */
+})();</script></head><body class="post-template"><header class="topbar" id="js-header"><div class="topbar__inner"><a class="logo" href="https://terrain.co.ke/">Tech-Terrain</a><nav class="navbar"><button class="navbar__toggle" aria-label="Menu" aria-haspopup="true" aria-expanded="false"><span class="navbar__toggle-box"><span class="navbar__toggle-inner">Menu</span></span></button><ul class="navbar__menu"><li><a href="https://terrain.co.ke/" target="_self">Home</a></li><li><a href="https://terrain.co.ke/" target="_self">About</a></li><li><a href="https://terrain.co.ke/tags/news/" target="_self">News</a></li><li><a href="/?contact&#x3D;true" target="_self">Contact</a></li><li><a href="#" target="_self">Login</a></li></ul></nav></div></header><div class="main-content"><div class="infobar"><div class="infobar__update">Last Updated: <time datetime="2026-11-25T17:09">November 25, 2026</time></div></div><main class="main post"><div class="banner banner--before-content"><style>/* 1. The entire body starts slightly transparent */
   body {
     opacity: 0;
     transition: opacity 0.4s ease-in-out;
@@ -3104,7 +3104,7 @@
         border-color: #f59e0b !important; color: #92400e !important;
       }
 
-      /* keep the locked-in up state looking selected, even while disabled */
+      /* keep the selected (locked-in) vote looking crisp, even while disabled */
       .vote-btn.on-up:disabled, .vote-btn.on-up:disabled:hover {
         background: #e6f0fd !important;
         border-color: #3973D4 !important;
@@ -3112,21 +3112,28 @@
         cursor: default !important;
         transform: none !important;
       }
+      .vote-btn.on-down:disabled, .vote-btn.on-down:disabled:hover {
+        background: #fef3c7 !important;
+        border-color: #f59e0b !important;
+        color: #92400e !important;
+        cursor: default !important;
+        transform: none !important;
+      }
 
       /* disabled = "inactive sibling", not "ghost". No heavy fade. */
       .vote-btn:disabled { cursor: default !important; transform: none !important; }
 
-      /* the non-selected down button after an up-lock: muted but legible */
-      .vote-btn[data-type="down"]:disabled,
-      .vote-btn[data-type="down"]:disabled:hover {
+      /* the non-selected button after a lock: muted but legible (both directions) */
+      .vote-btn:disabled:not(.on-up):not(.on-down),
+      .vote-btn:disabled:not(.on-up):not(.on-down):hover {
         background: #f8fafc !important;
         border-color: #e2e8f0 !important;
         color: #94a3b8 !important;
         opacity: 1 !important;
         box-shadow: none !important;
       }
-      .vote-btn[data-type="down"]:disabled svg { stroke: #94a3b8 !important; }
-      .vote-btn[data-type="down"]:disabled .vc { opacity: 0.6; }
+      .vote-btn:disabled:not(.on-up):not(.on-down) svg { stroke: #94a3b8 !important; }
+      .vote-btn:disabled:not(.on-up):not(.on-down) .vc { opacity: 0.6; }
 
       .share-btn.saved, .share-btn.saved:hover, .share-btn.saved:focus {
         background: #e6f0fd !important; border-color: #3973D4 !important; color: #1e4a9e !important;
@@ -3184,7 +3191,7 @@
       html.dark-mode-active .vote-btn.on-down, html.dark-mode-active .vote-btn.on-down:hover {
         background: rgba(245,158,11,0.2) !important; border-color: #f59e0b !important; color: #fde68a !important;
       }
-      /* keep locked-in up state looking selected in dark mode */
+      /* dark mode: selected locked-in states stay crisp */
       html.dark-mode-active .vote-btn.on-up:disabled,
       html.dark-mode-active .vote-btn.on-up:disabled:hover {
         background: rgba(57,115,212,0.25) !important;
@@ -3193,15 +3200,23 @@
         cursor: default !important;
         transform: none !important;
       }
-      /* dark mode: muted down button after lock */
-      html.dark-mode-active .vote-btn[data-type="down"]:disabled,
-      html.dark-mode-active .vote-btn[data-type="down"]:disabled:hover {
+      html.dark-mode-active .vote-btn.on-down:disabled,
+      html.dark-mode-active .vote-btn.on-down:disabled:hover {
+        background: rgba(245,158,11,0.2) !important;
+        border-color: #f59e0b !important;
+        color: #fde68a !important;
+        cursor: default !important;
+        transform: none !important;
+      }
+      /* dark mode: non-selected sibling after lock */
+      html.dark-mode-active .vote-btn:disabled:not(.on-up):not(.on-down),
+      html.dark-mode-active .vote-btn:disabled:not(.on-up):not(.on-down):hover {
         background: rgba(255,255,255,0.04) !important;
         border-color: rgba(255,255,255,0.10) !important;
         color: #64748b !important;
         opacity: 1 !important;
       }
-      html.dark-mode-active .vote-btn[data-type="down"]:disabled svg { stroke: #64748b !important; }
+      html.dark-mode-active .vote-btn:disabled:not(.on-up):not(.on-down) svg { stroke: #64748b !important; }
       html.dark-mode-active #most-read-list li { border-bottom-color: rgba(255,255,255,0.08); }
       html.dark-mode-active #most-read-list .rank { background: rgba(255,255,255,0.1); color: #cbd5e1; }
       html.dark-mode-active #most-read-list a { color: #e2e8f0; }
@@ -3351,7 +3366,7 @@
     `;
     article.appendChild(wrapper);
 
-    // 6. VOTING
+    // 6. VOTING (symmetric permanent lock: one vote per reader per article)
     const real = { up: 0, down: 0 };   // real votes from the worker (seed added on top)
     let mine = null;                    // 'up' | 'down' | null
     let loaded = false;
@@ -3401,16 +3416,17 @@
       upBtn.setAttribute('aria-pressed', mine === 'up' ? 'true' : 'false');
       downBtn.setAttribute('aria-pressed', mine === 'down' ? 'true' : 'false');
 
-      // lock rules: up is permanent. If mine === 'up', both disabled.
-      upBtn.disabled = (mine === 'up') || busy;
-      downBtn.disabled = (mine === 'up') || busy;
+      // Symmetric permanent lock: once a vote exists (up OR down), both buttons disabled.
+      const locked = (mine !== null);
+      upBtn.disabled = locked || busy;
+      downBtn.disabled = locked || busy;
 
       const label = document.getElementById('reaction-label-text');
       if (mine === 'up') {
-        label.textContent = 'Thanks — your vote is locked in.';
+        label.textContent = 'Thanks — your feedback is recorded.';
         label.style.color = '#3973D4';
       } else if (mine === 'down') {
-        label.textContent = 'Tap "Not helpful" again to undo.';
+        label.textContent = 'Thanks — your feedback is recorded.';
         label.style.color = '#b45309';
       } else {
         label.textContent = 'Did you find this helpful?';
@@ -3441,12 +3457,11 @@
 
     async function castVote(btn) {
       if (busy) return;
-      const type = btn.dataset.type;
+      // Symmetric lock: if any vote already exists, ignore.
+      if (mine !== null) return;
 
-      // guard: if already permanently up, do nothing
-      if (mine === 'up') return;
-      // down toggle: down → none ; none → down ; down → up allowed (then locks)
-      const next = (mine === type) ? null : type;
+      const type = btn.dataset.type;
+      const next = type;   // first vote only; no toggling, no switching
 
       busy = true;
 
@@ -3454,8 +3469,7 @@
       const prevReal = { up: real.up, down: real.down };
 
       // optimistic
-      if (mine) real[mine] = Math.max(0, real[mine] - 1);
-      if (next) real[next] += 1;
+      real[next] += 1;
       mine = next;
       loaded = true;
       paintVotes();
@@ -3463,7 +3477,7 @@
 
       try {
         const res = await fetch(
-          `${WORKER_URL}/vote?page=${encodeURIComponent(pageId)}&vote=${next || 'none'}&voter=${encodeURIComponent(VOTER)}`,
+          `${WORKER_URL}/vote?page=${encodeURIComponent(pageId)}&vote=${next}&voter=${encodeURIComponent(VOTER)}`,
           { method: 'POST' }
         );
         const data = await res.json();
